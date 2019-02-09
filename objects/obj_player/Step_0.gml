@@ -64,6 +64,16 @@ if (!isAttacking && grounded) {
 	}
 }
 
+// Set last know facing direction
+if (move == 1) {
+	faceRight = true;
+	faceLeft = false;
+}
+if (move == -1) {
+	faceRight = false;
+	faceleft = true;
+}
+
 player_hsp = move * moveSpeed;
 player_vsp = 0;
 
@@ -126,6 +136,40 @@ if (place_meeting(x, y + player_vsp, obj_floor)){
 if (!isAttacking) {
 	x += player_hsp;
 	y += player_vsp;
+}
+
+// =====================COMBAT CODE=======================
+if (global.usingGamePad) {
+	// Basic Attack
+	if (gamepad_button_check(slot, gp_face3) && grounded) {
+		isAttacking = true;
+		image_index = 0; // Reset the image index
+		if (attackIndex == 0) {
+			if (faceRight) {
+				sprite_index = spr_attack1_right;	
+			}
+			else {
+				sprite_index = spr_attack2_left;
+			}
+		}
+		else if (attackIndex == 1) {
+			if (faceRight) {
+				sprite_index = spr_attack2_right;	
+			}
+			else {
+				sprite_index = spr_attack2_left;	
+			}
+			
+		}
+		else if (attackIndex == 2) {
+			if (faceRight) {
+				sprite_index = spr_attack3_right;	
+			}
+			else {
+				sprite_index = spr_attack3_left;
+			}
+		}
+	}
 }
 
 //===================ANIMATION HANDLER=====================
