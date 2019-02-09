@@ -7,7 +7,7 @@ grav = 1;
 spd = 10;
 direct = 1;
 
-image_speed = 5;
+image_speed = 2.5;
 
 last_sprite = sprite_index;
 

@@ -132,4 +132,12 @@ switch(stage){
 			else scr_spawnEnemies(obj_enemy_basic, irandom_range(1,3), spawners, 1);
 		}
 		break;
+		
+	case(13):
+		if(timer % (5 * second) == 0)
+		{
+			scr_spawnEnemies(obj_enemy_health, 1, spawners, 1);
+			scr_spawnEnemies(obj_enemy_basic, irandom_range(1,3), spawners, 1);
+		}
+		break;
 }
