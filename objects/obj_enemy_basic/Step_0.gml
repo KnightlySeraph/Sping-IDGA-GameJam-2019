@@ -45,19 +45,45 @@ switch(state){
 	case("DEATH"):
 		sprite_index = spr_enemy_basic_dead;
 		image_angle += death_rot;
-		if(death_rot > 1)	death_rot -= 0.2;
+		if(death_rot > 1) death_rot -= 0.2;
 		if(place_meeting(x,y,obj_lightBox) && !hit)
+		{
+			hit = true;
+			hsp = -sign(obj_player.x - x) * 0.8;
+			vsp = -3;
+			grav = 0.1;
+			death_rot = 18;
+			type = "light";
+			if(obj_player.sprite_index = spr_attack3_left || obj_player.sprite_index = spr_attack3_right) {
+				vsp *= 1.5;
+				hsp *= 1.5;
+			}
+		}
+		else if(place_meeting(x,y,obj_stompBox) && !hit)
 		{
 			hit = true;
 			hsp = -sign(obj_player.x - x) * 1.2;
 			vsp = -3;
 			grav = 0.1;
 			death_rot = 18;
+			type = "stomp";
+			
 		}
-		else if(!place_meeting(x,y,obj_lightBox) && hit)
+		else if(!place_meeting(x,y,obj_lightBox) && hit && type == "light")
 		{
 			hsp = -sign(obj_player.x - x) * 3;
 			vsp = -10;
+			hit = false;
+			grav = 0.5;
+			if(obj_player.sprite_index = spr_attack3_left || obj_player.sprite_index = spr_attack3_right) {
+				vsp *= 1.5;
+				hsp *= 1.5;
+			}
+		}
+		else if(!place_meeting(x,y,obj_stompBox) && hit && type == "stomp")
+		{
+			hsp = -sign(obj_player.x - x) * 5;
+			vsp = -15;
 			hit = false;
 			grav = 0.5;
 		}
@@ -85,7 +111,7 @@ switch(state){
 
 // If there is no floor below, go into falling
 if(!place_meeting(x, y+1, obj_floor) && state != "DEATH") state = "FALL";
-if(place_meeting(x,y,obj_lightBox)) {
+if(place_meeting(x,y,obj_lightBox) || place_meeting(x,y,obj_stompBox)) {
 	state = "DEATH";
 }
 image_xscale = -direct;
