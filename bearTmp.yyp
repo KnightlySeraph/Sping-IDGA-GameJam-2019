@@ -551,6 +551,14 @@
             }
         },
         {
+            "Key": "b99e5757-bd0e-405b-be6a-75ad567697f8",
+            "Value": {
+                "id": "eae23306-7244-4c2c-b81e-10632535c333",
+                "resourcePath": "sprites\\spr_enemy_basic_attack\\spr_enemy_basic_attack.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "ba9577a7-958a-4530-a351-1f179e26f6bb",
             "Value": {
                 "id": "48dceba2-93a5-4527-a744-a420382a3292",
