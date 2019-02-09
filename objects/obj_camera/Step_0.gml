@@ -18,6 +18,10 @@ shake_remain = max(0, shake_remain - ((1/shake_length) * shake_mag));
 var vm = matrix_build_lookat(x, y, -10, x, y, 0, 0, 1, 0);
 camera_set_view_mat(player_cam, vm);
 
+if (keyboard_check(ord("Y"))) {
+		
+}
+
 //Zoom camera functionality
 if (mouse_wheel_up()) {
 	height -= zoomSpeed;
