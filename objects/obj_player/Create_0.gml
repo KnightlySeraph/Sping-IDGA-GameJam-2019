@@ -48,7 +48,7 @@ rumble = false;
 key_left = 0;
 key_right = 0;
 attackIndex = 0;
-attackDelay = 0.2;
+attackDelay = 1;
 faceRight = true;
 faceLeft = false;
 
