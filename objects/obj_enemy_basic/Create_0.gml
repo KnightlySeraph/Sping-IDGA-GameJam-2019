@@ -17,4 +17,5 @@ else max_height = 0;
 
 depth = -10;
 
-show_debug_message("SCREATE");
+//DELEt later
+rock_direct = 1;
