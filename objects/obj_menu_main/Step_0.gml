@@ -6,12 +6,20 @@ for(var k = 0; k < 5; k++)
 	{
 		if(instance_position(mouse_x, mouse_y, self))
 		{
-			show_debug_message(string(self))
 			sprite_index = spr_menu_tempHover;
+			main_index = k;
 		}
 		else
 		{
+			main_index = -1;
 			sprite_index = spr_menu_temp;
+		}
+		if(main_index == k)
+		{
+			if(mouse_check_button_pressed(mb_left))
+			{
+				main_committed = k;
+			}
 		}
 	}
 }
