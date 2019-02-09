@@ -7,8 +7,9 @@ switch(state){
 		if(obj_player.y < y - max_height) state = "PATH";
 		// If the player is close enough, move into attack
 		else if(abs(obj_player.x - x) < 170) {
+			direct = sign(obj_player.x - x);
 			state = "ATTACK";
-			alarm[2] = room_speed;
+			alarm[2] = room_speed * 0.9;
 			attacking = true;
 			resting = true;
 		}
@@ -28,12 +29,6 @@ switch(state){
 			state = "FOLLOW";
 			image_angle = 0;
 			sprite_index = spr_enemy_basic;
-		}
-		else
-		{
-			sprite_index = spr_enemy_basic;
-			image_angle = 0;
-			image_index = 0;
 		}
 		hsp = 0;
 		break;
