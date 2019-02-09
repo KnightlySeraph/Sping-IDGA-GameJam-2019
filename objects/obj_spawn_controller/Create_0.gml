@@ -1,5 +1,5 @@
 //Which set of enemies will start spawning.  12 is infinite.
-stage = 1;
+stage = 12;
 
 // Timer for counting seconds
 timer = 0;
@@ -11,3 +11,5 @@ for(i = 0; i < instance_number(obj_spawner); i+=1)
 {
 	spawners[i] = instance_find(obj_spawner,i);	
 }
+
+scr_spawnEnemies(obj_enemy_basic, 2, spawners);

@@ -68,5 +68,6 @@ switch(state){
 
 if(!place_meeting(x, y+1, obj_floor)) state = "FALL";
 image_xscale = -direct;
+image_speed = spd / 2;
 
 } //KEEP THIS AROUND
