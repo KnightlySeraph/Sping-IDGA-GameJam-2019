@@ -53,6 +53,9 @@ attackIndex = 0;
 attackDelay = 1;
 faceRight = true;
 faceLeft = false;
+firing = false;
+
+camLerp = 0.01;
 
 // Hitboxing
 lightHit_xRange = 192;
@@ -68,4 +71,7 @@ jump2right = false;
 jump2left = false;
 fallLeft = false;
 fallRight = false;
+laserRight = false;
+laserLeft = false;
+
 

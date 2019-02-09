@@ -1,7 +1,9 @@
 /// @description Main Player Code
 // Debug stuff
 // Attmpt to slow game
-
+if (gamepad_button_check_pressed(slot, gp_select)) {
+	show_message("Total Index of idle is: " + string(sprite_get_number(spr_idle_left)));	
+}
 // Set mask across all animations
 mask_index = spr_idle_left;
 // Movement code
@@ -92,6 +94,9 @@ if (key_jump && jump2) {
 	}
 	
 }
+if (gamepad_button_check(slot, gp_padd)) {
+	show_debug_message("Image Index is: " + string(image_index));	
+}
 
 // Set grounded var
 if (place_meeting(x, y + 1, obj_floor) && !isJumping) {
@@ -158,7 +163,7 @@ if (stomping) {
 	if (grounded) {
 		SlowSpeed(obj_player, 10, 0.5);
 		Shake(18, 30);
-		Zoom(768 * 0.5, 0.5);
+		Zoom(384, 0.5, 0.01, 0.1);
 		// Create Hitbox
 		if (global.usingGamePad) Rumble(0.8, 1.5);
 		player_grav = ori_player_grav;
@@ -181,6 +186,7 @@ if (global.usingGamePad) {
 		// Start ktimer to reset combo
 		Shake(1, 10);
 		Rumble(0.2, 1);
+		
 		alarm[4] = attackDelay * room_speed;
 		if (attackIndex == 0) {
 			show_debug_message("Attack index 0 entered");
@@ -231,23 +237,11 @@ if (global.usingGamePad) {
 		else if (attackIndex == 2) {
 			if (faceRight) {
 				sprite_index = spr_attack3_right;
-				if (!instance_exists(obj_lightBox)) {
-					instance_create_depth(x + lightHit_xRange, y + lightHit_yRange, 0, obj_lightBox);
-				}
-				else if (instance_exists(obj_lightBox)) {
-					instance_destroy(obj_lightBox);
-					instance_create_depth(x + lightHit_xRange, y + lightHit_yRange, 0, obj_lightBox);
-				}
+				alarm[7] = 0.7 * room_speed;
 			}
 			else {
 				sprite_index = spr_attack3_left;
-				if (!instance_exists(obj_lightBox)) {
-					instance_create_depth(x - lightHit_xRange, y + lightHit_yRange, 0, obj_lightBox);
-				}
-				else if (instance_exists(obj_lightBox)) {
-					instance_destroy(obj_lightBox);
-					instance_create_depth(x - lightHit_xRange, y + lightHit_yRange, 0, obj_lightBox);
-				}
+				alarm[7] = 0.7 * room_speed;
 			}
 		}
 	}
@@ -256,6 +250,20 @@ if (global.usingGamePad) {
 		stomping = true;
 		player_grav = ori_player_grav;
 		player_grav = 50;
+	}
+	// Heavy Attack -- LASER
+	if (gamepad_button_check_pressed(slot, gp_face4) && grounded && !isAttacking && !stomping && !firing) {
+		isAttacking = true;
+		isFiring = true;
+		// Delay specials alarm
+		alarm[6] = 1 * room_speed;
+		Zoom(384, 1, 0.01, 0.2);
+		if (faceRight) {
+			sprite_index = spr_laser_right;		
+		}
+		else {
+			sprite_index = spr_laser_left;
+		}
 	}
 }
 else {
@@ -341,6 +349,20 @@ else {
 		stomping = true;
 		player_grav = ori_player_grav;
 		player_grav = 50;
+	}
+	// Heavy Attack -- LASER
+	if (keyboard_check_pressed(ord("K")) && grounded && !isAttacking && !stomping && !firing) {
+		isAttacking = true;
+		isFiring = true;
+		// Delay specials alarm
+		alarm[6] = 1 * room_speed;
+		Zoom(384, 1, 0.01, 0.2);
+		if (faceRight) {
+			sprite_index = spr_laser_right;		
+		}
+		else {
+			sprite_index = spr_laser_left;
+		}
 	}
 }
 
