@@ -1,6 +1,8 @@
 if(instance_exists(obj_player))
 {
 
+mask_index = spr_enemy_basic;
+
 switch(state){
 	case("FOLLOW"):
 		// If the player is too high up, start pathing
@@ -55,12 +57,14 @@ switch(state){
 		
 	case("FALL"):
 		// Fall to the ground, then go back to following
+		sprite_index = spr_enemy_basic_fall;
 		if (place_meeting(x, y + vsp, obj_floor)){
 			while(!place_meeting(x, y+sign(vsp), obj_floor)){
 				y += sign(vsp);	
 			}
 			vsp = 0;
 			state = "FOLLOW";
+			sprite_index = spr_enemy_basic;
 		}
 		else {
 			y += vsp;
