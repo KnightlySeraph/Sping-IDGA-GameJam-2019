@@ -39,6 +39,8 @@ move = 0; // Drives movement
 ori_player_grav = 5;
 player_grav = ori_player_grav;
 isJumping = false;
-jumpForce = -18;
+oriJumpForce = -18;
+jumpForce = oriJumpForce;
 jumpLength = 0.3;
+peak = 0; // Used for the jump
 

@@ -207,6 +207,14 @@
             }
         },
         {
+            "Key": "6f7c8847-0edd-4221-9cea-2effe270fe4a",
+            "Value": {
+                "id": "792a347a-3aff-401f-a88d-604afc942a19",
+                "resourcePath": "scripts\\Hover\\Hover.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "86da4402-bf30-4b7d-b058-f1e114007cae",
             "Value": {
                 "id": "2ec00611-2942-4370-9777-a4ca9bc36d0d",
@@ -329,7 +337,8 @@
     ],
     "script_order": [
         "65f14405-b484-4570-a62b-dd56312b1d3c",
-        "3d1be0d5-4ef9-4c49-8bf0-1476280d9c77"
+        "3d1be0d5-4ef9-4c49-8bf0-1476280d9c77",
+        "6f7c8847-0edd-4221-9cea-2effe270fe4a"
     ],
     "tutorial": ""
 }
