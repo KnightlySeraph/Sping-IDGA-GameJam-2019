@@ -1,5 +1,18 @@
 /// @description Main Player Code
 // Debug stuff
+if (global.usingGamePad) {
+	if (gamepad_button_check_pressed(slot, gp_face4)){
+		if (!rumble) {
+			rumble = true;
+			gamepad_set_vibration(slot, 1, 1);	
+		}
+		else {
+			rumble = false;
+			gamepad_set_vibration(slot, 0, 0);	
+		}
+	}
+	
+}
 if (keyboard_check_pressed(ord("T"))) {
 	if (isAttacking) {
 		isAttacking = false;	

@@ -44,4 +44,7 @@ jumpForce = oriJumpForce;
 jumpLength = 0.3;
 jump1 = true;
 isAttacking = false;
+rumble = false;
+key_left = 0;
+key_right = 0;
 
