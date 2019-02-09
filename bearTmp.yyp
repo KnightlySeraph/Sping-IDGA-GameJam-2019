@@ -975,6 +975,14 @@
             }
         },
         {
+            "Key": "f5322cc1-5e6d-42f4-b3e3-beb446dd2fef",
+            "Value": {
+                "id": "ff09da43-ca9f-470c-8cf7-3f9e7923df5c",
+                "resourcePath": "sprites\\spr_enemy_health\\spr_enemy_health.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "f6fe1b96-2c62-44f6-9e80-4a15e564aa0b",
             "Value": {
                 "id": "0c3e2b82-a251-47fa-bb70-706831b17ef8",
