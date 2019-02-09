@@ -25,3 +25,8 @@ if ((sprite_index == spr_jump2_left || sprite_index == spr_jump2_right) && !grou
 		sprite_index = spr_fall_left;	
 	}
 }
+
+if (sprite_index == spr_laser_left || sprite_index == spr_laser_right) {
+	isAttacking = false;
+	isFiring = false;
+}

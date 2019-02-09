@@ -2,6 +2,9 @@
 // You can write your code in this editor
 zooming = false;
 stick = false;
+cameraLerp = obj_player.camLerp;
+lerpOut = cameraLerp;
+zoomOut = false;
 /// @description Smooth Follow on Player
 player_cam = camera_create();
 zoomScale = 2.5;

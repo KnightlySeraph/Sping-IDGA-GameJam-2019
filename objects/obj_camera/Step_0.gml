@@ -26,10 +26,17 @@ if (keyboard_check_pressed(ord("Y"))) {
 }
 
 if (zooming) {
-	height = lerp(height, newHeight, 0.1);
+	height = lerp(height, newHeight, cameraLerp);
 	event_user(0);
 	if (height == newHeight) {
 		zooming = false;	
+	}
+}
+if (zoomOut) {
+	height = lerp(height, newHeight, lerpOut);
+	event_user(0);
+	if (height == newHeight) {
+		zoomOut = false;	
 	}
 }
 

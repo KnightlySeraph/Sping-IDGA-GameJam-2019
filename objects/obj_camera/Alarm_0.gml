@@ -2,4 +2,5 @@
 // You can write your code in this editor
 
 newHeight = oriHeight;
-zooming = true;
+//zooming = true;
+zoomOut = true;
