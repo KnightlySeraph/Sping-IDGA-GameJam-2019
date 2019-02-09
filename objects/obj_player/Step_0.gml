@@ -1,6 +1,8 @@
 /// @description Main Player Code
 // Debug stuff
-
+if (keyboard_check_pressed(ord("T"))) {
+	show_debug_message("Player y coord is " + string(y) + " Peak is " + string(peak));	
+}
 // Movement code
 if (global.usingGamePad) {
 	
@@ -29,7 +31,7 @@ if (grounded && key_jump) {
 			decrease += 0.3;
 			totalIncrease -= decrease;
 	}
-	peak = y + totalIncrease;
+	peak = y - totalIncrease;
 }
 
 if (isJumping) {
