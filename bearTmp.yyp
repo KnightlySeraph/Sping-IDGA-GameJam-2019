@@ -55,6 +55,14 @@
             }
         },
         {
+            "Key": "129285d8-5cf0-4083-93e5-c90092885c34",
+            "Value": {
+                "id": "b4539d30-028b-40be-8f26-3c093afa2879",
+                "resourcePath": "objects\\obj_enemy_flying\\obj_enemy_flying.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "12ed4974-1de2-4ab8-a52f-ce1549d11e18",
             "Value": {
                 "id": "972f1665-242d-4bea-b83e-3c3e72ee46cf",
@@ -76,6 +84,14 @@
                 "id": "31dc7937-f722-488b-816a-31375f22e6dd",
                 "resourcePath": "views\\20be181d-3be1-47a2-8fed-32d3704afdbf.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "239bab02-f132-429f-890f-a7648b5d5624",
+            "Value": {
+                "id": "17c51e4e-e7ef-4792-b761-42d843851a03",
+                "resourcePath": "objects\\obj_enemy_health\\obj_enemy_health.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -188,6 +204,22 @@
                 "id": "3c871057-6871-4a65-a5cb-c61f19408d4c",
                 "resourcePath": "options\\linux\\options_linux.yy",
                 "resourceType": "GMLinuxOptions"
+            }
+        },
+        {
+            "Key": "afc1e978-ebf1-4be1-947e-a625c0e6fdc0",
+            "Value": {
+                "id": "a18abe48-4370-46a5-a3d3-5d871197ca42",
+                "resourcePath": "objects\\obj_enemy_prize\\obj_enemy_prize.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "b7221425-5c8f-4c4e-af54-3cb93d37cd29",
+            "Value": {
+                "id": "3bf4e902-442d-4748-8ae3-2bb2c61b21b6",
+                "resourcePath": "objects\\obj_enemy_shield\\obj_enemy_shield.yy",
+                "resourceType": "GMObject"
             }
         },
         {
