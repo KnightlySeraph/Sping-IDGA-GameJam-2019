@@ -4,7 +4,9 @@ if(instance_exists(obj_player))
 switch(state){
 	case("FOLLOW"):
 		if(obj_player.y < y - max_height) state = "PATH";
-		color = c_blue;
+		direct = obj_player.x - x;
+		hsp = direct * spd;
+		x += hsp;
 		break;
 		
 	case("ATTACK"):
@@ -12,7 +14,6 @@ switch(state){
 		
 	case("PATH"):
 		if(obj_player.y > y - max_height) state = "FOLLOW";
-		color = c_lime;
 		break;
 		
 	case("KNOCKBACK"):
