@@ -20,3 +20,5 @@ else max_height = 0;
 
 color = c_white;
 anti_sezure = 0;
+
+last_sprite = sprite_index;

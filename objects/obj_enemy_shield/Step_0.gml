@@ -87,4 +87,10 @@ if (place_meeting(x + hsp, y, obj_floor)){
 
 x += hsp;
 
+if (last_sprite != sprite_index)
+{
+   image_index = 0;
+   last_sprite = sprite_index;
+}
+
 } //KEEP THIS AROUND

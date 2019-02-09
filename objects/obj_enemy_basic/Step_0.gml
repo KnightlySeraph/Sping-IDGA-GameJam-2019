@@ -22,17 +22,16 @@ switch(state){
 	case("ATTACK"):
 		//REPLACE WITH ACTUAL ATTACK CODE LATER
 		if(attacking) {
-			anti_sezure += 1;
-			if(anti_sezure % 5 == 0) color = choose(c_orange, c_lime, c_aqua);
+			sprite_index = spr_enemy_basic_attack;
 		}
 		else if(!resting) {
-			color = c_white;
 			state = "FOLLOW";
 			image_angle = 0;
+			sprite_index = spr_enemy_basic;
 		}
 		else
 		{
-			color = c_white;
+			sprite_index = spr_enemy_basic;
 			image_angle = 0;
 			image_index = 0;
 		}
@@ -86,5 +85,11 @@ if (place_meeting(x + hsp, y, obj_floor)){
 }
 
 x += hsp;
+
+if (last_sprite != sprite_index)
+{
+   image_index = 0;
+   last_sprite = sprite_index;
+}
 
 } //KEEP THIS AROUND

@@ -29,4 +29,10 @@ switch(state){
 
 image_xscale = -direct;
 
+if (last_sprite != sprite_index)
+{
+   image_index = 0;
+   last_sprite = sprite_index;
+}
+
 } // DO NOT DELETE

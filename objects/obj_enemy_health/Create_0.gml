@@ -8,3 +8,5 @@ spd = 10;
 direct = 1;
 
 image_speed = 5;
+
+last_sprite = sprite_index;

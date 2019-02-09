@@ -375,6 +375,14 @@
             }
         },
         {
+            "Key": "831f1c62-cc8a-461d-b4b0-ec1bc23b594a",
+            "Value": {
+                "id": "6cdc16de-d3e0-4dfc-b3d7-0500915b7dce",
+                "resourcePath": "objects\\obj_enemy_basic_damage\\obj_enemy_basic_damage.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "86da4402-bf30-4b7d-b058-f1e114007cae",
             "Value": {
                 "id": "2ec00611-2942-4370-9777-a4ca9bc36d0d",
