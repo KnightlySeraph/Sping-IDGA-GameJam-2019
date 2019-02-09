@@ -1,0 +1,2 @@
+/// @description Connect Controller
+ConnectGamepad();

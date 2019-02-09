@@ -119,6 +119,14 @@
             }
         },
         {
+            "Key": "67db3464-4fe8-4d84-8386-bc8c789cec29",
+            "Value": {
+                "id": "b3432d51-6a14-4f38-a8da-bbd309043223",
+                "resourcePath": "views\\67db3464-4fe8-4d84-8386-bc8c789cec29.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "6ce0d6fa-3e9a-4118-91df-28a9d9754240",
             "Value": {
                 "id": "da432026-4b94-4190-99a0-c6dd863a57de",
@@ -175,6 +183,14 @@
             }
         },
         {
+            "Key": "cc549c1b-94aa-4ab6-90e0-ca2104bc8ba0",
+            "Value": {
+                "id": "bb41d54a-4b76-4e20-9c5e-2c6c0dd464f5",
+                "resourcePath": "scripts\\ConnectGamepad\\ConnectGamepad.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "cc98d028-7bdd-4680-85f3-c87a7baa481e",
             "Value": {
                 "id": "a14997e4-5435-4901-a947-7d4409bc8a40",
@@ -191,6 +207,14 @@
             }
         },
         {
+            "Key": "ec5fa767-c3d3-4313-94c2-49559963bcb9",
+            "Value": {
+                "id": "2e9c59e3-6b24-4247-af3b-941130fda9df",
+                "resourcePath": "objects\\obj_player\\obj_player.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "f418569b-3bdd-4706-a0e4-364317f54032",
             "Value": {
                 "id": "c971909e-d3d4-418a-b0e3-c046ab16d094",
@@ -200,7 +224,7 @@
         }
     ],
     "script_order": [
-        
+        "cc549c1b-94aa-4ab6-90e0-ca2104bc8ba0"
     ],
     "tutorial": ""
 }
