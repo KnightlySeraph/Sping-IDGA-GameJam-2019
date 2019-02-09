@@ -16,9 +16,10 @@ for(var k = 0; k < 5; k++)
 		}
 		if(main_index == k)
 		{
-			if(mouse_check_button_pressed(mb_left))
+			if(mouse_check_button(mb_left))
 			{
 				main_committed = k;
+				sprite_index = spr_menu_tempPress;
 			}
 		}
 	}
