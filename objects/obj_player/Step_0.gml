@@ -32,6 +32,8 @@ if (keyboard_check_pressed(ord("T"))) {
 		isAttacking = true;	
 	}
 }
+// 
+mask_index = spr_idle_left;
 // Movement code
 if (global.usingGamePad) {
 	key_right = sign(gamepad_axis_value(slot, gp_axislh));

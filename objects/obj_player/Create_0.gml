@@ -39,7 +39,7 @@ move = 0; // Drives movement
 ori_player_grav = 9;
 player_grav = ori_player_grav;
 isJumping = false;
-oriJumpForce = -18;
+oriJumpForce = -26;
 jumpForce = oriJumpForce;
 jumpLength = 0.3;
 jump1 = true;
@@ -61,4 +61,6 @@ jump1right = false;
 jump1left = false;
 jump2right = false;
 jump2left = false;
+fallLeft = false;
+fallRight = false;
 
