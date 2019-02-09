@@ -32,11 +32,12 @@ if (keyboard_check_pressed(ord("T"))) {
 		isAttacking = true;	
 	}
 }
-// 
+// Set mask across all animations
 mask_index = spr_idle_left;
 // Movement code
 if (global.usingGamePad) {
-	key_right = sign(gamepad_axis_value(slot, gp_axislh));
+	key_right = sign(gamepad_axis_value(slot, gp_axislh)) or gamepad_button_check(slot, gp_padr);
+	key_left = -gamepad_button_check(slot, gp_padl);
 	key_jump = gamepad_button_check_pressed(slot, gp_face1);
 }
 else { // Player is using the keyboard
@@ -189,6 +190,43 @@ if (global.usingGamePad) {
 		// Start ktimer to reset combo
 		Shake(1, 10);
 		Rumble(0.2, 1);
+		alarm[4] = attackDelay * room_speed;
+		if (attackIndex == 0) {
+			show_debug_message("Attack index 0 entered");
+			if (faceRight) {
+				sprite_index = spr_attack1_right;	
+			}
+			else {
+				sprite_index = spr_attack1_left;
+			}
+		}
+		else if (attackIndex == 1) {
+			if (faceRight) {
+				sprite_index = spr_attack2_right;	
+			}
+			else {
+				sprite_index = spr_attack2_left;	
+			}
+			
+		}
+		else if (attackIndex == 2) {
+			if (faceRight) {
+				sprite_index = spr_attack3_right;	
+			}
+			else {
+				sprite_index = spr_attack3_left;
+			}
+		}
+	}
+}
+else {
+	// Basic Attack
+	if (keyboard_check(ord("J")) && grounded && !isAttacking) {
+		show_debug_message("Attempting Attack");
+		isAttacking = true;
+		image_index = 0; // Reset the image index
+		// Start ktimer to reset combo
+		Shake(1, 10);
 		alarm[4] = attackDelay * room_speed;
 		if (attackIndex == 0) {
 			show_debug_message("Attack index 0 entered");
