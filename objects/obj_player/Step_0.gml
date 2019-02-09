@@ -1,37 +1,7 @@
 /// @description Main Player Code
 // Debug stuff
 // Attmpt to slow game
-if (gamepad_button_check_pressed(slot, gp_shoulderr)) {
-	Zoom(768 / 2, 2);	
-}
-// Attempt Shake
-if (gamepad_button_check(slot, gp_face2)) {
-	Shake(18, 90);	
-}
-if (gamepad_button_check_pressed(slot, gp_select)) {
-	show_message("Attack Index: " + string(attackIndex));	
-}
-if (global.usingGamePad) {
-	if (gamepad_button_check_pressed(slot, gp_face3)){
-		if (!rumble) {
-			rumble = true;
-			gamepad_set_vibration(slot, 1, 1);	
-		}
-		else {
-			rumble = false;
-			gamepad_set_vibration(slot, 0, 0);	
-		}
-	}
-	
-}
-if (keyboard_check_pressed(ord("T"))) {
-	if (isAttacking) {
-		isAttacking = false;	
-	}
-	else {
-		isAttacking = true;	
-	}
-}
+
 // Set mask across all animations
 mask_index = spr_idle_left;
 // Movement code
