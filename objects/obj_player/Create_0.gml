@@ -28,3 +28,7 @@ airDamage = 2;
 
 // Gamepad Slot
 slot = -1;
+
+// ======================INIT NON-GLOBALS========================
+grounded = false; // Is the player on the ground
+
