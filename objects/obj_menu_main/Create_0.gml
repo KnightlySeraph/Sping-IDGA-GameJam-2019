@@ -35,3 +35,9 @@ main[3] = controlButton;
 main[2] = highscoreButton;
 main[1] = creditButton;
 main[0] = exitButton;
+
+for(var n = 0; n < 5; n++)
+{
+	main[n].image_xscale = 0.5;
+	main[n].image_yscale = 0.5;
+}
