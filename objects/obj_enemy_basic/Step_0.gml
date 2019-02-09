@@ -5,6 +5,12 @@ switch(state){
 	case("FOLLOW"):
 		// If the player is too high up, start pathing
 		if(obj_player.y < y - max_height) state = "PATH";
+		// If the player is too low, walk off the platform
+		else if(obj_player.y > y)
+		{
+			direct = sign((room_width / 2) - x);
+			hsp = direct * spd;
+		}
 		// If the player is close enough, move into attack
 		else if(abs(obj_player.x - x) < 170) {
 			direct = sign(obj_player.x - x);

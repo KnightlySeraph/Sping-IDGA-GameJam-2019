@@ -50,5 +50,5 @@ enemy.vsp += enemy.grav;
 
 if(enemy.y > room_height + 30)
 {
-	instance_destroy();	
+	// instance_destroy();	
 }
