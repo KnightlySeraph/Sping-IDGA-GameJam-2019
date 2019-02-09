@@ -31,4 +31,5 @@ slot = -1;
 
 // ======================INIT NON-GLOBALS========================
 grounded = false; // Is the player on the ground
+move = 0; // Drives movement
 
