@@ -163,6 +163,13 @@ if (stomping) {
 		if (global.usingGamePad) Rumble(0.8, 1.5);
 		player_grav = ori_player_grav;
 		stomping = false;
+		if (!instance_exists(obj_stompBox)) {
+			instance_create_depth(x, y + 216, 0, obj_stompBox);
+		}
+		else if (instance_exists(obj_stompBox)) {
+			instance_destroy(obj_stompBox);
+			instance_create_depth(x, y + 216, 0, obj_stompBox);
+		}
 	}
 }
 if (global.usingGamePad) {
