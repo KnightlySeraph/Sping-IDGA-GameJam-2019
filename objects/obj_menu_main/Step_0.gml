@@ -2,9 +2,16 @@
 // You can write your code in this editor
 for(var k = 0; k < 5; k++)
 {
-	if(place_meeting(mouse_x, mouse_y, main[k]))
+	with(main[k])
 	{
-		var hoverbutton = main[k];
-		hoverbutton.sprite_index = spr_menu_tempHover;
+		if(instance_position(mouse_x, mouse_y, self))
+		{
+			show_debug_message(string(self))
+			sprite_index = spr_menu_tempHover;
+		}
+		else
+		{
+			sprite_index = spr_menu_temp;
+		}
 	}
 }
