@@ -6,7 +6,7 @@ switch(state){
 		// If the player is too high up, start pathing
 		if(obj_player.y < y - max_height) state = "PATH";
 		// If the player is close enough, move into attack
-		else if(abs(obj_player.x - x) < 50) {
+		else if(abs(obj_player.x - x) < 110) {
 			state = "ATTACK";
 			alarm[0] = 60;
 			attacking = true;
@@ -16,24 +16,27 @@ switch(state){
 			// Walk towards the player
 			direct = sign(obj_player.x - x);
 			hsp = direct * spd;
-			x += hsp;
 		}
 		break;
 		
 	case("ATTACK"):
 		//REPLACE WITH ACTUAL ATTACK CODE LATER
 		if(attacking) {
-			image_angle = irandom_range(0,360)
+			anti_sezure += 1;
+			if(anti_sezure % 5 == 0) color = choose(c_orange, c_lime, c_aqua);
 		}
 		else if(!resting) {
+			color = c_white;
 			state = "FOLLOW";
 			image_angle = 0;
 		}
 		else
 		{
+			color = c_white;
 			image_angle = 0;
 			image_index = 0;
 		}
+		hsp = 0;
 		break;
 		
 	case("PATH"):
@@ -42,14 +45,6 @@ switch(state){
 		else {
 			//Walk back and forth upon hitting walls
 			hsp = direct * spd;
-			if (place_meeting(x + hsp, y, obj_floor)){
-				while(!place_meeting(x+sign(hsp), y, obj_floor)){
-					x += sign(hsp);	
-				}
-				hsp = 0;
-				direct = -direct;
-			}
-			x += hsp;
 		}
 		break;
 		
@@ -69,6 +64,7 @@ switch(state){
 			y += vsp;
 			vsp += grav;
 		}
+		hsp = 0;
 		break;
 }
 
@@ -76,5 +72,19 @@ switch(state){
 if(!place_meeting(x, y+1, obj_floor)) state = "FALL";
 image_xscale = -direct;
 image_speed = spd / 2;
+
+if(place_meeting(x,y,obj_player)){
+	hsp = sign(x - obj_player.x) * maxSpeed;	
+}
+
+if (place_meeting(x + hsp, y, obj_floor)){
+	while(!place_meeting(x+sign(hsp), y, obj_floor)){
+		x += sign(hsp);	
+	}
+	hsp = 0;
+	if(!place_meeting(x,y,obj_player)) direct = -direct;
+}
+
+x += hsp;
 
 } //KEEP THIS AROUND

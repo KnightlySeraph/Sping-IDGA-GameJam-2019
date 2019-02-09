@@ -4,7 +4,16 @@
     "mvc": "1.0",
     "name": "obj_enemy_shield",
     "eventList": [
-        
+        {
+            "id": "9b4cd4a8-5f4a-45ef-8558-eb7279543d00",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
+            "enumb": 0,
+            "eventtype": 0,
+            "m_owner": "b7221425-5c8f-4c4e-af54-3cb93d37cd29"
+        }
     ],
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",
     "overriddenProperties": null,
@@ -24,6 +33,6 @@
     "physicsStartAwake": true,
     "properties": null,
     "solid": false,
-    "spriteId": "00000000-0000-0000-0000-000000000000",
+    "spriteId": "ae21a291-a3d0-42df-ab48-9baf39b32c50",
     "visible": true
 }
