@@ -3,7 +3,7 @@ state = "WALK";
 
 hsp = 0;
 vsp = 0;
-grav = 2;
+grav = 1;
 spd = 10;
 direct = 1;
 
