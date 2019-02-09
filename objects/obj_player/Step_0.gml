@@ -179,10 +179,8 @@ if (stomping) {
 	}
 }
 if (isDashing) {
-	show_debug_message("IsDashing");
 	if (image_index > 9 && image_index < 11) {
 		isAttacking = true;
-		//show_message("Index is 10");
 	}
 }
 if (global.usingGamePad) {

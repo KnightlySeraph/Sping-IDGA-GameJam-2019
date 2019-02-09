@@ -239,6 +239,14 @@
             }
         },
         {
+            "Key": "2e4db38b-53ec-4de7-abf0-9016cc5613aa",
+            "Value": {
+                "id": "3e19cc9a-cd89-4bff-b13b-6e15dafa4d0b",
+                "resourcePath": "sprites\\spr_dashBox\\spr_dashBox.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "349665e7-3398-4512-9215-b1c0832c5f02",
             "Value": {
                 "id": "089e2a26-419a-4487-9605-c7c76318f7b5",
