@@ -8,6 +8,7 @@ switch(state){
 			state = "ATTACK";
 			alarm[0] = 60;
 			attacking = true;
+			resting = true;
 		}
 		else {
 			direct = sign(obj_player.x - x);
