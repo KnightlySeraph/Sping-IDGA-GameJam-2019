@@ -19,29 +19,40 @@ player_hsp = move * moveSpeed;
 player_vsp = 0;
 
 // Jump Code
-if (grounded && key_jump) {
+if (key_jump && jump2) {
 	isJumping = true;	
 	// Control the length of the jump
 	alarm[0] = room_speed * jumpLength;
-	// Check what the peak height is
-	totalIncrease = jumpForce;
-	decrease = jumpForce;
-	totalFrame = room_speed * jumpLength;
-	for (i = 0; i < totalFrame; i++) {
-			decrease += 0.3;
-			totalIncrease -= decrease;
+	if (jump1) {
+		jump1 = false;	
 	}
-	peak = y - totalIncrease;
+	else {
+		jump2 = false;	
+	}
+	
+}
+
+// Set grounded var
+if (place_meeting(x, y + 1, obj_floor)) {
+	grounded = true;	
+}
+else {
+	grounded = false;	
+}
+
+// Do stuff based on grounded
+if (grounded) {
+	// Reset jump
+	if (!jump1 || !jump2) {
+		jump1 = true;
+		jump2 = true;
+	}
 }
 
 if (isJumping) {
 	player_vsp = jumpForce;
 	if (jumpForce >= 5) {
 		jumpForce += 0.3;	
-	}
-	if (y < peak - 10 && y > peak + 10) {
-		show_message("Hover Call");
-		Hover(obj_player, 0.2);
 	}
 }
 

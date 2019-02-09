@@ -43,4 +43,6 @@ oriJumpForce = -18;
 jumpForce = oriJumpForce;
 jumpLength = 0.3;
 peak = 0; // Used for the jump
+jump1 = true;
+jump2 = true;
 
