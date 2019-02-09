@@ -43,6 +43,27 @@ switch(state){
 		break;
 		
 	case("DEATH"):
+		sprite_index = spr_enemy_basic_dead;
+		image_angle += death_rot;
+		if(death_rot > 1)	death_rot -= 0.2;
+		if(place_meeting(x,y,obj_lightBox) && !hit)
+		{
+			hit = true;
+			hsp = -sign(obj_player.x - x) * 1.2;
+			vsp = -3;
+			grav = 0.1;
+			death_rot = 18;
+		}
+		else if(!place_meeting(x,y,obj_lightBox) && hit)
+		{
+			hsp = -sign(obj_player.x - x) * 3;
+			vsp = -10;
+			hit = false;
+			grav = 0.5;
+		}
+		x += hsp;
+		y += vsp
+		vsp += grav;
 		break;
 		
 	case("FALL"):
@@ -63,23 +84,29 @@ switch(state){
 }
 
 // If there is no floor below, go into falling
-if(!place_meeting(x, y+1, obj_floor)) state = "FALL";
+if(!place_meeting(x, y+1, obj_floor) && state != "DEATH") state = "FALL";
+if(place_meeting(x,y,obj_lightBox)) {
+	state = "DEATH";
+}
 image_xscale = -direct;
 image_speed = spd / 2;
 
-if(place_meeting(x,y,obj_player)){
-	hsp = sign(x - obj_player.x) * maxSpeed;	
-}
-
-if (place_meeting(x + hsp, y, obj_floor)){
-	while(!place_meeting(x+sign(hsp), y, obj_floor)){
-		x += sign(hsp);	
+if(state != "DEATH")
+{
+	if(place_meeting(x,y,obj_player)){
+		hsp = sign(x - obj_player.x) * maxSpeed;	
 	}
-	hsp = 0;
-	if(!place_meeting(x,y,obj_player)) direct = -direct;
-}
 
-x += hsp;
+	if (place_meeting(x + hsp, y, obj_floor)){
+		while(!place_meeting(x+sign(hsp), y, obj_floor)){
+			x += sign(hsp);	
+		}
+		hsp = 0;
+		if(!place_meeting(x,y,obj_player)) direct = -direct;
+	}
+
+	x += hsp;
+}
 
 if (last_sprite != sprite_index)
 {
