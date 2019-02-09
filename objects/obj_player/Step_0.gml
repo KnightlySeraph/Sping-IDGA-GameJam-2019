@@ -9,7 +9,7 @@ if (gamepad_button_check(slot, gp_face4)) {
 	Shake(18, 90);	
 }
 if (gamepad_button_check_pressed(slot, gp_select)) {
-	show_message("Current Speed: " + string(room_speed));	
+	show_message("Move: " + string(move));	
 }
 if (global.usingGamePad) {
 	if (gamepad_button_check_pressed(slot, gp_face4)){
@@ -44,6 +44,25 @@ else { // Player is using the keyboard
 }
 
 move = key_right + key_left
+
+// Set ground movement animations
+if (!isAttacking && grounded) {
+	if (move == 0) {
+		idling = true;
+		moveRight = false;
+		moveLeft = false;
+	}
+	else if (move == 1) {
+		moveRight = true;
+		moveLeft = false;
+		idling = false;
+	}
+	else if (move == -1) {
+		moveLeft = true;
+		moveRight = false;
+		idling = false;
+	}
+}
 
 player_hsp = move * moveSpeed;
 player_vsp = 0;
@@ -107,6 +126,17 @@ if (place_meeting(x, y + player_vsp, obj_floor)){
 if (!isAttacking) {
 	x += player_hsp;
 	y += player_vsp;
+}
+
+//===================ANIMATION HANDLER=====================
+if (idling) {
+	sprite_index = spr_idle_left;	
+}
+if (moveRight) {
+	sprite_index = spr_run_right;	
+}
+if (moveLeft) {
+	sprite_index = spr_run_left;
 }
 
 
