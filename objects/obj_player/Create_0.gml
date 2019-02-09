@@ -6,6 +6,8 @@ Connect();
 // ========================ALLOCATE GLOBALS=========================
 globalvar hitPointMax;
 globalvar apMax;
+globalvar maxSpeed;
+globalvar moveSpeed;
 globalvar hitPoints;
 globalvar actionMeter;
 globalvar basicDamage;
@@ -18,6 +20,8 @@ globalvar points;
 // ========================INIT GLOBALS========================
 hitPointMax = 100;
 apMax = 100;
+maxSpeed = 5;
+moveSpeed = maxSpeed;
 hitPoints = hitPointMax;
 actionMeter = apMax;
 basicDamage = 1;
@@ -30,6 +34,11 @@ airDamage = 2;
 slot = -1;
 
 // ======================INIT NON-GLOBALS========================
-grounded = false; // Is the player on the ground
+grounded = true; // Is the player on the ground
 move = 0; // Drives movement
+ori_player_grav = 5;
+player_grav = ori_player_grav;
+isJumping = false;
+jumpForce = -18;
+jumpLength = 0.3;
 
