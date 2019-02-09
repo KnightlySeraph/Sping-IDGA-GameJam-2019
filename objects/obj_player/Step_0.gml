@@ -4,6 +4,10 @@
 if (gamepad_button_check_pressed(slot, gp_shoulderr)) {
 	SlowSpeed(obj_player, 10, 0.2);	
 }
+// Attempt Shake
+if (gamepad_button_check(slot, gp_face4)) {
+	Shake(18, 90);	
+}
 if (gamepad_button_check_pressed(slot, gp_select)) {
 	show_message("Current Speed: " + string(room_speed));	
 }
