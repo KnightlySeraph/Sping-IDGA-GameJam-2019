@@ -119,6 +119,14 @@
             }
         },
         {
+            "Key": "3d1be0d5-4ef9-4c49-8bf0-1476280d9c77",
+            "Value": {
+                "id": "6612cf94-a8dd-416a-983d-fe16115d8b0b",
+                "resourcePath": "scripts\\scr_spawnEnemies\\scr_spawnEnemies.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "3f90a8b8-dff3-4ed2-9144-d6c3ce6ee847",
             "Value": {
                 "id": "7e0f4d36-c9b8-4c4d-a036-f2f06aaafbed",
@@ -296,7 +304,8 @@
         }
     ],
     "script_order": [
-        "65f14405-b484-4570-a62b-dd56312b1d3c"
+        "65f14405-b484-4570-a62b-dd56312b1d3c",
+        "3d1be0d5-4ef9-4c49-8bf0-1476280d9c77"
     ],
     "tutorial": ""
 }
