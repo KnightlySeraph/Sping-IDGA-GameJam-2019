@@ -5,7 +5,7 @@ if (createRight) {
 else {
 	show_debug_message("Should Create left");
 	x_direct = 0;
-	while((x_direct - x) % sprite_get_width(spr_lightning) != 0) x_direct -= 1;
+	while((x_direct + x) % sprite_get_width(spr_lightning) != 0) x_direct -= 1;
 }
 tipDist = point_distance(x, y, x_direct, y);
 
