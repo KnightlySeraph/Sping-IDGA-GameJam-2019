@@ -127,6 +127,14 @@
             }
         },
         {
+            "Key": "1ea9eec4-5baa-44d5-a635-67cbba7e2852",
+            "Value": {
+                "id": "cddb8ac8-fc1a-4aa4-bb98-c1c56f6b99ee",
+                "resourcePath": "objects\\obj_alex_tester\\obj_alex_tester.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "20be181d-3be1-47a2-8fed-32d3704afdbf",
             "Value": {
                 "id": "31dc7937-f722-488b-816a-31375f22e6dd",
