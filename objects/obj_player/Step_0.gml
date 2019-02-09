@@ -179,7 +179,7 @@ if (stomping) {
 }
 if (global.usingGamePad) {
 	// Basic Attack
-	if (gamepad_button_check(slot, gp_face3) && grounded && !isAttacking) {
+	if (gamepad_button_check(slot, gp_face3) && grounded && !isAttacking && move == 0) {
 		show_debug_message("Attempting Attack");
 		isAttacking = true;
 		image_index = 0; // Reset the image index
@@ -257,7 +257,7 @@ if (global.usingGamePad) {
 		firing = true;
 		// Delay specials alarm
 		alarm[6] = 1 * room_speed;
-		alarm[8] = 1.05 * room_speed;
+		alarm[8] = 1.1 * room_speed;
 		Zoom(384, 1, 0.01, 0.2);
 		if (faceRight) {
 			sprite_index = spr_laser_right;		
@@ -268,10 +268,14 @@ if (global.usingGamePad) {
 			laserLeft = true;
 		}
 	}
+	// Dash Attack
+	if (gamepad_button_check_pressed(slot, gp_face3) && grounded && !isAttacking) {
+		
+	}
 }
 else {
 	// Basic Attack
-	if (keyboard_check(ord("J")) && grounded && !isAttacking) {
+	if (keyboard_check(ord("J")) && grounded && !isAttacking && move == 0) {
 		show_debug_message("Attempting Attack");
 		isAttacking = true;
 		image_index = 0; // Reset the image index
@@ -359,7 +363,7 @@ else {
 		firing = true;
 		// Delay specials alarm
 		alarm[6] = 1 * room_speed;
-		alarm[8] = 1.05 * room_speed;
+		alarm[8] = 1.1 * room_speed;
 		Zoom(384, 1, 0.01, 0.2);
 		if (faceRight) {
 			sprite_index = spr_laser_right;		
