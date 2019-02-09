@@ -177,27 +177,69 @@ if (global.usingGamePad) {
 		if (attackIndex == 0) {
 			show_debug_message("Attack index 0 entered");
 			if (faceRight) {
-				sprite_index = spr_attack1_right;	
+				sprite_index = spr_attack1_right;
+				if (!instance_exists(obj_lightBox)) {
+					instance_create_depth(x + lightHit_xRange, y + lightHit_yRange, 0, obj_lightBox);
+				}
+				else if (instance_exists(obj_lightBox)) {
+					instance_destroy(obj_lightBox);
+					instance_create_depth(x + lightHit_xRange, y + lightHit_yRange, 0, obj_lightBox);
+				}
 			}
 			else {
 				sprite_index = spr_attack1_left;
+				if (!instance_exists(obj_lightBox)) {
+					instance_create_depth(x - lightHit_xRange, y + lightHit_yRange, 0, obj_lightBox);
+				}
+				else if (instance_exists(obj_lightBox)) {
+					instance_destroy(obj_lightBox);
+					instance_create_depth(x - lightHit_xRange, y + lightHit_yRange, 0, obj_lightBox);
+				}
 			}
 		}
 		else if (attackIndex == 1) {
 			if (faceRight) {
-				sprite_index = spr_attack2_right;	
+				sprite_index = spr_attack2_right;
+				if (!instance_exists(obj_lightBox)) {
+					instance_create_depth(x + lightHit_xRange, y + lightHit_yRange, 0, obj_lightBox);
+				}
+				else if (instance_exists(obj_lightBox)) {
+					instance_destroy(obj_lightBox);
+					instance_create_depth(x + lightHit_xRange, y + lightHit_yRange, 0, obj_lightBox);
+				}
 			}
 			else {
-				sprite_index = spr_attack2_left;	
+				sprite_index = spr_attack2_left;
+				if (!instance_exists(obj_lightBox)) {
+					instance_create_depth(x - lightHit_xRange, y + lightHit_yRange, 0, obj_lightBox);
+				}
+				else if (instance_exists(obj_lightBox)) {
+					instance_destroy(obj_lightBox);
+					instance_create_depth(x - lightHit_xRange, y + lightHit_yRange, 0, obj_lightBox);
+				}
 			}
 			
 		}
 		else if (attackIndex == 2) {
 			if (faceRight) {
-				sprite_index = spr_attack3_right;	
+				sprite_index = spr_attack3_right;
+				if (!instance_exists(obj_lightBox)) {
+					instance_create_depth(x + lightHit_xRange, y + lightHit_yRange, 0, obj_lightBox);
+				}
+				else if (instance_exists(obj_lightBox)) {
+					instance_destroy(obj_lightBox);
+					instance_create_depth(x + lightHit_xRange, y + lightHit_yRange, 0, obj_lightBox);
+				}
 			}
 			else {
 				sprite_index = spr_attack3_left;
+				if (!instance_exists(obj_lightBox)) {
+					instance_create_depth(x - lightHit_xRange, y + lightHit_yRange, 0, obj_lightBox);
+				}
+				else if (instance_exists(obj_lightBox)) {
+					instance_destroy(obj_lightBox);
+					instance_create_depth(x - lightHit_xRange, y + lightHit_yRange, 0, obj_lightBox);
+				}
 			}
 		}
 	}
@@ -220,27 +262,69 @@ else {
 		if (attackIndex == 0) {
 			show_debug_message("Attack index 0 entered");
 			if (faceRight) {
-				sprite_index = spr_attack1_right;	
+				sprite_index = spr_attack1_right;
+				if (!instance_exists(obj_lightBox)) {
+					instance_create_depth(x + lightHit_xRange, y + lightHit_yRange, 0, obj_lightBox);
+				}
+				else if (instance_exists(obj_lightBox)) {
+					instance_destroy(obj_lightBox);
+					instance_create_depth(x + lightHit_xRange, y + lightHit_yRange, 0, obj_lightBox);
+				}
 			}
 			else {
 				sprite_index = spr_attack1_left;
+				if (!instance_exists(obj_lightBox)) {
+					instance_create_depth(x - lightHit_xRange, y + lightHit_yRange, 0, obj_lightBox);
+				}
+				else if (instance_exists(obj_lightBox)) {
+					instance_destroy(obj_lightBox);
+					instance_create_depth(x - lightHit_xRange, y + lightHit_yRange, 0, obj_lightBox);
+				}
 			}
 		}
 		else if (attackIndex == 1) {
 			if (faceRight) {
-				sprite_index = spr_attack2_right;	
+				sprite_index = spr_attack2_right;
+				if (!instance_exists(obj_lightBox)) {
+					instance_create_depth(x + lightHit_xRange, y + lightHit_yRange, 0, obj_lightBox);
+				}
+				else if (instance_exists(obj_lightBox)) {
+					instance_destroy(obj_lightBox);
+					instance_create_depth(x + lightHit_xRange, y + lightHit_yRange, 0, obj_lightBox);
+				}
 			}
 			else {
-				sprite_index = spr_attack2_left;	
+				sprite_index = spr_attack2_left;
+				if (!instance_exists(obj_lightBox)) {
+					instance_create_depth(x - lightHit_xRange, y + lightHit_yRange, 0, obj_lightBox);
+				}
+				else if (instance_exists(obj_lightBox)) {
+					instance_destroy(obj_lightBox);
+					instance_create_depth(x - lightHit_xRange, y + lightHit_yRange, 0, obj_lightBox);
+				}
 			}
 			
 		}
 		else if (attackIndex == 2) {
 			if (faceRight) {
-				sprite_index = spr_attack3_right;	
+				sprite_index = spr_attack3_right;
+				if (!instance_exists(obj_lightBox)) {
+					instance_create_depth(x + lightHit_xRange, y + lightHit_yRange, 0, obj_lightBox);
+				}
+				else if (instance_exists(obj_lightBox)) {
+					instance_destroy(obj_lightBox);
+					instance_create_depth(x + lightHit_xRange, y + lightHit_yRange, 0, obj_lightBox);
+				}
 			}
 			else {
 				sprite_index = spr_attack3_left;
+				if (!instance_exists(obj_lightBox)) {
+					instance_create_depth(x - lightHit_xRange, y + lightHit_yRange, 0, obj_lightBox);
+				}
+				else if (instance_exists(obj_lightBox)) {
+					instance_destroy(obj_lightBox);
+					instance_create_depth(x - lightHit_xRange, y + lightHit_yRange, 0, obj_lightBox);
+				}
 			}
 		}
 	}

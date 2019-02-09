@@ -54,6 +54,10 @@ attackDelay = 1;
 faceRight = true;
 faceLeft = false;
 
+// Hitboxing
+lightHit_xRange = 192;
+lightHit_yRange = 128;
+
 // Anim vars
 idling = true;
 moveRight = false;

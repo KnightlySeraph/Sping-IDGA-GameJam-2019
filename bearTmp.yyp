@@ -55,6 +55,14 @@
             }
         },
         {
+            "Key": "03f3c06b-7fcf-4aac-bb90-77e7c470c5e7",
+            "Value": {
+                "id": "0db24d5f-2afb-4ab8-8aea-85888fe0da87",
+                "resourcePath": "sprites\\spr_lightAttack\\spr_lightAttack.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "0455069f-86d6-46e0-8b6f-4f541b0ad279",
             "Value": {
                 "id": "60cdf9b5-939a-4bb6-904e-a5309ef464a4",
@@ -92,6 +100,14 @@
                 "id": "b4539d30-028b-40be-8f26-3c093afa2879",
                 "resourcePath": "objects\\obj_enemy_flying\\obj_enemy_flying.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "12d45aef-1eea-464c-ae71-8c3c6ce324be",
+            "Value": {
+                "id": "d054b1c4-9176-4239-a993-0e4104854bdf",
+                "resourcePath": "views\\12d45aef-1eea-464c-ae71-8c3c6ce324be.yy",
+                "resourceType": "GMFolder"
             }
         },
         {
@@ -179,6 +195,14 @@
             "Value": {
                 "id": "f622e7ed-6073-4c28-b17b-33d2c7dabc9b",
                 "resourcePath": "objects\\obj_button_highscores\\obj_button_highscores.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "399de86a-7525-4aac-b523-9dc8bb605f0c",
+            "Value": {
+                "id": "986ed723-f9a2-4cab-9d58-593a40c4a271",
+                "resourcePath": "objects\\obj_lightBox\\obj_lightBox.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -444,6 +468,14 @@
                 "id": "2917bf65-ac1e-4017-88d0-44ff62d21990",
                 "resourcePath": "rooms\\room0\\room0.yy",
                 "resourceType": "GMRoom"
+            }
+        },
+        {
+            "Key": "95d70689-8e4c-463a-83ab-23268fdf9322",
+            "Value": {
+                "id": "f8668bde-cb20-45f7-8fdc-d6b67b0dc9b8",
+                "resourcePath": "views\\95d70689-8e4c-463a-83ab-23268fdf9322.yy",
+                "resourceType": "GMFolder"
             }
         },
         {
