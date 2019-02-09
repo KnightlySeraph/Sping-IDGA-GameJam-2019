@@ -2,7 +2,7 @@
 // Debug stuff
 // Attmpt to slow game
 if (gamepad_button_check_pressed(slot, gp_shoulderr)) {
-	Zoom(768 / 2, 0.5, 2);	
+	Zoom(768 / 2, 2);	
 }
 // Attempt Shake
 if (gamepad_button_check(slot, gp_face4)) {

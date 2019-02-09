@@ -1,13 +1,12 @@
-/// @desc Zoom(zoom, speed, length)
-
-obj_camera.height = lerp(obj_camera.height, argument0, argument1);
-
-with (obj_player) {
-	alarm[2] = room_speed * argument2;	
-}
+/// @desc Zoom(zoom, length)
+/// @arg zoom
+/// @arg length
 
 with (obj_camera) {
-	event_user(0);
+	newHeight = argument0;
+	zooming = true;
+	stick = true;
+	alarm[0] = argument1 * room_speed;
 }
 
 

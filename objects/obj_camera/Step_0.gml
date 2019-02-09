@@ -18,8 +18,19 @@ shake_remain = max(0, shake_remain - ((1/shake_length) * shake_mag));
 var vm = matrix_build_lookat(x, y, -10, x, y, 0, 0, 1, 0);
 camera_set_view_mat(player_cam, vm);
 
-if (keyboard_check(ord("Y"))) {
-		
+if (keyboard_check_pressed(ord("Y"))) {
+	// Set Zoom
+	zooming = true;
+	stick = true;
+	newHeight = 768 / 2;
+}
+
+if (zooming) {
+	height = lerp(height, newHeight, 0.1);
+	event_user(0);
+	if (height == newHeight) {
+		zooming = false;	
+	}
 }
 
 //Zoom camera functionality

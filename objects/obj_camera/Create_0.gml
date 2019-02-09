@@ -1,12 +1,14 @@
 /// @description Insert description here
 // You can write your code in this editor
-
+zooming = false;
+stick = false;
 /// @description Smooth Follow on Player
 player_cam = camera_create();
 zoomScale = 2.5;
 
 width = 1024;
-height = 768;
+oriHeight = 768;
+height = oriHeight;
 aspectRatio = 0.75;
 zoomSpeed = 100;
 
