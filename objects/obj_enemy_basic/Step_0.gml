@@ -54,13 +54,3 @@ if(!place_meeting(x, y+1, obj_floor)) state = "FALL";
 image_xscale = -direct;
 
 } //KEEP THIS AROUND
-
-if(image_angle > 15 && rock_direct == 1)
-{
-	rock_direct = -1;
-}
-else if(image_angle < -15 && rock_direct == -1)
-{
-	rock_direct = 1;	
-}
-image_angle += rock_direct * 2;
