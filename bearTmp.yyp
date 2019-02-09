@@ -87,6 +87,14 @@
             }
         },
         {
+            "Key": "0a46750d-25f9-405a-b084-f919448072d8",
+            "Value": {
+                "id": "69e35ce3-db51-4027-ad81-089e7e5446c4",
+                "resourcePath": "sprites\\spr_enemy_basic_fall\\spr_enemy_basic_fall.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "0d8ab429-0dc6-4b04-b750-df454058a42c",
             "Value": {
                 "id": "3e15d9bb-fd7a-4e39-8009-b3e1d13a439b",
