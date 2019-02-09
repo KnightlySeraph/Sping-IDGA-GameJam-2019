@@ -1,5 +1,12 @@
 /// @description Main Player Code
 // Debug stuff
+// Attmpt to slow game
+if (gamepad_button_check_pressed(slot, gp_shoulderr)) {
+	SlowSpeed(obj_player, 10, 0.2);	
+}
+if (gamepad_button_check_pressed(slot, gp_select)) {
+	show_message("Current Speed: " + string(room_speed));	
+}
 if (global.usingGamePad) {
 	if (gamepad_button_check_pressed(slot, gp_face4)){
 		if (!rumble) {
