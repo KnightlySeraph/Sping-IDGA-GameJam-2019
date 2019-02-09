@@ -1,11 +1,19 @@
 /// @description Insert description here
 // You can write your code in this editor
+
+
+//main_light_surf = surface_create(camera_get_view_width(view_camera[0]), camera_get_view_height(view_camera[0]));
+
 main_step = 0;
 main_index = -1;
 main_committed = -1;
 main_control = true;
 
-unpressed = true;
+main_unpressed = true;
+main_lightup = false;
+
+light_horizontal_radius = 180;
+light_vertical_radius = 100;
 
 gui_width = display_get_gui_width();
 gui_height = display_get_gui_height();

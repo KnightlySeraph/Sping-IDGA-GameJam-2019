@@ -6,7 +6,8 @@ for(var k = 0; k < 5; k++)
 	{
 		if(instance_position(mouse_x, mouse_y, self))
 		{
-			sprite_index = spr_menu_tempHover;
+			main_lightup = true;
+			main_light_index = k;
 			main_index = k;
 		}
 		else
