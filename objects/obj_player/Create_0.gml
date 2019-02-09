@@ -45,6 +45,7 @@ jumpLength = 0.3;
 jump1 = true;
 jump2 = true;
 isAttacking = false;
+stomping = false;
 rumble = false;
 key_left = 0;
 key_right = 0;

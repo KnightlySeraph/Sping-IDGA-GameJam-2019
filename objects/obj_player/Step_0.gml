@@ -5,14 +5,14 @@ if (gamepad_button_check_pressed(slot, gp_shoulderr)) {
 	Zoom(768 / 2, 2);	
 }
 // Attempt Shake
-if (gamepad_button_check(slot, gp_face4)) {
+if (gamepad_button_check(slot, gp_face2)) {
 	Shake(18, 90);	
 }
 if (gamepad_button_check_pressed(slot, gp_select)) {
 	show_message("Attack Index: " + string(attackIndex));	
 }
 if (global.usingGamePad) {
-	if (gamepad_button_check_pressed(slot, gp_face4)){
+	if (gamepad_button_check_pressed(slot, gp_face3)){
 		if (!rumble) {
 			rumble = true;
 			gamepad_set_vibration(slot, 1, 1);	
@@ -36,8 +36,9 @@ if (keyboard_check_pressed(ord("T"))) {
 mask_index = spr_idle_left;
 // Movement code
 if (global.usingGamePad) {
-	key_right = sign(gamepad_axis_value(slot, gp_axislh)) or gamepad_button_check(slot, gp_padr);
-	key_left = -gamepad_button_check(slot, gp_padl);
+	key_right = sign(gamepad_axis_value(slot, gp_axislh));
+	//key_left = -gamepad_button_check(slot, gp_padl);
+	//key_right = gamepad_button_check(slot, gp_padr);
 	key_jump = gamepad_button_check_pressed(slot, gp_face1);
 }
 else { // Player is using the keyboard
@@ -181,6 +182,18 @@ if (!isAttacking) {
 }
 
 // =====================COMBAT CODE=======================
+// Handle per frame code dealing with combat
+if (stomping) {
+	player_grav = 50;
+	if (grounded) {
+		SlowSpeed(obj_player, 10, 0.5);
+		Shake(18, 30);
+		Zoom(768 * 0.5, 0.5);
+		if (global.usingGamePad) Rumble(0.8, 1.5);
+		player_grav = ori_player_grav;
+		stomping = false;
+	}
+}
 if (global.usingGamePad) {
 	// Basic Attack
 	if (gamepad_button_check(slot, gp_face3) && grounded && !isAttacking) {
@@ -217,6 +230,12 @@ if (global.usingGamePad) {
 				sprite_index = spr_attack3_left;
 			}
 		}
+	}
+	// Heavy Attack -- STOMP
+	if (gamepad_button_check_pressed(slot, gp_face4) && !grounded && !isAttacking && !stomping) {
+		stomping = true;
+		player_grav = ori_player_grav;
+		player_grav = 50;
 	}
 }
 else {
