@@ -90,11 +90,43 @@ switch(stage){
 		break;
 		
 	case(10):
+		if(timer == 1)
+		{
+			scr_spawnEnemies(obj_enemy_basic,2,spawners);
+			scr_spawnEnemies(obj_enemy_flying, 2, spawners);
+		}
+		else if(timer == 1 * second) scr_spawnEnemies(obj_enemy_shield, 3, spawners);
+		else if(timer == 4 * second) scr_spawnEnemies(obj_enemy_health, 1, spawners);
+		else if(timer == 5 * second) {
+			scr_spawnEnemies(obj_enemy_basic, 2, spawners);
+			scr_spawnEnemies(obj_enemy_flying, 1, spawners);
+		}
+		else if(!instance_exists(obj_enemy_basic) && !instance_exists(obj_enemy_shield) && !instance_exists(obj_enemy_flying) && timer > 5 * second) {
+			timer = 0;
+			stage = 11;
+		}
 		break;
 		
 	case(11):
+		if(timer == 1) scr_spawnEnemies(obj_enemy_basic, 4, spawners);
+		else if(timer > 2 * second) scr_spawnEnemies(obj_enemy_shield, 4, spawners);
+		else if(timer > 4 * second) scr_spawnEnemies(obj_enemy_flying, 4, spawners);
+		else if(timer > 8 * second) {
+			scr_spawnEnemies(obj_enemy_prize, 1, spawners);	
+			scr_spawnEnemies(obj_enemy_health, 1, spawners);	
+		}
+		else if(!instance_exists(obj_enemy_basic) && !instance_exists(obj_enemy_shield) && !instance_exists(obj_enemy_flying) && timer > 8 * second) {
+			timer = 0;
+			stage = 12;
+		}
 		break;
 		
 	case(12):
+		percentage = irandom_range(1,100);
+		if(percentage == 1) scr_spawnEnemies(obj_enemy_prize, 1, spawners);
+		else if(percentage <= 6) scr_spawnEnemies(obj_enemy_health, 1, spawners);
+		else if(percentage <= 26) scr_spawnEnemies(obj_enemy_flying, irandom_range(1,2), spawners);
+		else if(percentage <= 55) scr_spawnEnemies(obj_enemy_shield, irandom_range(1,2), spawners);
+		else scr_spawnEnemies(obj_enemy_basic, irandom_range(1,3), spawners);
 		break;
 }
