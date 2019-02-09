@@ -1,7 +1,25 @@
 /// @description Main Player Code
 // Debug stuff
+if (global.usingGamePad) {
+	if (gamepad_button_check_pressed(slot, gp_face4)){
+		if (!rumble) {
+			rumble = true;
+			gamepad_set_vibration(slot, 1, 1);	
+		}
+		else {
+			rumble = false;
+			gamepad_set_vibration(slot, 0, 0);	
+		}
+	}
+	
+}
 if (keyboard_check_pressed(ord("T"))) {
-	show_debug_message("Player y coord is " + string(y) + " Peak is " + string(peak));	
+	if (isAttacking) {
+		isAttacking = false;	
+	}
+	else {
+		isAttacking = true;	
+	}
 }
 // Movement code
 if (global.usingGamePad) {
@@ -74,8 +92,11 @@ if (place_meeting(x, y + player_vsp, obj_floor)){
 	player_vsp = 0;
 }
 
-// Move the player
-x += player_hsp;
-y += player_vsp;
+// Move the player if they are allowed to move
+if (!isAttacking) {
+	x += player_hsp;
+	y += player_vsp;
+}
+
 
 

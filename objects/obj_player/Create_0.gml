@@ -36,13 +36,15 @@ slot = -1;
 // ======================INIT NON-GLOBALS========================
 grounded = true; // Is the player on the ground
 move = 0; // Drives movement
-ori_player_grav = 5;
+ori_player_grav = 9;
 player_grav = ori_player_grav;
 isJumping = false;
 oriJumpForce = -18;
 jumpForce = oriJumpForce;
 jumpLength = 0.3;
-peak = 0; // Used for the jump
 jump1 = true;
-jump2 = true;
+isAttacking = false;
+rumble = false;
+key_left = 0;
+key_right = 0;
 
