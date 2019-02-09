@@ -47,6 +47,14 @@
             }
         },
         {
+            "Key": "01f285a8-f81b-484b-a674-814253d82817",
+            "Value": {
+                "id": "02500c7d-a898-4c6c-a5e2-557eab87127a",
+                "resourcePath": "sprites\\spr_main_back_button\\spr_main_back_button.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "032851c9-998b-4df7-9dcd-f713dbe74540",
             "Value": {
                 "id": "135464bf-cdb7-400b-9d23-1923cd071f06",
@@ -172,6 +180,14 @@
                 "id": "cddb8ac8-fc1a-4aa4-bb98-c1c56f6b99ee",
                 "resourcePath": "objects\\obj_alex_tester\\obj_alex_tester.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "1ed01cea-0c46-4569-9762-583add67ebc4",
+            "Value": {
+                "id": "996cbb9b-f546-40ba-82f6-b5565d9a57b7",
+                "resourcePath": "views\\1ed01cea-0c46-4569-9762-583add67ebc4.yy",
+                "resourceType": "GMFolder"
             }
         },
         {
@@ -420,6 +436,14 @@
                 "id": "da432026-4b94-4190-99a0-c6dd863a57de",
                 "resourcePath": "views\\6ce0d6fa-3e9a-4118-91df-28a9d9754240.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "6f10906a-8ea9-4591-b5b5-786c91acca88",
+            "Value": {
+                "id": "f5b2f8fb-0e68-49f5-ace2-d154918614bc",
+                "resourcePath": "sprites\\spr_rope\\spr_rope.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -875,6 +899,14 @@
             "Value": {
                 "id": "84cbfc66-5deb-496d-a18b-9c13aaa20ec5",
                 "resourcePath": "sprites\\spr_attack3_right\\spr_attack3_right.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "fef51871-0974-427f-bc13-43b45e070479",
+            "Value": {
+                "id": "3715a55c-39c3-46de-8a02-fa3ed8654639",
+                "resourcePath": "sprites\\spr_main_back_nobutton\\spr_main_back_nobutton.yy",
                 "resourceType": "GMSprite"
             }
         }
