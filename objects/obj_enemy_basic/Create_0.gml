@@ -27,3 +27,4 @@ damage_box = noone;
 
 hit = false;
 death_rot = 1;
+type = noone;
