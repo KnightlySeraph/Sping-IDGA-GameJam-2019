@@ -9,7 +9,7 @@ if (gamepad_button_check(slot, gp_face4)) {
 	Shake(18, 90);	
 }
 if (gamepad_button_check_pressed(slot, gp_select)) {
-	show_message("Move: " + string(move));	
+	show_message("Attack Index: " + string(attackIndex));	
 }
 if (global.usingGamePad) {
 	if (gamepad_button_check_pressed(slot, gp_face4)){
@@ -62,6 +62,16 @@ if (!isAttacking && grounded) {
 		moveRight = false;
 		idling = false;
 	}
+}
+
+// Set last know facing direction
+if (move == 1) {
+	faceRight = true;
+	faceLeft = false;
+}
+if (move == -1) {
+	faceRight = false;
+	faceleft = true;
 }
 
 player_hsp = move * moveSpeed;
@@ -128,15 +138,56 @@ if (!isAttacking) {
 	y += player_vsp;
 }
 
+// =====================COMBAT CODE=======================
+if (global.usingGamePad) {
+	// Basic Attack
+	if (gamepad_button_check(slot, gp_face3) && grounded && !isAttacking) {
+		show_debug_message("Attempting Attack");
+		isAttacking = true;
+		image_index = 0; // Reset the image index
+		// Start ktimer to reset combo
+		Shake(1, 10);
+		alarm[4] = attackDelay * room_speed;
+		if (attackIndex == 0) {
+			show_debug_message("Attack index 0 entered");
+			if (faceRight) {
+				sprite_index = spr_attack1_right;	
+			}
+			else {
+				sprite_index = spr_attack1_left;
+			}
+		}
+		else if (attackIndex == 1) {
+			if (faceRight) {
+				sprite_index = spr_attack2_right;	
+			}
+			else {
+				sprite_index = spr_attack2_left;	
+			}
+			
+		}
+		else if (attackIndex == 2) {
+			if (faceRight) {
+				sprite_index = spr_attack3_right;	
+			}
+			else {
+				sprite_index = spr_attack3_left;
+			}
+		}
+	}
+}
+
 //===================ANIMATION HANDLER=====================
-if (idling) {
+if (!isAttacking) {
+	if (idling) {
 	sprite_index = spr_idle_left;	
-}
-if (moveRight) {
-	sprite_index = spr_run_right;	
-}
-if (moveLeft) {
-	sprite_index = spr_run_left;
+	}
+	if (moveRight) {
+		sprite_index = spr_run_right;	
+	}
+	if (moveLeft) {
+		sprite_index = spr_run_left;
+	}	
 }
 
 
