@@ -1,4 +1,5 @@
 /// @description Main Player Code
+// Debug stuff
 
 // Movement code
 if (global.usingGamePad) {
@@ -20,10 +21,26 @@ if (grounded && key_jump) {
 	isJumping = true;	
 	// Control the length of the jump
 	alarm[0] = room_speed * jumpLength;
+	// Check what the peak height is
+	totalIncrease = jumpForce;
+	decrease = jumpForce;
+	totalFrame = room_speed * jumpLength;
+	for (i = 0; i < totalFrame; i++) {
+			decrease += 0.3;
+			totalIncrease -= decrease;
+	}
+	peak = y + totalIncrease;
 }
 
 if (isJumping) {
-	player_vsp = jumpForce;	
+	player_vsp = jumpForce;
+	if (jumpForce >= 5) {
+		jumpForce += 0.3;	
+	}
+	if (y < peak - 10 && y > peak + 10) {
+		show_message("Hover Call");
+		Hover(obj_player, 0.2);
+	}
 }
 
 // Gravity
