@@ -3,6 +3,7 @@
 
 
 //main_light_surf = surface_create(camera_get_view_width(view_camera[0]), camera_get_view_height(view_camera[0]));
+//main_light_surf_copy = surface_create(camera_get_view_width(view_camera[0]), camera_get_view_height(view_camera[0]));
 
 main_step = 0;
 main_index = -1;
@@ -13,8 +14,8 @@ main_pressed = false;
 main_hover = false;
 main_lightup = false;
 
-light_horizontal_radius = 180;
-light_vertical_radius = 100;
+light_horizontal_radius = 170;
+light_vertical_radius = 95;
 
 gui_width = display_get_gui_width();
 gui_height = display_get_gui_height();
@@ -38,6 +39,6 @@ main[0] = exitButton;
 
 for(var n = 0; n < 5; n++)
 {
-	main[n].image_xscale = 0.5;
-	main[n].image_yscale = 0.5;
+	main[n].image_xscale = 0.6;
+	main[n].image_yscale = 0.6;
 }
