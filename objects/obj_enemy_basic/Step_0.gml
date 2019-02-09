@@ -4,7 +4,11 @@ if(instance_exists(obj_player))
 switch(state){
 	case("FOLLOW"):
 		if(obj_player.y < y - max_height) state = "PATH";
-		else if(abs(obj_player.x - x) < 50) state = "ATTACK";
+		else if(abs(obj_player.x - x) < 50) {
+			state = "ATTACK";
+			alarm[0] = 60;
+			attacking = true;
+		}
 		else {
 			direct = sign(obj_player.x - x);
 			hsp = direct * spd;
@@ -14,7 +18,11 @@ switch(state){
 		
 	case("ATTACK"):
 		//REPLACE WITH ACTUAL ATTACK CODE LATER
-		if(!abs(obj_player.x - x) < 50) state = "FOLLOW";
+		image_angle = irandom_range(0,360)
+		if(!attacking) {
+			state = "FOLLOW";
+			image_angle = 0;
+		}
 		break;
 		
 	case("PATH"):
@@ -30,9 +38,6 @@ switch(state){
 			}
 			x += hsp;
 		}
-		break;
-		
-	case("KNOCKBACK"):
 		break;
 		
 	case("DEATH"):
@@ -57,13 +62,3 @@ if(!place_meeting(x, y+1, obj_floor)) state = "FALL";
 image_xscale = -direct;
 
 } //KEEP THIS AROUND
-
-if(image_angle > 15 && rock_direct == 1)
-{
-	rock_direct = -1;	
-}
-else if(image_angle < -15 && rock_direct == -1)
-{
-	rock_direct = 1;	
-}
-image_angle += rock_direct * 2;
