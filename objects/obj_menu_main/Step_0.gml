@@ -10,9 +10,10 @@ for(var k = 0; k < 5; k++)
 		main_index = k;
 		break;
 	}
-	if(k == 4 && !main_hover)
+	if(k == 4)
 	{
 		main_index = -1;
+		main_light_index = -1;
 		main_hover = false;
 		main_pressed = false;
 	}

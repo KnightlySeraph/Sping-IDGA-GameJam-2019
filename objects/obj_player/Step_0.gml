@@ -163,7 +163,7 @@ if (stomping) {
 	if (grounded) {
 		SlowSpeed(obj_player, 10, 0.5);
 		Shake(18, 30);
-		Zoom(768 * 0.5, 0.5, 0.1, 0.1);
+		Zoom(384, 0.5, 0.01, 0.1);
 		// Create Hitbox
 		if (global.usingGamePad) Rumble(0.8, 1.5);
 		player_grav = ori_player_grav;
@@ -257,7 +257,7 @@ if (global.usingGamePad) {
 		isFiring = true;
 		// Delay specials alarm
 		alarm[6] = 1 * room_speed;
-		Zoom(300, 1, 0.01, 0.1);
+		Zoom(384, 1, 0.01, 0.2);
 		if (faceRight) {
 			sprite_index = spr_laser_right;		
 		}
@@ -349,6 +349,20 @@ else {
 		stomping = true;
 		player_grav = ori_player_grav;
 		player_grav = 50;
+	}
+	// Heavy Attack -- LASER
+	if (keyboard_check_pressed(ord("K")) && grounded && !isAttacking && !stomping && !firing) {
+		isAttacking = true;
+		isFiring = true;
+		// Delay specials alarm
+		alarm[6] = 1 * room_speed;
+		Zoom(384, 1, 0.01, 0.2);
+		if (faceRight) {
+			sprite_index = spr_laser_right;		
+		}
+		else {
+			sprite_index = spr_laser_left;
+		}
 	}
 }
 
