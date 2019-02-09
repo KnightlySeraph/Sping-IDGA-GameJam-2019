@@ -24,3 +24,9 @@ anti_sezure = 0;
 last_sprite = sprite_index;
 
 damage_box = noone;
+
+// DEath Variables
+hit = false;
+death_rot = 1;
+type = noone;
+combo = 0;

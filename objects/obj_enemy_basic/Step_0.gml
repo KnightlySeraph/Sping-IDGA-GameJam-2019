@@ -5,6 +5,12 @@ switch(state){
 	case("FOLLOW"):
 		// If the player is too high up, start pathing
 		if(obj_player.y < y - max_height) state = "PATH";
+		// If the player is too low, walk off the platform
+		else if(obj_player.y > y)
+		{
+			direct = sign((room_width / 2) - x);
+			hsp = direct * spd;
+		}
 		// If the player is close enough, move into attack
 		else if(abs(obj_player.x - x) < 170) {
 			direct = sign(obj_player.x - x);
@@ -43,6 +49,8 @@ switch(state){
 		break;
 		
 	case("DEATH"):
+		sprite_index = spr_enemy_basic_dead;
+		scr_enemyDeath(self);
 		break;
 		
 	case("FALL"):
@@ -63,23 +71,32 @@ switch(state){
 }
 
 // If there is no floor below, go into falling
-if(!place_meeting(x, y+1, obj_floor)) state = "FALL";
+if(!place_meeting(x, y+1, obj_floor) && state != "DEATH") state = "FALL";
+if(place_meeting(x,y,obj_lightBox) || place_meeting(x,y,obj_stompBox)) {
+	state = "DEATH";
+	alarm[0] = -1;
+	alarm[1] = -1;
+	alarm[2] = -1;
+}
 image_xscale = -direct;
 image_speed = spd / 2;
 
-if(place_meeting(x,y,obj_player)){
-	hsp = sign(x - obj_player.x) * maxSpeed;	
-}
-
-if (place_meeting(x + hsp, y, obj_floor)){
-	while(!place_meeting(x+sign(hsp), y, obj_floor)){
-		x += sign(hsp);	
+if(state != "DEATH")
+{
+	if(place_meeting(x,y,obj_player)){
+		hsp = sign(x - obj_player.x) * maxSpeed;	
 	}
-	hsp = 0;
-	if(!place_meeting(x,y,obj_player)) direct = -direct;
-}
 
-x += hsp;
+	if (place_meeting(x + hsp, y, obj_floor)){
+		while(!place_meeting(x+sign(hsp), y, obj_floor)){
+			x += sign(hsp);	
+		}
+		hsp = 0;
+		if(!place_meeting(x,y,obj_player)) direct = -direct;
+	}
+
+	x += hsp;
+}
 
 if (last_sprite != sprite_index)
 {

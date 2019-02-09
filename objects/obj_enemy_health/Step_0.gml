@@ -24,6 +24,8 @@ switch(state){
 		break;
 		
 	case("DEATH"):
+		sprite_index = spr_enemy_basic_dead;
+		scr_enemyDeath(self);
 		break;
 }
 
@@ -33,6 +35,11 @@ if (last_sprite != sprite_index)
 {
    image_index = 0;
    last_sprite = sprite_index;
+}
+
+
+if(place_meeting(x,y,obj_lightBox) || place_meeting(x,y,obj_stompBox)) {
+	state = "DEATH";
 }
 
 } // DO NOT DELETE

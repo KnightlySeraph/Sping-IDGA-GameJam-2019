@@ -10,3 +10,9 @@ direct = 1;
 image_speed = 5;
 
 last_sprite = sprite_index;
+
+// DEath Variables
+hit = false;
+death_rot = 1;
+type = noone;
+combo = 0;
