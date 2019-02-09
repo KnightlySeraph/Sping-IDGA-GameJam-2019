@@ -19,3 +19,5 @@ if(instance_exists(obj_player))
 else max_height = 0;
 
 anti_sezure = 0; // Delet Later
+
+last_sprite = sprite_index;
