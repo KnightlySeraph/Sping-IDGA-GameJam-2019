@@ -639,6 +639,14 @@
             }
         },
         {
+            "Key": "b93ecc10-82fd-4743-b710-14d5acc51c33",
+            "Value": {
+                "id": "7dac9fd3-ecb2-4446-b2e5-8ea523ac1cbf",
+                "resourcePath": "sprites\\spr_enemy_flying\\spr_enemy_flying.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "b99e5757-bd0e-405b-be6a-75ad567697f8",
             "Value": {
                 "id": "eae23306-7244-4c2c-b81e-10632535c333",
