@@ -5,7 +5,8 @@ if (keyboard_check_pressed(ord("T"))) {
 }
 // Movement code
 if (global.usingGamePad) {
-	
+	key_right = sign(gamepad_axis_value(slot, gp_axislh));
+	key_jump = gamepad_button_check_pressed(slot, gp_face1);
 }
 else { // Player is using the keyboard
 	key_right = keyboard_check(ord("D"));
