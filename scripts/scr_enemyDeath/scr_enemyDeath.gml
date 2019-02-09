@@ -15,6 +15,12 @@ if(place_meeting(enemy.x,enemy.y,obj_lightBox) && !enemy.hit)
 		enemy.vsp *= 1.5;
 		enemy.hsp *= 1.5;
 	}
+	
+	random_num = irandom_range(3,7);
+	for(i = 0; i<random_num; i++)
+	{
+		instance_create_depth(enemy.x, enemy.y, enemy.depth - 1, obj_pow);	
+	}
 }
 else if(place_meeting(enemy.x,enemy.y,obj_stompBox) && !hit)
 {
@@ -24,7 +30,13 @@ else if(place_meeting(enemy.x,enemy.y,obj_stompBox) && !hit)
 	enemy.grav = 0.1;
 	enemy.death_rot = 18;
 	enemy.type = "stomp";
-	enemy.combo += 1;		
+	enemy.combo += 1;	
+	
+	random_num = irandom_range(3,7);
+	for(i = 0; i<random_num; i++)
+	{
+		instance_create_depth(enemy.x, enemy.y, enemy.depth - 1, obj_pow);	
+	}
 }
 else if(!place_meeting(enemy.x,enemy.y,obj_lightBox) && enemy.hit && enemy.type == "light")
 {
