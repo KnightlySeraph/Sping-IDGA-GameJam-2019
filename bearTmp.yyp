@@ -663,6 +663,14 @@
             }
         },
         {
+            "Key": "db5680d2-9f49-47ec-8689-418b5d318612",
+            "Value": {
+                "id": "0b27ba26-bd08-4e15-acf1-ccd327d2c6f2",
+                "resourcePath": "sprites\\spr_enemy_basic_damage\\spr_enemy_basic_damage.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "dbdf4336-29e6-46b8-9e5f-e50da9c970c5",
             "Value": {
                 "id": "219841a8-9918-4d78-a84d-7c6aa3b0631f",
