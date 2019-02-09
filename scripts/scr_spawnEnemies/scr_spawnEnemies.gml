@@ -27,5 +27,6 @@ for(i = 0; i < number; i++)
 	bannedNumbers[banned] = random_num;
 	banned += 1;
 	
-	instance_create_depth(spawns[i].x, spawns[i].y, depth, enemyType);
+	enemy = instance_create_depth(spawns[i].x, spawns[i].y, depth, enemyType);
+	enemy.direct = spawns[i].direct;
 }
