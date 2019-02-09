@@ -319,6 +319,14 @@
             }
         },
         {
+            "Key": "b85bedb7-d1d2-4609-831e-972c7a3ecf88",
+            "Value": {
+                "id": "a7320ad2-88d2-4081-a6e9-5832d8c9e069",
+                "resourcePath": "scripts\\SlowSpeed\\SlowSpeed.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "ba9577a7-958a-4530-a351-1f179e26f6bb",
             "Value": {
                 "id": "48dceba2-93a5-4527-a744-a420382a3292",
@@ -396,7 +404,8 @@
         "3d1be0d5-4ef9-4c49-8bf0-1476280d9c77",
         "6f7c8847-0edd-4221-9cea-2effe270fe4a",
         "93688934-2991-4fff-9656-db39e0e660e7",
-        "ca48939c-47b2-483d-a860-ee4d6255e452"
+        "ca48939c-47b2-483d-a860-ee4d6255e452",
+        "b85bedb7-d1d2-4609-831e-972c7a3ecf88"
     ],
     "tutorial": ""
 }

@@ -2,6 +2,7 @@
 x += (xTo - x) / 10;
 y += (yTo - y) / 10;
 
+
 //As long as player following  is following the player
 if(follow != noone){
 	xTo = follow.x;
