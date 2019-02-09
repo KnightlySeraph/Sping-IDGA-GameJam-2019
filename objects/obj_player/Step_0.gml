@@ -19,15 +19,12 @@ player_hsp = move * moveSpeed;
 player_vsp = 0;
 
 // Jump Code
-if (key_jump && jump2) {
+if (key_jump && jump1) {
 	isJumping = true;	
 	// Control the length of the jump
 	alarm[0] = room_speed * jumpLength;
 	if (jump1) {
 		jump1 = false;	
-	}
-	else {
-		jump2 = false;	
 	}
 	
 }
@@ -43,9 +40,8 @@ else {
 // Do stuff based on grounded
 if (grounded) {
 	// Reset jump
-	if (!jump1 || !jump2) {
+	if (!jump1) {
 		jump1 = true;
-		jump2 = true;
 	}
 }
 
