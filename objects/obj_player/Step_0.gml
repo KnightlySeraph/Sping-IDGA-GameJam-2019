@@ -244,6 +244,12 @@ else {
 			}
 		}
 	}
+	// Heavy Attack -- STOMP
+	if (keyboard_check_pressed(ord("K")) && !grounded && !isAttacking && !stomping) {
+		stomping = true;
+		player_grav = ori_player_grav;
+		player_grav = 50;
+	}
 }
 
 //===================ANIMATION HANDLER=====================
