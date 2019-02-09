@@ -48,3 +48,8 @@ rumble = false;
 key_left = 0;
 key_right = 0;
 
+// Anim vars
+idling = true;
+moveRight = false;
+moveLeft = true;
+

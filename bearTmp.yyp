@@ -359,11 +359,27 @@
             }
         },
         {
+            "Key": "cae5de5e-a39f-40fd-a4a5-e6ad2d27a375",
+            "Value": {
+                "id": "309ec549-f729-4af2-bdf5-e56168d63e7c",
+                "resourcePath": "sprites\\spr_run_left\\spr_run_left.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "cc98d028-7bdd-4680-85f3-c87a7baa481e",
             "Value": {
                 "id": "a14997e4-5435-4901-a947-7d4409bc8a40",
                 "resourcePath": "options\\windows\\options_windows.yy",
                 "resourceType": "GMWindowsOptions"
+            }
+        },
+        {
+            "Key": "d39db706-4567-495b-b3b7-4fba3a098ad4",
+            "Value": {
+                "id": "0d3d684e-297a-4f3c-ab98-5fd8b19d3535",
+                "resourcePath": "sprites\\spr_run_right\\spr_run_right.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
