@@ -186,6 +186,7 @@ if (global.usingGamePad) {
 		image_index = 0; // Reset the image index
 		// Start ktimer to reset combo
 		Shake(1, 10);
+		Rumble(0.2, 1);
 		alarm[4] = attackDelay * room_speed;
 		if (attackIndex == 0) {
 			show_debug_message("Attack index 0 entered");
