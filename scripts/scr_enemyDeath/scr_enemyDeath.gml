@@ -7,7 +7,7 @@ if(place_meeting(enemy.x,enemy.y,obj_lightBox) && !enemy.hit)
 	enemy.hit = true;
 	enemy.hsp = -sign(obj_player.x - enemy.x) * 0.8;
 	enemy.vsp = -4;
-	enemy.grav = 0.1;
+	enemy.grav = 0.2;
 	enemy.death_rot = 18;
 	enemy.type = "light";
 	enemy.combo += 1;
@@ -31,7 +31,7 @@ else if(!place_meeting(enemy.x,enemy.y,obj_lightBox) && enemy.hit && enemy.type 
 	enemy.hsp = -sign(obj_player.x - enemy.x) * combo;
 	enemy.vsp = -10;
 	enemy.hit = false;
-	enemy.grav = 0.5;
+	enemy.grav = 0.6;
 	if(obj_player.sprite_index = spr_attack3_left || obj_player.sprite_index = spr_attack3_right) {
 		enemy.vsp *= 1.5;
 		enemy.hsp *= 1.5;
