@@ -8,6 +8,7 @@ switch(state){
 			state = "ATTACK";
 			alarm[0] = 60;
 			attacking = true;
+			resting = true;
 		}
 		else {
 			direct = sign(obj_player.x - x);
@@ -18,10 +19,17 @@ switch(state){
 		
 	case("ATTACK"):
 		//REPLACE WITH ACTUAL ATTACK CODE LATER
-		image_angle = irandom_range(0,360)
-		if(!attacking) {
+		if(attacking) {
+			image_angle = irandom_range(0,360)
+		}
+		else if(!resting) {
 			state = "FOLLOW";
 			image_angle = 0;
+		}
+		else
+		{
+			image_angle = 0;
+			image_index = 0;
 		}
 		break;
 		
