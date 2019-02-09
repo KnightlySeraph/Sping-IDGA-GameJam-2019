@@ -1,6 +1,8 @@
 if(instance_exists(obj_player))
 {
 
+show_debug_message(state);
+
 switch(state){
 	case("FOLLOW"):
 		if(obj_player.y < y - max_height) state = "PATH";

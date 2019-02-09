@@ -14,3 +14,5 @@ if(instance_exists(obj_player))
 	max_height = obj_player.sprite_height * 1.5;
 }
 else max_height = 0;
+
+show_debug_message("SCREATE");
