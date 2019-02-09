@@ -159,6 +159,7 @@ if (stomping) {
 		SlowSpeed(obj_player, 10, 0.5);
 		Shake(18, 30);
 		Zoom(768 * 0.5, 0.5);
+		// Create Hitbox
 		if (global.usingGamePad) Rumble(0.8, 1.5);
 		player_grav = ori_player_grav;
 		stomping = false;
