@@ -1,8 +1,3 @@
-/// @description Init all varaibles for the player
-global.usingGamePad = false;
-
-
-// Attempt to connect the controller
-ConnectGamepad();
+/// @description Init primary vars
 
 
