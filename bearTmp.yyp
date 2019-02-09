@@ -31,6 +31,14 @@
     },
     "resources": [
         {
+            "Key": "033fe4c3-2ae7-42cd-bec1-e76061b1251b",
+            "Value": {
+                "id": "6d694160-0bfc-4a0a-bb05-135a89a24972",
+                "resourcePath": "objects\\obj_button_play\\obj_button_play.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "0455069f-86d6-46e0-8b6f-4f541b0ad279",
             "Value": {
                 "id": "60cdf9b5-939a-4bb6-904e-a5309ef464a4",
@@ -108,6 +116,22 @@
                 "id": "7fc44788-6fda-4846-bbb7-1107abe6b7c9",
                 "resourcePath": "views\\27299bb1-5458-45a1-b469-bfda2c564135.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "297cf366-61ce-4b9f-81cf-d704a866d978",
+            "Value": {
+                "id": "1b7ef26b-67a6-491d-bca3-1468220494b1",
+                "resourcePath": "objects\\obj_menu_main\\obj_menu_main.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "2985a44e-5d02-401a-9624-d9f147395a36",
+            "Value": {
+                "id": "f622e7ed-6073-4c28-b17b-33d2c7dabc9b",
+                "resourcePath": "objects\\obj_button_highscores\\obj_button_highscores.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -247,6 +271,22 @@
             }
         },
         {
+            "Key": "8833f54b-0902-49e4-b27b-72afe9f0e4fe",
+            "Value": {
+                "id": "a401540b-a2e1-4e98-a6e4-c91f978b252b",
+                "resourcePath": "objects\\obj_button_credits\\obj_button_credits.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "88c2ca22-d094-44ad-b874-ac4007f125d6",
+            "Value": {
+                "id": "c4185a38-022f-49df-b2d5-aad8b8593124",
+                "resourcePath": "views\\88c2ca22-d094-44ad-b874-ac4007f125d6.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "8e2e6824-92c1-4c69-8544-20c7869c77c4",
             "Value": {
                 "id": "e829617f-22be-4aeb-943f-5207a8f88818",
@@ -275,6 +315,14 @@
             "Value": {
                 "id": "2917bf65-ac1e-4017-88d0-44ff62d21990",
                 "resourcePath": "rooms\\room0\\room0.yy",
+                "resourceType": "GMRoom"
+            }
+        },
+        {
+            "Key": "97dcd04a-5185-49b5-b8a7-177250be329f",
+            "Value": {
+                "id": "c725c136-0a70-4316-9de2-8728d5f6d52f",
+                "resourcePath": "rooms\\rm_menu_test\\rm_menu_test.yy",
                 "resourceType": "GMRoom"
             }
         },
@@ -351,6 +399,14 @@
             }
         },
         {
+            "Key": "c57d4854-9cc6-4e8c-8a41-f92e7369bc7d",
+            "Value": {
+                "id": "7d767e8e-83fa-4b7e-bc51-10522d305119",
+                "resourcePath": "views\\c57d4854-9cc6-4e8c-8a41-f92e7369bc7d.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "ca48939c-47b2-483d-a860-ee4d6255e452",
             "Value": {
                 "id": "ff28fc82-8ec2-4a75-aeef-07f400bdd29a",
@@ -412,6 +468,22 @@
                 "id": "c971909e-d3d4-418a-b0e3-c046ab16d094",
                 "resourcePath": "options\\mac\\options_mac.yy",
                 "resourceType": "GMMacOptions"
+            }
+        },
+        {
+            "Key": "f4b8cd63-acee-45cc-b335-b3e7be3ed18a",
+            "Value": {
+                "id": "0c8d0a58-9027-4276-bf7a-c64c31acfb52",
+                "resourcePath": "objects\\obj_button_exit\\obj_button_exit.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "f4dcfce1-1c38-420d-ab7e-78805f9b3af7",
+            "Value": {
+                "id": "afac0269-f01d-4bec-b5c9-72e573f31505",
+                "resourcePath": "objects\\obj_button_controls\\obj_button_controls.yy",
+                "resourceType": "GMObject"
             }
         }
     ],
