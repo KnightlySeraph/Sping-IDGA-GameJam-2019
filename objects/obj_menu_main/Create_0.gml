@@ -9,7 +9,8 @@ main_index = -1;
 main_committed = -1;
 main_control = true;
 
-main_unpressed = true;
+main_pressed = false;
+main_hover = false;
 main_lightup = false;
 
 light_horizontal_radius = 180;
