@@ -32,9 +32,6 @@ switch(state){
 		}
 		break;
 		
-	case("KNOCKBACK"):
-		break;
-		
 	case("DEATH"):
 		break;
 		
