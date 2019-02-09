@@ -1,11 +1,18 @@
+if(instance_exists(obj_player))
+{
+
 switch(state){
 	case("FOLLOW"):
+		if(obj_player.y < y - max_height) state = "PATH";
+		color = c_blue;
 		break;
 		
 	case("ATTACK"):
 		break;
 		
 	case("PATH"):
+		if(obj_player.y > y - max_height) state = "FOLLOW";
+		color = c_lime;
 		break;
 		
 	case("KNOCKBACK"):
@@ -30,3 +37,5 @@ switch(state){
 }
 
 if(!place_meeting(x, y+1, obj_floor)) state = "FALL";
+
+} //KEEP THIS AROUND
