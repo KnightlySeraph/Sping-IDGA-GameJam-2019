@@ -1,14 +1,14 @@
 enemy = argument0
 
 enemy.image_angle += enemy.death_rot;
-if(enemy.death_rot > 1) enemy.death_rot -= 0.2;
+if(enemy.death_rot > 1) enemy.death_rot -= random_range(0.1, 0.3);
 if(place_meeting(enemy.x,enemy.y,obj_lightBox) && !enemy.hit)
 {
 	enemy.hit = true;
 	enemy.hsp = -sign(obj_player.x - enemy.x) * 0.8;
 	enemy.vsp = -4;
 	enemy.grav = 0.2;
-	enemy.death_rot = 18;
+	enemy.death_rot = 10 + random_range(1,10);
 	enemy.type = "light";
 	enemy.combo += 1;
 	if(obj_player.sprite_index = spr_attack3_left || obj_player.sprite_index = spr_attack3_right) {
@@ -28,7 +28,7 @@ else if(place_meeting(enemy.x,enemy.y,obj_stompBox) && !hit)
 	enemy.hsp = -sign(obj_player.x - enemy.x) * 1.2;
 	enemy.vsp = -3;
 	enemy.grav = 0.1;
-	enemy.death_rot = 18;
+	enemy.death_rot = 10 + random_range(1,10);
 	enemy.type = "stomp";
 	enemy.combo += 1;	
 	

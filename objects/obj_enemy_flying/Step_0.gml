@@ -17,6 +17,7 @@ switch(state){
 		break;
 		
 	case("DEATH"):
+		scr_enemyDeath(self);
 		break;
 }
 
@@ -31,7 +32,12 @@ if(state != "DEATH")
 {
 	
 	if(place_meeting(x,y,obj_player)){
-		hsp = sign(x - obj_player.x) * maxSpeed;	
+		if(obj_player.stomping){
+			hsp = 0;
+			while(place_meeting(x,y,obj_player)) y += 1;
+			y -= 100;
+		}
+		else hsp = sign(x - obj_player.x) * maxSpeed;	
 	}
 	else hsp = 0; //DELETE THIS LATER OR ELSE
 	//SERIOSLY
