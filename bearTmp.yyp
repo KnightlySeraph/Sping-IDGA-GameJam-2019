@@ -55,6 +55,14 @@
             }
         },
         {
+            "Key": "12ed4974-1de2-4ab8-a52f-ce1549d11e18",
+            "Value": {
+                "id": "972f1665-242d-4bea-b83e-3c3e72ee46cf",
+                "resourcePath": "notes\\Hello World.yy",
+                "resourceType": "GMNotes"
+            }
+        },
+        {
             "Key": "20be181d-3be1-47a2-8fed-32d3704afdbf",
             "Value": {
                 "id": "31dc7937-f722-488b-816a-31375f22e6dd",
