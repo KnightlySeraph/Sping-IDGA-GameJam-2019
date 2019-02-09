@@ -1,4 +1,5 @@
 /// @description Laser Special Attacks
+//Instantiate energy beam
 
 
 if (global.usingGamePad) Rumble(1, 1);

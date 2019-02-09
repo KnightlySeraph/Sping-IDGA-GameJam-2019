@@ -1,6 +1,11 @@
-tipDist = point_distance(x, y, room_width, y);
+if (createRight) tipDist = point_distance(x, y, room_width, y);
+else {
+	show_debug_message("Should Create left");	
+	tipDist = point_distance(x, y, 0, y);
+}
 spr_width = sprite_get_width(spr_lightning);
-angle_player = point_direction(x, y, room_width, y);
+if (createRight) angle_player = point_direction(x, y, room_width, y);
+else angle_player = point_direction(x, y, 0, y);
 num = tipDist / spr_width;
 gap = tipDist/num;
 for(i = 0; i < num; i++){
