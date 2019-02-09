@@ -399,6 +399,14 @@
             }
         },
         {
+            "Key": "831f1c62-cc8a-461d-b4b0-ec1bc23b594a",
+            "Value": {
+                "id": "6cdc16de-d3e0-4dfc-b3d7-0500915b7dce",
+                "resourcePath": "objects\\obj_enemy_basic_damage\\obj_enemy_basic_damage.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "86da4402-bf30-4b7d-b058-f1e114007cae",
             "Value": {
                 "id": "2ec00611-2942-4370-9777-a4ca9bc36d0d",
@@ -583,6 +591,14 @@
             }
         },
         {
+            "Key": "b99e5757-bd0e-405b-be6a-75ad567697f8",
+            "Value": {
+                "id": "eae23306-7244-4c2c-b81e-10632535c333",
+                "resourcePath": "sprites\\spr_enemy_basic_attack\\spr_enemy_basic_attack.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "ba9577a7-958a-4530-a351-1f179e26f6bb",
             "Value": {
                 "id": "48dceba2-93a5-4527-a744-a420382a3292",
@@ -683,6 +699,14 @@
             "Value": {
                 "id": "91380a5e-2e5b-48d8-a34e-2d28b8c78a54",
                 "resourcePath": "sprites\\spr_playerTemp\\spr_playerTemp.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "db5680d2-9f49-47ec-8689-418b5d318612",
+            "Value": {
+                "id": "0b27ba26-bd08-4e15-acf1-ccd327d2c6f2",
+                "resourcePath": "sprites\\spr_enemy_basic_damage\\spr_enemy_basic_damage.yy",
                 "resourceType": "GMSprite"
             }
         },

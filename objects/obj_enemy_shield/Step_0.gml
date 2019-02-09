@@ -6,7 +6,7 @@ switch(state){
 		// If the player is too high up, start pathing
 		if(obj_player.y < y - max_height) state = "PATH";
 		// If the player is close enough, move into attack
-		else if(abs(obj_player.x - x) < 110) {
+		else if(abs(obj_player.x - x) < 170) {
 			state = "ATTACK";
 			alarm[0] = 60;
 			attacking = true;
@@ -86,5 +86,11 @@ if (place_meeting(x + hsp, y, obj_floor)){
 }
 
 x += hsp;
+
+if (last_sprite != sprite_index)
+{
+   image_index = 0;
+   last_sprite = sprite_index;
+}
 
 } //KEEP THIS AROUND
