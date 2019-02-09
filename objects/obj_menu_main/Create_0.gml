@@ -1,9 +1,11 @@
 /// @description Insert description here
 // You can write your code in this editor
 main_step = 0;
-main_index = 0;
+main_index = -1;
 main_committed = -1;
 main_control = true;
+
+unpressed = true;
 
 gui_width = display_get_gui_width();
 gui_height = display_get_gui_height();
