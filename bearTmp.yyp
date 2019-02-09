@@ -127,6 +127,14 @@
             }
         },
         {
+            "Key": "86da4402-bf30-4b7d-b058-f1e114007cae",
+            "Value": {
+                "id": "2ec00611-2942-4370-9777-a4ca9bc36d0d",
+                "resourcePath": "notes\\note1.yy",
+                "resourceType": "GMNotes"
+            }
+        },
+        {
             "Key": "8e2e6824-92c1-4c69-8544-20c7869c77c4",
             "Value": {
                 "id": "e829617f-22be-4aeb-943f-5207a8f88818",
