@@ -4,8 +4,11 @@ state = "FOLLOW";
 hsp = 0;
 vsp = 0;
 grav = 0.5;
-spd = 5;
+spd = 2;
 direct = 1;
+
+attacking = false;
+resting = false;
 
 dead = false;
 
