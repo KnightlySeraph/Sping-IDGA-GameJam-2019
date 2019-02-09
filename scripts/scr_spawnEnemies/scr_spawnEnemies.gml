@@ -1,8 +1,9 @@
-///spawnEnemies(enemyType, number, spawns[])
+///spawnEnemies(enemyType, number, spawns[], spd)
 
 enemyType = argument0;
 number = argument1;
 spawns = argument2;
+spd = argument3;
 
 spawn_num = array_length_1d(spawns);
 bannedNumbers[0] = 5;
@@ -29,4 +30,5 @@ for(i = 0; i < number; i++)
 	
 	enemy = instance_create_depth(spawns[i].x, spawns[i].y, depth, enemyType);
 	enemy.direct = spawns[i].direct;
+	enemy.spd = enemy.spd * spd;
 }

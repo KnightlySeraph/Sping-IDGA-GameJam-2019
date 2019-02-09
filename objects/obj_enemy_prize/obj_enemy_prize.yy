@@ -4,7 +4,16 @@
     "mvc": "1.0",
     "name": "obj_enemy_prize",
     "eventList": [
-        
+        {
+            "id": "81982966-abba-443a-a4d3-208318886537",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
+            "enumb": 0,
+            "eventtype": 0,
+            "m_owner": "afc1e978-ebf1-4be1-947e-a625c0e6fdc0"
+        }
     ],
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",
     "overriddenProperties": null,
