@@ -6,6 +6,7 @@ for(i = 0; i < controller_count; i++){
 		//Create a Deadzone for the Gamepad of 0.05
 		gamepad_set_axis_deadzone(i, 0.1);
 		// obj_player.gamepad_slot = i;
+		show_message("Connected");
 		break;
 	}
 	else{
