@@ -8,7 +8,7 @@ switch(state){
 		// If the player is close enough, move into attack
 		else if(abs(obj_player.x - x) < 170) {
 			state = "ATTACK";
-			alarm[0] = 60;
+			alarm[2] = room_speed;
 			attacking = true;
 			resting = true;
 		}
