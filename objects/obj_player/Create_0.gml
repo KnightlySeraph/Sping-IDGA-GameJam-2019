@@ -43,6 +43,7 @@ oriJumpForce = -18;
 jumpForce = oriJumpForce;
 jumpLength = 0.3;
 jump1 = true;
+jump2 = true;
 isAttacking = false;
 rumble = false;
 key_left = 0;
@@ -56,4 +57,8 @@ faceLeft = false;
 idling = true;
 moveRight = false;
 moveLeft = true;
+jump1right = false;
+jump1left = false;
+jump2right = false;
+jump2left = false;
 

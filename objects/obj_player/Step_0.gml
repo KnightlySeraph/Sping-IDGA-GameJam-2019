@@ -78,19 +78,58 @@ player_hsp = move * moveSpeed;
 player_vsp = 0;
 
 // Jump Code
-if (key_jump && jump1) {
-	isJumping = true;	
+if (key_jump && jump2) {
+	isJumping = true;
 	// Control the length of the jump
+	if (jump1) {
+		if (faceRight) {
+			jump1right = true;
+			jump1left = false;
+			jump2right = false;
+			jump2left = false;
+		}
+		else {
+			jump1right = false;
+			jump1left = true;
+			jump2right = false;
+			jump2left = false;
+		}
+	}
+	else {
+		if (faceRight) {
+			jump1right = false;
+			jump1left = false;
+			jump2right = true;
+			jump2left = false;
+		}
+		else {
+			jump1right = false;
+			jump1left = false;
+			jump2right = false;
+			jump2left = true;
+		}
+	}
 	alarm[0] = room_speed * jumpLength;
 	if (jump1) {
 		jump1 = false;	
+	}
+	else {
+		jump2 = false;	
 	}
 	
 }
 
 // Set grounded var
-if (place_meeting(x, y + 1, obj_floor)) {
-	grounded = true;	
+if (place_meeting(x, y + 1, obj_floor) && !isJumping) {
+	grounded = true;
+	// Reset jump animation vars
+	jump1right = false;
+	jump1left = false;
+	jump2right = false;
+	jump2left = false;
+	// Reset jumps
+	jump1 = true;
+	jump2 = true;
 }
 else {
 	grounded = false;	
@@ -179,14 +218,28 @@ if (global.usingGamePad) {
 
 //===================ANIMATION HANDLER=====================
 if (!isAttacking) {
-	if (idling) {
-	sprite_index = spr_idle_left;	
+	if (grounded) {
+		if (idling) {
+		sprite_index = spr_idle_left;	
+		}
+		if (moveRight) {
+			sprite_index = spr_run_right;	
+		}
+		if (moveLeft) {
+			sprite_index = spr_run_left;
+		}	
 	}
-	if (moveRight) {
-		sprite_index = spr_run_right;	
+	if (jump1left) {
+		sprite_index = spr_jump1_left;
+	}	
+	if (jump1right) {
+		sprite_index = spr_jump1_right;
+	}	
+	if (jump2left) {
+		sprite_index = spr_jump2_left;
 	}
-	if (moveLeft) {
-		sprite_index = spr_run_left;
+	if (jump2right) {
+		sprite_index = spr_jump2_right;
 	}	
 }
 
