@@ -30,3 +30,8 @@ if (sprite_index == spr_laser_left || sprite_index == spr_laser_right) {
 	isAttacking = false;
 	isFiring = false;
 }
+
+if (sprite_index = spr_dashAttack_left || sprite_index = spr_dashAttack_right) {
+	isAttacking = false;	
+	isDashing = false;
+}

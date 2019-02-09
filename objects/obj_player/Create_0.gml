@@ -54,6 +54,7 @@ attackDelay = 1;
 faceRight = true;
 faceLeft = false;
 firing = false;
+isDashing = false;
 
 camLerp = 0.01;
 
