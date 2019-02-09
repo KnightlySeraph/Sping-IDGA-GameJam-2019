@@ -254,15 +254,18 @@ if (global.usingGamePad) {
 	// Heavy Attack -- LASER
 	if (gamepad_button_check_pressed(slot, gp_face4) && grounded && !isAttacking && !stomping && !firing) {
 		isAttacking = true;
-		isFiring = true;
+		firing = true;
 		// Delay specials alarm
 		alarm[6] = 1 * room_speed;
+		alarm[8] = 1.05 * room_speed;
 		Zoom(384, 1, 0.01, 0.2);
 		if (faceRight) {
 			sprite_index = spr_laser_right;		
+			laserRight = true;
 		}
 		else {
 			sprite_index = spr_laser_left;
+			laserLeft = true;
 		}
 	}
 }
