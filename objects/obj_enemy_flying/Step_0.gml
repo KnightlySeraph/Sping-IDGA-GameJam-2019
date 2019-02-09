@@ -33,6 +33,9 @@ if(state != "DEATH")
 	if(place_meeting(x,y,obj_player)){
 		hsp = sign(x - obj_player.x) * maxSpeed;	
 	}
+	else hsp = 0; //DELETE THIS LATER OR ELSE
+	//SERIOSLY
+	//DONT FORGET
 
 	if (place_meeting(x + hsp, y, obj_floor)){
 		while(!place_meeting(x+sign(hsp), y, obj_floor)){
