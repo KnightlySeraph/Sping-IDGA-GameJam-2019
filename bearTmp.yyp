@@ -239,6 +239,14 @@
             }
         },
         {
+            "Key": "d5b73529-74b3-4ea6-bec3-92a35847c984",
+            "Value": {
+                "id": "4e3618bc-f55f-4b0d-af11-07bea3b503a9",
+                "resourcePath": "objects\\obj_spawn_controller\\obj_spawn_controller.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "e4e0c171-3738-42c0-b166-1c48b0e23e8f",
             "Value": {
                 "id": "c7b0813d-755e-4641-84ec-eb67cf2a832d",
