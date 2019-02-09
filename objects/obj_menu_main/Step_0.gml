@@ -14,15 +14,17 @@ for(var k = 0; k < 5; k++)
 	{
 		main_index = -1;
 		main_light_index = -1;
+		main_committed = -1;
 		main_hover = false;
 		main_pressed = false;
 	}
-	if(main_index == k)
+}
+
+if(main_hover)
+{
+	if(mouse_check_button_pressed(mb_left))
 	{
-		if(mouse_check_button(mb_left))
-		{
-			main_committed = k;
-			sprite_index = spr_menu_tempPress;
-		}
+		main_pressed = true;
+		main_committed = main_index;
 	}
 }
