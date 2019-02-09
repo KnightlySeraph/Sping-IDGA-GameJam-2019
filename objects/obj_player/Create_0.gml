@@ -45,6 +45,7 @@ jumpLength = 0.3;
 jump1 = true;
 jump2 = true;
 isAttacking = false;
+stomping = false;
 rumble = false;
 key_left = 0;
 key_right = 0;
@@ -52,6 +53,10 @@ attackIndex = 0;
 attackDelay = 1;
 faceRight = true;
 faceLeft = false;
+
+// Hitboxing
+lightHit_xRange = 192;
+lightHit_yRange = 128;
 
 // Anim vars
 idling = true;

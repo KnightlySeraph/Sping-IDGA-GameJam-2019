@@ -1,42 +1,14 @@
 /// @description Main Player Code
 // Debug stuff
 // Attmpt to slow game
-if (gamepad_button_check_pressed(slot, gp_shoulderr)) {
-	Zoom(768 / 2, 2);	
-}
-// Attempt Shake
-if (gamepad_button_check(slot, gp_face4)) {
-	Shake(18, 90);	
-}
-if (gamepad_button_check_pressed(slot, gp_select)) {
-	show_message("Attack Index: " + string(attackIndex));	
-}
-if (global.usingGamePad) {
-	if (gamepad_button_check_pressed(slot, gp_face4)){
-		if (!rumble) {
-			rumble = true;
-			gamepad_set_vibration(slot, 1, 1);	
-		}
-		else {
-			rumble = false;
-			gamepad_set_vibration(slot, 0, 0);	
-		}
-	}
-	
-}
-if (keyboard_check_pressed(ord("T"))) {
-	if (isAttacking) {
-		isAttacking = false;	
-	}
-	else {
-		isAttacking = true;	
-	}
-}
-// 
+
+// Set mask across all animations
 mask_index = spr_idle_left;
 // Movement code
 if (global.usingGamePad) {
 	key_right = sign(gamepad_axis_value(slot, gp_axislh));
+	//key_left = -gamepad_button_check(slot, gp_padl);
+	//key_right = gamepad_button_check(slot, gp_padr);
 	key_jump = gamepad_button_check_pressed(slot, gp_face1);
 }
 else { // Player is using the keyboard
@@ -180,6 +152,18 @@ if (!isAttacking) {
 }
 
 // =====================COMBAT CODE=======================
+// Handle per frame code dealing with combat
+if (stomping) {
+	player_grav = 50;
+	if (grounded) {
+		SlowSpeed(obj_player, 10, 0.5);
+		Shake(18, 30);
+		Zoom(768 * 0.5, 0.5);
+		if (global.usingGamePad) Rumble(0.8, 1.5);
+		player_grav = ori_player_grav;
+		stomping = false;
+	}
+}
 if (global.usingGamePad) {
 	// Basic Attack
 	if (gamepad_button_check(slot, gp_face3) && grounded && !isAttacking) {
@@ -193,29 +177,162 @@ if (global.usingGamePad) {
 		if (attackIndex == 0) {
 			show_debug_message("Attack index 0 entered");
 			if (faceRight) {
-				sprite_index = spr_attack1_right;	
+				sprite_index = spr_attack1_right;
+				if (!instance_exists(obj_lightBox)) {
+					instance_create_depth(x + lightHit_xRange, y + lightHit_yRange, 0, obj_lightBox);
+				}
+				else if (instance_exists(obj_lightBox)) {
+					instance_destroy(obj_lightBox);
+					instance_create_depth(x + lightHit_xRange, y + lightHit_yRange, 0, obj_lightBox);
+				}
 			}
 			else {
 				sprite_index = spr_attack1_left;
+				if (!instance_exists(obj_lightBox)) {
+					instance_create_depth(x - lightHit_xRange, y + lightHit_yRange, 0, obj_lightBox);
+				}
+				else if (instance_exists(obj_lightBox)) {
+					instance_destroy(obj_lightBox);
+					instance_create_depth(x - lightHit_xRange, y + lightHit_yRange, 0, obj_lightBox);
+				}
 			}
 		}
 		else if (attackIndex == 1) {
 			if (faceRight) {
-				sprite_index = spr_attack2_right;	
+				sprite_index = spr_attack2_right;
+				if (!instance_exists(obj_lightBox)) {
+					instance_create_depth(x + lightHit_xRange, y + lightHit_yRange, 0, obj_lightBox);
+				}
+				else if (instance_exists(obj_lightBox)) {
+					instance_destroy(obj_lightBox);
+					instance_create_depth(x + lightHit_xRange, y + lightHit_yRange, 0, obj_lightBox);
+				}
 			}
 			else {
-				sprite_index = spr_attack2_left;	
+				sprite_index = spr_attack2_left;
+				if (!instance_exists(obj_lightBox)) {
+					instance_create_depth(x - lightHit_xRange, y + lightHit_yRange, 0, obj_lightBox);
+				}
+				else if (instance_exists(obj_lightBox)) {
+					instance_destroy(obj_lightBox);
+					instance_create_depth(x - lightHit_xRange, y + lightHit_yRange, 0, obj_lightBox);
+				}
 			}
 			
 		}
 		else if (attackIndex == 2) {
 			if (faceRight) {
-				sprite_index = spr_attack3_right;	
+				sprite_index = spr_attack3_right;
+				if (!instance_exists(obj_lightBox)) {
+					instance_create_depth(x + lightHit_xRange, y + lightHit_yRange, 0, obj_lightBox);
+				}
+				else if (instance_exists(obj_lightBox)) {
+					instance_destroy(obj_lightBox);
+					instance_create_depth(x + lightHit_xRange, y + lightHit_yRange, 0, obj_lightBox);
+				}
 			}
 			else {
 				sprite_index = spr_attack3_left;
+				if (!instance_exists(obj_lightBox)) {
+					instance_create_depth(x - lightHit_xRange, y + lightHit_yRange, 0, obj_lightBox);
+				}
+				else if (instance_exists(obj_lightBox)) {
+					instance_destroy(obj_lightBox);
+					instance_create_depth(x - lightHit_xRange, y + lightHit_yRange, 0, obj_lightBox);
+				}
 			}
 		}
+	}
+	// Heavy Attack -- STOMP
+	if (gamepad_button_check_pressed(slot, gp_face4) && !grounded && !isAttacking && !stomping) {
+		stomping = true;
+		player_grav = ori_player_grav;
+		player_grav = 50;
+	}
+}
+else {
+	// Basic Attack
+	if (keyboard_check(ord("J")) && grounded && !isAttacking) {
+		show_debug_message("Attempting Attack");
+		isAttacking = true;
+		image_index = 0; // Reset the image index
+		// Start ktimer to reset combo
+		Shake(1, 10);
+		alarm[4] = attackDelay * room_speed;
+		if (attackIndex == 0) {
+			show_debug_message("Attack index 0 entered");
+			if (faceRight) {
+				sprite_index = spr_attack1_right;
+				if (!instance_exists(obj_lightBox)) {
+					instance_create_depth(x + lightHit_xRange, y + lightHit_yRange, 0, obj_lightBox);
+				}
+				else if (instance_exists(obj_lightBox)) {
+					instance_destroy(obj_lightBox);
+					instance_create_depth(x + lightHit_xRange, y + lightHit_yRange, 0, obj_lightBox);
+				}
+			}
+			else {
+				sprite_index = spr_attack1_left;
+				if (!instance_exists(obj_lightBox)) {
+					instance_create_depth(x - lightHit_xRange, y + lightHit_yRange, 0, obj_lightBox);
+				}
+				else if (instance_exists(obj_lightBox)) {
+					instance_destroy(obj_lightBox);
+					instance_create_depth(x - lightHit_xRange, y + lightHit_yRange, 0, obj_lightBox);
+				}
+			}
+		}
+		else if (attackIndex == 1) {
+			if (faceRight) {
+				sprite_index = spr_attack2_right;
+				if (!instance_exists(obj_lightBox)) {
+					instance_create_depth(x + lightHit_xRange, y + lightHit_yRange, 0, obj_lightBox);
+				}
+				else if (instance_exists(obj_lightBox)) {
+					instance_destroy(obj_lightBox);
+					instance_create_depth(x + lightHit_xRange, y + lightHit_yRange, 0, obj_lightBox);
+				}
+			}
+			else {
+				sprite_index = spr_attack2_left;
+				if (!instance_exists(obj_lightBox)) {
+					instance_create_depth(x - lightHit_xRange, y + lightHit_yRange, 0, obj_lightBox);
+				}
+				else if (instance_exists(obj_lightBox)) {
+					instance_destroy(obj_lightBox);
+					instance_create_depth(x - lightHit_xRange, y + lightHit_yRange, 0, obj_lightBox);
+				}
+			}
+			
+		}
+		else if (attackIndex == 2) {
+			if (faceRight) {
+				sprite_index = spr_attack3_right;
+				if (!instance_exists(obj_lightBox)) {
+					instance_create_depth(x + lightHit_xRange, y + lightHit_yRange, 0, obj_lightBox);
+				}
+				else if (instance_exists(obj_lightBox)) {
+					instance_destroy(obj_lightBox);
+					instance_create_depth(x + lightHit_xRange, y + lightHit_yRange, 0, obj_lightBox);
+				}
+			}
+			else {
+				sprite_index = spr_attack3_left;
+				if (!instance_exists(obj_lightBox)) {
+					instance_create_depth(x - lightHit_xRange, y + lightHit_yRange, 0, obj_lightBox);
+				}
+				else if (instance_exists(obj_lightBox)) {
+					instance_destroy(obj_lightBox);
+					instance_create_depth(x - lightHit_xRange, y + lightHit_yRange, 0, obj_lightBox);
+				}
+			}
+		}
+	}
+	// Heavy Attack -- STOMP
+	if (keyboard_check_pressed(ord("K")) && !grounded && !isAttacking && !stomping) {
+		stomping = true;
+		player_grav = ori_player_grav;
+		player_grav = 50;
 	}
 }
 
