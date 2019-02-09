@@ -6,7 +6,7 @@ show_debug_message(state);
 switch(state){
 	case("FOLLOW"):
 		if(obj_player.y < y - max_height) state = "PATH";
-		direct = obj_player.x - x;
+		direct = sign(obj_player.x - x);
 		hsp = direct * spd;
 		x += hsp;
 		break;

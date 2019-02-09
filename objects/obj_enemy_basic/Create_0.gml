@@ -15,4 +15,6 @@ if(instance_exists(obj_player))
 }
 else max_height = 0;
 
+depth = -10;
+
 show_debug_message("SCREATE");
