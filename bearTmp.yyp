@@ -143,6 +143,14 @@
             }
         },
         {
+            "Key": "0a65bf3a-ea9b-41b2-98da-3880bd88e55a",
+            "Value": {
+                "id": "bf008059-3913-441c-8ed0-81a93e12408f",
+                "resourcePath": "objects\\obj_musicCredit\\obj_musicCredit.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "0d6db881-d723-4c04-8676-1233fcd7445a",
             "Value": {
                 "id": "f0a09de8-30b1-42ea-b50a-f92326eefa46",
