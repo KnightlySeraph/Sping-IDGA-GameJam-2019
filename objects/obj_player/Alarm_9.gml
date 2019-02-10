@@ -5,3 +5,5 @@ isDashing = false;
 if (instance_exists(obj_dashBox)) {
 	instance_destroy(obj_dashBox);	
 }
+
+moveSpeed = maxSpeed;
