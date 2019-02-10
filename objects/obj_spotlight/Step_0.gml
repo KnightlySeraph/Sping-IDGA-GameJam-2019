@@ -28,6 +28,7 @@ else
 	}
 	if(place_meeting(x,y,obj_player)){
 		obj_player.spotHit = true;	
+		Shake(12,30);
 	}
 	vsp += grav;
 	y += vsp;
