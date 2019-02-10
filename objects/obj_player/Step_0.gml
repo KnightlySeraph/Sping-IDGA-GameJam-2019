@@ -254,6 +254,8 @@ if (global.usingGamePad) {
 		isAttacking = true;
 		// Change animation state
 		image_index = 0;
+		if (faceRight) AirBox(obj_player, 1);
+		else AirBox(obj_player, -1);
 		if (faceRight) STATE = STATES.AIR_ATTACK_RIGHT;
 		else STATE = STATES.AIR_ATTACK_LEFT;
 	}
