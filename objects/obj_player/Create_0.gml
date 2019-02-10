@@ -4,7 +4,7 @@ instance_create_depth(x, y, 0, STATES);
 STATE = STATES.IDLE;
 window_set_fullscreen(true);
 
-Connect();
+instance_create_depth(x, y, 0, Connecter); // Connects controller
 
 // ========================ALLOCATE GLOBALS=========================
 globalvar hitPointMax;
