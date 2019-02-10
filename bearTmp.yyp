@@ -1535,6 +1535,14 @@
             }
         },
         {
+            "Key": "d15aadfa-cfd2-4ded-9aeb-e40ff84c9347",
+            "Value": {
+                "id": "e34cfe14-3c07-4304-bba7-880c20a56d46",
+                "resourcePath": "sprites\\spr_go\\spr_go.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "d350a193-807d-44d6-baa3-1b7790292b2f",
             "Value": {
                 "id": "868d07c8-fff7-48ee-8e89-cd36db65df89",

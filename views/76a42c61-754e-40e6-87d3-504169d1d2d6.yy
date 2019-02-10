@@ -6,7 +6,8 @@
     "children": [
         "bd906cd2-8dc5-4ae3-bd93-6a579e5dafdd",
         "922a4b38-47f0-439f-bd65-aca83b3fea6d",
-        "ab2279ce-8dd5-4f5d-8c57-e0d06176b2d6"
+        "ab2279ce-8dd5-4f5d-8c57-e0d06176b2d6",
+        "d15aadfa-cfd2-4ded-9aeb-e40ff84c9347"
     ],
     "filterType": "GMSprite",
     "folderName": "Number",

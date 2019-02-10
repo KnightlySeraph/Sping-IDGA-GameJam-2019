@@ -8,5 +8,9 @@ else if (sprite_index == spr_two) {
 	alarm[0] = timer * room_speed;
 }
 else if (sprite_index == spr_one) {
+	sprite_index = spr_go;
+	alarm[0] = timer * room_speed;	
+}
+else {
 	alarm[1] = timer * room_speed;	
 }
