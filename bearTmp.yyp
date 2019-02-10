@@ -655,6 +655,14 @@
             }
         },
         {
+            "Key": "9a9cd076-f8ca-4717-846a-79b6e92e9fc3",
+            "Value": {
+                "id": "291b7c13-1b5c-404b-b73e-9de634f73a94",
+                "resourcePath": "objects\\obj_dashBox\\obj_dashBox.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "9f11bf33-6656-4771-8bc5-e1cede4d91fe",
             "Value": {
                 "id": "310165dc-fb32-475d-a2dd-c5ec50d6a560",

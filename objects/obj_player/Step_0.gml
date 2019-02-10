@@ -181,6 +181,12 @@ if (stomping) {
 	}
 }
 if (isDashing) {
+	if (instance_exists(obj_dashBox)) {
+		with (obj_dashBox) {
+			x = obj_player.x;
+			y = obj_player.y + 256;
+		}
+	}
 	if (image_index > 9 && image_index < 11) {
 		isAttacking = true;
 	}
@@ -286,6 +292,14 @@ if (global.usingGamePad) {
 	if (gamepad_button_check_pressed(slot, gp_face3) && grounded && !isDashing && (move == 1 || move == -1) && !isAttacking && !stomping && !firing) {
 		isDashing = true;	
 		alarm[9] = 2 * room_speed;
+		image_index = 0;
+		if (!instance_exists(obj_dashBox)) {
+			instance_create_depth(x, y + 256, 0, obj_dashBox);	
+		}
+		else {
+			instance_destroy(obj_dashBox);
+			instance_create_depth(x, y + 256, 0, obj_dashBox);
+		}
 		if (faceRight) {
 			sprite_index = spr_dashAttack_right;	
 		}
