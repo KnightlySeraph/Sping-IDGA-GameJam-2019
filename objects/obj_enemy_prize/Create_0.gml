@@ -4,11 +4,16 @@ state = "WALK";
 hsp = 0;
 vsp = 0;
 grav = 2;
-spd = 20;
+spd = 12;
 direct = -1;
 
-image_speed = 10;
+image_speed = 8;
 
 last_sprite = sprite_index;
 
 timer = 0;
+// DEath Variables
+hit = false;
+death_rot = 1;
+type = noone;
+combo = 0;

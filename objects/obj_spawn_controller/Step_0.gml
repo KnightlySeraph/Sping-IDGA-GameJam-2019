@@ -131,7 +131,7 @@ switch(stage){
 			else if(percentage <= 55) scr_spawnEnemies(obj_enemy_shield, irandom_range(1,shield_rate), spawners, 1 + (0.1 * difficulty));
 			else scr_spawnEnemies(obj_enemy_basic, irandom_range(1,basic_rate), spawners, 1 + (0.1 * difficulty));
 			
-			if(!instance_exists(obj_spotlight) && difficulty % 2 == 0) scr_spawnEnemies(obj_spotlight, irandom_range(1,light_rate), spotlights, 1);
+			if(!instance_exists(obj_spotlight) && percentage % 5 == 0) scr_spawnEnemies(obj_spotlight, irandom_range(1,light_rate), spotlights, 1);
 		}
 		if(timer % (10 * second) == 0)
 		{

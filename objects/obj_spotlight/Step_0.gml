@@ -1,4 +1,4 @@
-image_index = direct;
+image_xscale = direct;
 
 if(rocking){
 	timer += 1;
