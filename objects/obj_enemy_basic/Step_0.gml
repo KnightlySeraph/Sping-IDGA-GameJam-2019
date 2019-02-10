@@ -29,7 +29,6 @@ switch(state){
 		break;
 		
 	case("ATTACK"):
-		//REPLACE WITH ACTUAL ATTACK CODE LATER
 		if(attacking) {
 			sprite_index = spr_enemy_basic_attack;
 		}

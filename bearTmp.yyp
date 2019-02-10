@@ -311,6 +311,14 @@
             }
         },
         {
+            "Key": "3e4648cd-5635-432b-a406-766fdbbe55c1",
+            "Value": {
+                "id": "e12a030e-16ff-4c1c-bc9d-0dfe69bb10c2",
+                "resourcePath": "sprites\\spr_enemy_health_dead\\spr_enemy_health_dead.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "3f8139f9-9a51-4628-8768-61bc86ea6880",
             "Value": {
                 "id": "5622ee8e-5940-4ad4-a6e8-7f8bdf3d3a36",
@@ -395,6 +403,14 @@
             "Value": {
                 "id": "9c854576-68ef-42a0-8507-5eb1872aeded",
                 "resourcePath": "sprites\\spr_idle_left\\spr_idle_left.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "5153affb-3dad-4f0f-8a5d-e87a09bc2707",
+            "Value": {
+                "id": "16ea2906-7dc0-4549-a549-8c1fb1d4dda5",
+                "resourcePath": "sprites\\spr_enemy_flying_attack\\spr_enemy_flying_attack.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -604,6 +620,14 @@
                 "id": "e829617f-22be-4aeb-943f-5207a8f88818",
                 "resourcePath": "views\\8e2e6824-92c1-4c69-8544-20c7869c77c4.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "8f06a82e-9cf1-4216-afa6-75e245fe7c93",
+            "Value": {
+                "id": "510c321e-7c03-488f-8855-9a87da0d4e97",
+                "resourcePath": "sprites\\spr_enemy_health_fall\\spr_enemy_health_fall.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
