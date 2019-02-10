@@ -249,6 +249,14 @@ if (global.usingGamePad) {
 			}
 		}
 	}
+	// Arial Attack
+	if (gamepad_button_check_pressed(slot, gp_face3) && !grounded && !stomping && !isAttacking) {
+		isAttacking = true;
+		// Change animation state
+		image_index = 0;
+		if (faceRight) STATE = STATES.AIR_ATTACK_RIGHT;
+		else STATE = STATES.AIR_ATTACK_LEFT;
+	}
 	// Heavy Attack -- STOMP
 	if (gamepad_button_check_pressed(slot, gp_face4) && !grounded && !isAttacking && !stomping) {
 		isAttacking = true;
@@ -365,9 +373,13 @@ if (STATE = STATES.DASH_ATTACK_RIGHT) {
 if (STATE = STATES.DIVE_RIGHT) {
 	sprite_index = spr_dive_right;	
 }
-
 if (STATE = STATES.DIVE_LEFT) {
 	sprite_index = spr_dive_left;	
 }
-
+if (STATE = STATES.AIR_ATTACK_LEFT) {
+	sprite_index = spr_air_left;	
+}
+if (STATE = STATES.AIR_ATTACK_RIGHT) {
+	sprite_index = spr_air_right;	
+}
 

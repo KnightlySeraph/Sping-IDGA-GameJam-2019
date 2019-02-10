@@ -45,3 +45,7 @@ if (sprite_index == spr_dashAttack_left || sprite_index == spr_dashAttack_right)
 if (sprite_index == spr_groundPound_left || sprite_index == spr_groundPound_right) {
 	isAttacking = false;	
 }
+
+if (sprite_index == spr_air_right || sprite_index == spr_air_left) {
+	isAttacking = false;	
+}
