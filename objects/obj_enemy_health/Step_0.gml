@@ -1,8 +1,11 @@
 if(instance_exists(obj_player))
 {
+	
+mask_index = spr_enemy_health;
 
 switch(state){
 	case("WALK"):
+		sprite_index = spr_enemy_health;
 		if(place_meeting(x,y,obj_floor)) instance_destroy();
 		if(!place_meeting(x, y+1, obj_floor)) state = "FALL";
 		hsp = direct * spd;
@@ -10,6 +13,7 @@ switch(state){
 		break;
 		
 	case("FALL"):
+		sprite_index = spr_enemy_health_fall;
 		if (place_meeting(x, y + vsp, obj_floor)){
 			while(!place_meeting(x, y+sign(vsp), obj_floor)){
 				y += sign(vsp);	
@@ -24,7 +28,7 @@ switch(state){
 		break;
 		
 	case("DEATH"):
-		sprite_index = spr_enemy_basic_dead;
+		sprite_index = spr_enemy_health_dead;
 		scr_enemyDeath(self);
 		break;
 }

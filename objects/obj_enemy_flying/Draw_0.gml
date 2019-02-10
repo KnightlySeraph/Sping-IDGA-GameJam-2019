@@ -1,9 +1,9 @@
 
 if(state != "DEATH")
 {
-	tipDist = point_distance(x, y, x, 0);
+	tipDist = point_distance(x, y - 30, x, 0);
 	spr_width = sprite_get_height(spr_rope) * 0.2;
-	angle_player = point_direction(x, y, x, 0);
+	angle_player = point_direction(x, y - 30, x, 0);
 	num = tipDist / spr_width;
 	gap = tipDist/num;
 	for(i = 0; i < num; i++){
