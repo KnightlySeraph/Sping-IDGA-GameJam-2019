@@ -135,6 +135,14 @@
             }
         },
         {
+            "Key": "0eeda969-2139-48d0-9fd4-52972221af18",
+            "Value": {
+                "id": "59705f78-9b6b-4a65-9d53-4b183d8e3916",
+                "resourcePath": "scripts\\AirBox\\AirBox.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "124a9a0f-d609-452a-8342-387b30303329",
             "Value": {
                 "id": "3c3575c2-2e03-40ef-87db-50f047ef3cdf",
@@ -1461,7 +1469,8 @@
         "3376d47f-2441-4bea-954f-3c06cd8da28c",
         "14959705-3bac-42d5-aa7b-003e16b26174",
         "dad1652e-01ed-4d12-9629-68a8791158f5",
-        "4d5a8ecf-4cd7-4a19-b7dd-7d5002ccd9c6"
+        "4d5a8ecf-4cd7-4a19-b7dd-7d5002ccd9c6",
+        "0eeda969-2139-48d0-9fd4-52972221af18"
     ],
     "tutorial": ""
 }
