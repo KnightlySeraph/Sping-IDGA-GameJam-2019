@@ -4,7 +4,16 @@
     "mvc": "1.0",
     "name": "obj_fold_3",
     "eventList": [
-        
+        {
+            "id": "f9327520-18ed-4b35-8247-2ef84087fe01",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
+            "enumb": 0,
+            "eventtype": 0,
+            "m_owner": "a4ef9d9a-7836-4eee-901d-c897c769e7aa"
+        }
     ],
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",
     "overriddenProperties": null,
