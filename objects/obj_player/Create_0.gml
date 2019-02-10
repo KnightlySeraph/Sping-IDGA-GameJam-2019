@@ -81,3 +81,9 @@ laserRight = false;
 laserLeft = false;
 
 
+// Taking Damage
+invincible = false;
+invince_timer = 0;
+invince_max = room_speed * 1.5;
+spotHit = false;
+
