@@ -5,7 +5,7 @@ y += (yTo - y) / 10;
 x=clamp(x,0+(width/2),room_width-(width/2));
 y=clamp(y,0+(height/2),room_height-(height/2));
 
-if (keyboard_check_pressed(ord("O"))) show_message("Height, Width: (" + string(height) + ", " + string(width) +")");
+//if (keyboard_check_pressed(ord("O"))) show_message("Height, Width: (" + string(height) + ", " + string(width) +")");
 
 
 //As long as player following  is following the player
