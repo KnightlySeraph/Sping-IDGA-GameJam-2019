@@ -503,6 +503,14 @@
             }
         },
         {
+            "Key": "468b0123-9ffd-4db9-b464-fc401919a629",
+            "Value": {
+                "id": "1ce90ce9-845f-48cb-9b90-e313ada95191",
+                "resourcePath": "sounds\\Italy_Jr\\Italy_Jr.yy",
+                "resourceType": "GMSound"
+            }
+        },
+        {
             "Key": "4aa27852-bd62-45e1-96d7-87c0381d3999",
             "Value": {
                 "id": "aa421e07-b9b1-4bec-b023-35a452a1013f",
@@ -1436,6 +1444,14 @@
                 "id": "9173272c-add2-4997-8fe0-e63331927cd7",
                 "resourcePath": "sprites\\spr_fold_2\\spr_fold_2.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "ef9adf1f-9bc1-4519-a22f-021175b173a9",
+            "Value": {
+                "id": "62de640a-c86c-49c8-b64a-0f24463c5f37",
+                "resourcePath": "sounds\\Spazmatic_Polka\\Spazmatic_Polka.yy",
+                "resourceType": "GMSound"
             }
         },
         {
