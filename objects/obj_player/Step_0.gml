@@ -16,6 +16,8 @@ else if (keyboard_check_pressed(vk_f11)) {
 	window_set_fullscreen(true);	
 }
 
+// Quit game and stuff
+
 // Set mask across all animations
 mask_index = spr_idle_left;
 // Movement code
