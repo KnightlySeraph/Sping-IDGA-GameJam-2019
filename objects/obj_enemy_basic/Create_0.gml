@@ -14,7 +14,7 @@ dead = false;
 
 if(instance_exists(obj_player))
 {
-	max_height = obj_player.sprite_height * 1.5;
+	max_height = 300;
 }
 else max_height = 0;
 
