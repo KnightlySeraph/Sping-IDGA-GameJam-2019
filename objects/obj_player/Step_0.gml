@@ -390,10 +390,11 @@ else {
 		}
 	}
 	// Dash Attack
-	if (keyboard_check_pressed(ord("J")) && grounded && !isDashing && (move == 1 || move == -1) && !isAttacking && !stomping && !firing) {
+	if (keyboard_check_pressed(ord("L")) && grounded && !isDashing && (move == 1 || move == -1) && !isAttacking && !stomping && !firing) {
 		isDashing = true;	
 		alarm[9] = 2 * room_speed;
 		image_index = 0;
+		moveSpeed *= 2;
 		if (faceRight) {
 			STATE = STATES.DASH_ATTACK_RIGHT;
 		}
