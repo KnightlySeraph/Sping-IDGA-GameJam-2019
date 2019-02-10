@@ -5,7 +5,8 @@ if (gamepad_button_check_pressed(slot, gp_select)) {
 	//show_message("Total Index of idle is: " + string(sprite_get_number(spr_idle_left)));	
 	// show_message("Image Index is: " + string(image_index) + " Move is Set to: " + string(move) + " isDashing is set to: " + string(isDashing));
 	// if (sprite_index == spr_attack2_left) show_message("Current sprite: " + string(sprite_index));
-	show_message("isAttacking is: " + string(isAttacking) + " Basic attack index: " + string(attackIndex) + " isDashing is: " + string(isDashing));
+	//show_message("isAttacking is: " + string(isAttacking) + " Basic attack index: " + string(attackIndex) + " isDashing is: " + string(isDashing));
+	show_message("STATE: " + string(STATE));
 }
 // Set mask across all animations
 mask_index = spr_idle_left;
@@ -24,8 +25,8 @@ else { // Player is using the keyboard
 
 move = key_right + key_left
 
-// Set ground movement animations
-if (!isAttacking && grounded && !isDashing) {
+// Set animation state based on move var, animation cannot be accessed while the player is considered to be attacking
+if (grounded && !isAttacking) {
 	if (move == 0) {
 		STATE = STATES.IDLE;
 	}
@@ -99,8 +100,9 @@ if (grounded) {
 	// Reset jump
 	if (!jump1) {
 		jump1 = true;
-	}
-	
+	}	
+}
+else if (!grounded) {
 	// Change player animation to fall unless doing airial attack
 	if (!stomping) { // Set an animation state
 		if (faceRight) STATE = STATES.FALL_RIGHT;
