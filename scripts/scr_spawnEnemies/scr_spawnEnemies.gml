@@ -39,4 +39,6 @@ for(i = 0; i < number; i++)
 	enemy = instance_create_depth(spawns[random_num].x, spawns[random_num].y, depth, enemyType);
 	enemy.direct = spawns[random_num].direct;
 	enemy.spd = enemy.spd * spd;
+	enemy.depth = -1;
+	bannedNumbers = noone;
 }

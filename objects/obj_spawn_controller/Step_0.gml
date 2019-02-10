@@ -131,7 +131,7 @@ switch(stage){
 			else if(percentage <= 55) scr_spawnEnemies(obj_enemy_shield, irandom_range(1,3), spawners, 1);
 			else scr_spawnEnemies(obj_enemy_basic, irandom_range(1,3), spawners, 1);
 			
-			scr_spawnEnemies(obj_spotlight, 1, spotlights, 1);
+			if(!instance_exists(obj_spotlight)) scr_spawnEnemies(obj_spotlight, 1, spotlights, 1);
 		}
 		break;
 		
