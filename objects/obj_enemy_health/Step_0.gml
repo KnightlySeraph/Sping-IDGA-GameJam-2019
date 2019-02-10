@@ -42,7 +42,7 @@ if (last_sprite != sprite_index)
 }
 
 
-if(place_meeting(x,y,obj_lightBox) || place_meeting(x,y,obj_stompBox)) {
+if(place_meeting(x,y,obj_lightBox) || place_meeting(x,y,obj_stompBox) || place_meeting(x,y,obj_airBox) || place_meeting(x,y,obj_dashBox) || place_meeting(x,y,obj_laserBox)) {
 	state = "DEATH";
 }
 
