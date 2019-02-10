@@ -173,7 +173,11 @@ if (stomping) {
 			instance_destroy(obj_stompBox);
 			instance_create_depth(x, y + 216, 0, obj_stompBox);
 		}
-		isAttacking = false;
+		// Set the pound animation state
+		// isPounding = true;
+		image_index = 0;
+		if (faceRight) STATE = STATES.POUND_RIGHT;
+		else STATE = STATES.POUND_LEFT;
 	}
 }
 if (isDashing) {
