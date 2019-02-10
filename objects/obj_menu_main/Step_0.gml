@@ -41,4 +41,11 @@ else if(!main_control)
 		// show_debug_message("Curtains drop");
 		curtains.y += 5;
 	}
+	else if(curtains.y >= 1080)
+	{
+		if(!instance_exists(obj_roomTransition))
+		{
+			var tempRoomFade = instance_create_depth(x,y, -1000, obj_roomTransition);
+		}
+	}
 }
