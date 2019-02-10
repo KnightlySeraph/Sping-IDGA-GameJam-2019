@@ -3,7 +3,9 @@
 // Attmpt to slow game
 if (gamepad_button_check_pressed(slot, gp_select)) {
 	//show_message("Total Index of idle is: " + string(sprite_get_number(spr_idle_left)));	
-	show_message("Image Index is: " + string(image_index) + " Move is Set to: " + string(move) + " isDashing is set to: " + string(isDashing));
+	// show_message("Image Index is: " + string(image_index) + " Move is Set to: " + string(move) + " isDashing is set to: " + string(isDashing));
+	// if (sprite_index == spr_attack2_left) show_message("Current sprite: " + string(sprite_index));
+	show_message("isAttacking is: " + string(isAttacking) + " Basic attack index: " + string(attackIndex) + " isDashing is: " + string(isDashing));
 }
 // Set mask across all animations
 mask_index = spr_idle_left;
@@ -179,9 +181,24 @@ if (stomping) {
 	}
 }
 if (isDashing) {
+	if (instance_exists(obj_dashBox)) {
+		with (obj_dashBox) {
+			x = obj_player.x;
+			y = obj_player.y + 256;
+		}
+	}
 	if (image_index > 9 && image_index < 11) {
+		// Do some special effects
+		Rumble(0.6, 0.7);
+		Shake(6, 30);
 		isAttacking = true;
 	}
+}
+// Fix infinite attack comboing
+if (attackIndex > 2) {
+	attackIndex = 0;
+	isDashing = false;
+	sprite_index = spr_idle_left;
 }
 if (global.usingGamePad) {
 	// Basic Attack
@@ -275,8 +292,17 @@ if (global.usingGamePad) {
 		}
 	}
 	// Dash Attack
-	if (gamepad_button_check_pressed(slot, gp_face3) && grounded && !isDashing && (move == 1 || move == -1)) {
+	if (gamepad_button_check_pressed(slot, gp_face3) && grounded && !isDashing && (move == 1 || move == -1) && !isAttacking && !stomping && !firing) {
 		isDashing = true;	
+		alarm[9] = 2 * room_speed;
+		image_index = 0;
+		if (!instance_exists(obj_dashBox)) {
+			instance_create_depth(x, y + 256, 0, obj_dashBox);	
+		}
+		else {
+			instance_destroy(obj_dashBox);
+			instance_create_depth(x, y + 256, 0, obj_dashBox);
+		}
 		if (faceRight) {
 			sprite_index = spr_dashAttack_right;	
 		}

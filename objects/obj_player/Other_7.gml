@@ -31,7 +31,13 @@ if (sprite_index == spr_laser_left || sprite_index == spr_laser_right) {
 	isFiring = false;
 }
 
-if (sprite_index = spr_dashAttack_left || sprite_index = spr_dashAttack_right) {
+if (sprite_index == spr_dashAttack_left || sprite_index == spr_dashAttack_right) {
+	//show_message("Ending dash animation");
 	isAttacking = false;	
 	isDashing = false;
+	
+	// Delete hitBox
+	if (instance_exists(obj_dashBox)) {
+		instance_destroy(obj_dashBox);	
+	}
 }
