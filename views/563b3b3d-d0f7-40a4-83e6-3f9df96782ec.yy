@@ -7,7 +7,8 @@
         "f2e031be-84c7-4676-b090-05b8e1a6af9e",
         "75b0568c-cbf9-438c-a596-59a0e738ff96",
         "941a6229-0f60-4a83-a2a7-ed2af3d4989c",
-        "09078d1a-b85b-496d-9c59-9dbfe4ad9e76"
+        "09078d1a-b85b-496d-9c59-9dbfe4ad9e76",
+        "2f3df6b7-c847-43b5-b62d-c6cd6866648a"
     ],
     "filterType": "GMRoom",
     "folderName": "Menu Rooms",
