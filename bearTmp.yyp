@@ -1207,6 +1207,14 @@
             }
         },
         {
+            "Key": "e1b2a3d8-1d51-4409-8618-e0c422e6b147",
+            "Value": {
+                "id": "0a954098-f8dc-47a6-a8c3-3db6d03885f3",
+                "resourcePath": "sprites\\spr_stagelight\\spr_stagelight.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "e4e0c171-3738-42c0-b166-1c48b0e23e8f",
             "Value": {
                 "id": "c7b0813d-755e-4641-84ec-eb67cf2a832d",
