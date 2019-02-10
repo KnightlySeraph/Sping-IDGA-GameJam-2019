@@ -61,6 +61,7 @@ firing = false;
 isDashing = false;
 player_vsp = 0;
 isPounding = false;
+dying = false;
 
 camLerp = 0.01;
 

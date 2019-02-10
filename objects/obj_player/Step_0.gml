@@ -8,6 +8,15 @@ if (gamepad_button_check_pressed(slot, gp_select)) {
 	//show_message("isAttacking is: " + string(isAttacking) + " Basic attack index: " + string(attackIndex) + " isDashing is: " + string(isDashing));
 	// show_message("STATE: " + string(STATE));
 }
+// Player death
+if (hitPoints <= 0) {
+	dying = true;	
+	stomping = false;
+	isDashing = false;
+	isAttacking = false;
+	if (faceRight) STATE = STATES.DEATH_RIGHT;
+	else STATE = STATES.DEATH_LEFT;
+}
 
 // Set mask across all animations
 mask_index = spr_idle_left;
@@ -27,7 +36,7 @@ else { // Player is using the keyboard
 move = key_right + key_left
 
 // Set animation state based on move var, animation cannot be accessed while the player is considered to be attacking
-if (grounded && !isAttacking  && !isDashing) {
+if (grounded && !isAttacking  && !isDashing && !dying) {
 	if (move == 0) {
 		if (faceRight) STATE = STATES.IDLE_RIGHT;
 		else STATE = STATES.IDLE;
@@ -54,7 +63,7 @@ player_hsp = move * moveSpeed;
 
 // Jump Code
 // Disallow jumps when attacking
-if (!isAttacking) {
+if (!isAttacking && !dying) {
 	if (key_jump && jump2) {
 		isJumping = true;
 		// Set the correct animation state
@@ -107,7 +116,7 @@ if (grounded) {
 }
 else if (!grounded) {
 	// Change player animation to fall unless doing airial attack
-	if (!stomping && player_vsp > 0 && !isAttacking) { // Set an animation state
+	if (!stomping && player_vsp > 0 && !isAttacking && !dying) { // Set an animation state
 		if (faceRight) STATE = STATES.FALL_RIGHT;
 		else STATE = STATES.FALL_LEFT;
 	}
@@ -473,6 +482,12 @@ if (STATE = STATES.AIR_ATTACK_LEFT) {
 }
 if (STATE = STATES.AIR_ATTACK_RIGHT) {
 	sprite_index = spr_air_right;	
+}
+if (STATE = STATES.DEATH_RIGHT) {
+	sprite_index = spr_perish_right;	
+}
+if (STATE = STATES.DEATH_LEFT) {
+	sprite_index = spr_perish_left;	
 }
 
 
