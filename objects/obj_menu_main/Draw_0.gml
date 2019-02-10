@@ -21,6 +21,12 @@ if(main_exists)
 	}
 }
 
+if(draw_credits)
+{
+	draw_sprite(spr_cutrain_cast, 1, 0, 0);
+	show_debug_message("Draw cast");
+}
+
 if(play_transition)
 {
 	draw_set_color(c_black);

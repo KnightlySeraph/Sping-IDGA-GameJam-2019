@@ -8,6 +8,7 @@ if(option_fadeAlpha == 1)
 if(option_fadeAlpha == 0 && option_fadeState == -1)
 {
 	instance_destroy();
+	show_debug_message("Transition over");
 	draw_set_alpha(1);
 }
 if(instance_exists(self))

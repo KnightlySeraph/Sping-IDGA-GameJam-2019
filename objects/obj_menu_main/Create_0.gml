@@ -12,6 +12,10 @@ main_hover = false;
 main_lightup = false;
 play_transition = false;
 
+draw_credits = false;
+
+castTransition = noone;
+
 light_horizontal_radius = 170;
 light_vertical_radius = 95;
 
