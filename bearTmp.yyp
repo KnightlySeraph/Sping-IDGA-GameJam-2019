@@ -799,6 +799,14 @@
             }
         },
         {
+            "Key": "9ddc53d1-7c6e-4ae5-8036-5d605518a49a",
+            "Value": {
+                "id": "ae42c819-7b5f-41f5-b388-bacfcc530ac2",
+                "resourcePath": "objects\\obj_curtains_level_top\\obj_curtains_level_top.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "9f11bf33-6656-4771-8bc5-e1cede4d91fe",
             "Value": {
                 "id": "310165dc-fb32-475d-a2dd-c5ec50d6a560",
