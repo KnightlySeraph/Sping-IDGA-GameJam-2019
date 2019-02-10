@@ -114,7 +114,7 @@ if (grounded) {
 }
 else if (!grounded) {
 	// Change player animation to fall unless doing airial attack
-	if (!stomping && player_vsp > 0) { // Set an animation state
+	if (!stomping && player_vsp > 0 && !isAttacking) { // Set an animation state
 		if (faceRight) STATE = STATES.FALL_RIGHT;
 		else STATE = STATES.FALL_LEFT;
 	}
@@ -151,8 +151,8 @@ if (place_meeting(x, y + player_vsp, obj_floor)){
 // Move the player if they are allowed to move
 if (!isAttacking) {
 	x += player_hsp;
-	y += player_vsp;
 }
+y += player_vsp;
 
 // =====================COMBAT CODE=======================
 // Handle per frame code dealing with combat
@@ -173,6 +173,11 @@ if (stomping) {
 			instance_destroy(obj_stompBox);
 			instance_create_depth(x, y + 216, 0, obj_stompBox);
 		}
+		// Set the pound animation state
+		// isPounding = true;
+		image_index = 0;
+		if (faceRight) STATE = STATES.POUND_RIGHT;
+		else STATE = STATES.POUND_LEFT;
 	}
 }
 if (isDashing) {
@@ -246,14 +251,13 @@ if (global.usingGamePad) {
 	}
 	// Heavy Attack -- STOMP
 	if (gamepad_button_check_pressed(slot, gp_face4) && !grounded && !isAttacking && !stomping) {
-		stomping = true;
-		player_grav = ori_player_grav;
-		player_grav = 50;
+		isAttacking = true;
+		alarm[10] = room_speed * 0.5;
 		if (faceRight) {
-			STATE = STATES.POUND_RIGHT;
+			STATE = STATES.DIVE_RIGHT;
 		}
 		else {
-			STATE = STATES.POUND_LEFT;
+			STATE = STATES.DIVE_LEFT;
 		}
 	}
 	// Heavy Attack -- LASER
@@ -358,4 +362,12 @@ if (STATE = STATES.DASH_ATTACK_LEFT) {
 if (STATE = STATES.DASH_ATTACK_RIGHT) {
 	sprite_index = spr_dashAttack_right;	
 }
+if (STATE = STATES.DIVE_RIGHT) {
+	sprite_index = spr_dive_right;	
+}
+
+if (STATE = STATES.DIVE_LEFT) {
+	sprite_index = spr_dive_left;	
+}
+
 
