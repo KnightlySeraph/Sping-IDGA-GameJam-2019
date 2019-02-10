@@ -72,6 +72,8 @@ if (key_jump && jump2) {
 	}
 	// Control the length of the jump
 	alarm[0] = room_speed * jumpLength;
+	
+	// Implements double jump
 	if (jump1) {
 		jump1 = false;	
 	}
@@ -80,18 +82,10 @@ if (key_jump && jump2) {
 	}
 	
 }
-if (gamepad_button_check(slot, gp_padd)) {
-	show_debug_message("Image Index is: " + string(image_index));	
-}
 
 // Set grounded var
 if (place_meeting(x, y + 1, obj_floor) && !isJumping) {
 	grounded = true;
-	// Reset jump animation vars
-	jump1right = false;
-	jump1left = false;
-	jump2right = false;
-	jump2left = false;
 	// Reset jumps
 	jump1 = true;
 	jump2 = true;
@@ -108,9 +102,9 @@ if (grounded) {
 	}
 	
 	// Change player animation to fall unless doing airial attack
-	if (!stomping) {
-		if (faceRight) sprite_index = spr_fall_right;
-		else sprite_index = spr_fall_left;
+	if (!stomping) { // Set an animation state
+		if (faceRight) STATE = STATES.FALL_RIGHT;
+		else STATE = STATES.FALL_LEFT;
 	}
 }
 
@@ -410,31 +404,52 @@ else {
 }
 
 //===================ANIMATION HANDLER=====================
-if (!isAttacking && !isDashing) {
-	if (grounded) {
-		if (idling) {
-		sprite_index = spr_idle_left;	
-		}
-		if (moveRight) {
-			sprite_index = spr_run_right;	
-		}
-		if (moveLeft) {
-			sprite_index = spr_run_left;
-		}	
-	}
-	if (jump1left) {
-		sprite_index = spr_jump1_left;
-	}	
-	if (jump1right) {
-		sprite_index = spr_jump1_right;
-	}	
-	if (jump2left) {
-		sprite_index = spr_jump2_left;
-	}
-	if (jump2right) {
-		sprite_index = spr_jump2_right;
-	}	
+if (STATE = STATES.IDLE) {
+	sprite_index = spr_idle_left;	
 }
-
-
+if (STATE = STATES.RUN_LEFT) {
+	sprite_index = spr_run_left;	
+}
+if (STATE = STATES.RUN_RIGHT) {
+	sprite_index = spr_run_right;	
+}
+if (STATE = STATES.FALL_LEFT) {
+	sprite_index = spr_fall_left;	
+}
+if (STATE = STATES.FALL_RIGHT) {
+	sprite_index = spr_fall_right;	
+}
+if (STATE = STATES.IDLE) {
+	sprite_index = spr_idle_left;	
+}
+if (STATE = STATES.IDLE) {
+	sprite_index = spr_idle_left;	
+}
+if (STATE = STATES.IDLE) {
+	sprite_index = spr_idle_left;	
+}
+if (STATE = STATES.IDLE) {
+	sprite_index = spr_idle_left;	
+}
+if (STATE = STATES.IDLE) {
+	sprite_index = spr_idle_left;	
+}
+if (STATE = STATES.IDLE) {
+	sprite_index = spr_idle_left;	
+}
+if (STATE = STATES.IDLE) {
+	sprite_index = spr_idle_left;	
+}
+if (STATE = STATES.IDLE) {
+	sprite_index = spr_idle_left;	
+}
+if (STATE = STATES.IDLE) {
+	sprite_index = spr_idle_left;	
+}
+if (STATE = STATES.IDLE) {
+	sprite_index = spr_idle_left;	
+}
+if (STATE = STATES.IDLE) {
+	sprite_index = spr_idle_left;	
+}
 
