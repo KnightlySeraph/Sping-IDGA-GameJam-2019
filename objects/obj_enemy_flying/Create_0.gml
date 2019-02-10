@@ -26,6 +26,8 @@ damage_box = noone;
 updown = 1;
 updown_speed = 0.5;
 updown_time = 0;
+target_x = x;
+target_y = y;
 
 // DEath Variables
 hit = false;

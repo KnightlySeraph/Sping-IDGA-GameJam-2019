@@ -11,6 +11,21 @@ switch(state){
 			updown = -updown;
 		}
 		y += updown * updown_speed;
+		
+		target_x = obj_player.x - (direct * 168);
+		target_y = obj_player.y + 140;
+		
+		direction = point_direction(x,y,target_x, target_y);
+		
+		if(abs(obj_player.x - x) < 172 && y > obj_player.y + 130 && y < obj_player.y + 160){
+			speed = 0;	
+			// state = "ATTACK";
+		}
+		else
+		{
+			speed = spd;	
+		}
+		
 		break;
 		
 	case("ATTACK"):
@@ -39,19 +54,24 @@ if(state != "DEATH")
 		}
 		else hsp = sign(x - obj_player.x) * maxSpeed;	
 	}
-	else hsp = 0; //DELETE THIS LATER OR ELSE
-	//SERIOSLY
-	//DONT FORGET
+	else hsp = 0;
 
 	if (place_meeting(x + hsp, y, obj_floor)){
 		while(!place_meeting(x+sign(hsp), y, obj_floor)){
 			x += sign(hsp);	
 		}
 		hsp = 0;
-		if(!place_meeting(x,y,obj_player)) direct = -direct;
 	}
+	
+	direct = sign(obj_player.x - x);
 
 	x += hsp;
+	y += vsp;
+}
+
+if(state != "FOLLOW")
+{
+	speed = 0;	
 }
 
 if (last_sprite != sprite_index)
