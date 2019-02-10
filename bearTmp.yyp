@@ -247,6 +247,14 @@
             }
         },
         {
+            "Key": "1e28b97e-9c0d-4e8e-b345-43f24747e2c6",
+            "Value": {
+                "id": "7f1703eb-b4ec-42de-859d-35923433837e",
+                "resourcePath": "sprites\\spr_enemy_shield_dead\\spr_enemy_shield_dead.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "1ea9eec4-5baa-44d5-a635-67cbba7e2852",
             "Value": {
                 "id": "cddb8ac8-fc1a-4aa4-bb98-c1c56f6b99ee",
