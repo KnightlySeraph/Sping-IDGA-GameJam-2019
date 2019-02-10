@@ -415,6 +415,14 @@
             }
         },
         {
+            "Key": "3d6fafe8-42b9-48a3-a7cc-b32b8b4ebee2",
+            "Value": {
+                "id": "227022d8-8229-4619-9492-153615debe2b",
+                "resourcePath": "views\\3d6fafe8-42b9-48a3-a7cc-b32b8b4ebee2.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "3dfb6fe0-365e-450b-9b04-12009cc63202",
             "Value": {
                 "id": "257013ac-ff23-4a6e-bcf0-7552fc446210",
@@ -628,6 +636,14 @@
                 "id": "7f4788f8-bf8a-4bbb-805a-e627e38c1efd",
                 "resourcePath": "views\\5dc1b4a7-539d-4c65-89bf-9b7bef6f2690.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "612d0ce2-180b-4ef2-945b-63f8efef94ed",
+            "Value": {
+                "id": "6d52ff39-b8be-4020-b9ca-00b7cd83694e",
+                "resourcePath": "objects\\obj_soundController\\obj_soundController.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -1100,6 +1116,14 @@
                 "id": "eae23306-7244-4c2c-b81e-10632535c333",
                 "resourcePath": "sprites\\spr_enemy_basic_attack\\spr_enemy_basic_attack.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "b9f0800d-2e65-451a-bbd0-20aedfd70bb1",
+            "Value": {
+                "id": "bfd5e957-be9a-448a-9ee8-56c548abb72c",
+                "resourcePath": "sounds\\Run_Amok\\Run_Amok.yy",
+                "resourceType": "GMSound"
             }
         },
         {
