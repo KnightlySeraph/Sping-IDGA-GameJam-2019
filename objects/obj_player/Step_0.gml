@@ -188,6 +188,9 @@ if (isDashing) {
 		}
 	}
 	if (image_index > 9 && image_index < 11) {
+		// Do some special effects
+		Rumble(0.6, 0.7);
+		Shake(6, 30);
 		isAttacking = true;
 	}
 }
