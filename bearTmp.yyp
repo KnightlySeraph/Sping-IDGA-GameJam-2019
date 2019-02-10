@@ -1031,6 +1031,14 @@
             }
         },
         {
+            "Key": "c7085003-2cad-4910-ad6a-e5b3aeabce31",
+            "Value": {
+                "id": "b4c25830-3538-499b-acc6-2e91042835e3",
+                "resourcePath": "sprites\\spr_enemy_shield\\spr_enemy_shield.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "c9372efd-0211-4d7a-ad0b-118150ffec3d",
             "Value": {
                 "id": "2b0fab26-3117-4e01-bb2f-0ec692dd6338",
