@@ -1103,6 +1103,14 @@
             }
         },
         {
+            "Key": "e0f5a07b-65f8-4d07-911e-cc46e0cafed0",
+            "Value": {
+                "id": "156bfe3f-17b5-4c0a-9cc7-14a4b50042e7",
+                "resourcePath": "sprites\\spr_idle_right\\spr_idle_right.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "e4e0c171-3738-42c0-b166-1c48b0e23e8f",
             "Value": {
                 "id": "c7b0813d-755e-4641-84ec-eb67cf2a832d",
