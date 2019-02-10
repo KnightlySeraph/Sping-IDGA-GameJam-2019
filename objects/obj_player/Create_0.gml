@@ -88,3 +88,6 @@ invince_timer = 0;
 invince_max = room_speed * 1.5;
 spotHit = false;
 
+//SPEED
+speed_timer = 0;
+

@@ -507,3 +507,18 @@ if(invincible) {
 else {
 	image_alpha = 1;	
 }
+
+// NEED FOR SPEED
+if(speed_timer > 0)
+{
+	moveSpeed = maxSpeed * 3;
+	speed_timer -= 1;
+	if(speed_timer % 5 == 0)
+	{
+		instance_create_depth(x,y,depth, obj_sparkle);	
+	}
+}
+else
+{
+	moveSpeed = maxSpeed;	
+}
