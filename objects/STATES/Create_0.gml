@@ -2,6 +2,7 @@
 // You can write your code in this editor
 
 IDLE = "IDLE";
+IDLE_RIGHT = "IDLE_RIGHT";
 RUN_RIGHT = "RUN_RIGHT";
 RUN_LEFT = "RUN_LEFT";
 FALL_LEFT = "FALL_LEFT";

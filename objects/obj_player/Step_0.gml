@@ -26,9 +26,10 @@ else { // Player is using the keyboard
 move = key_right + key_left
 
 // Set animation state based on move var, animation cannot be accessed while the player is considered to be attacking
-if (grounded && !isAttacking) {
+if (grounded && !isAttacking  && !isDashing) {
 	if (move == 0) {
-		STATE = STATES.IDLE;
+		if (faceRight) STATE = STATES.IDLE;
+		else STATE = STATES.IDLE_RIGHT;
 	}
 	else if (move == 1) {
 		STATE = STATES.RUN_RIGHT;
@@ -173,6 +174,10 @@ if (isDashing) {
 			y = obj_player.y + 256;
 		}
 	}
+	if (image_index > 6 && image_index < 9) {
+		if (faceRight) DashBox(obj_player, 1);
+		else DashBox(obj_player, -1);
+	}
 	if (image_index > 9 && image_index < 11) {
 		// Do some special effects
 		Rumble(0.6, 0.7);
@@ -265,13 +270,6 @@ if (global.usingGamePad) {
 		isDashing = true;	
 		alarm[9] = 2 * room_speed;
 		image_index = 0;
-		if (!instance_exists(obj_dashBox)) {
-			instance_create_depth(x, y + 256, 0, obj_dashBox);	
-		}
-		else {
-			instance_destroy(obj_dashBox);
-			instance_create_depth(x, y + 256, 0, obj_dashBox);
-		}
 		if (faceRight) {
 			STATE = STATES.DASH_ATTACK_RIGHT;
 		}
@@ -282,111 +280,15 @@ if (global.usingGamePad) {
 }
 // ===============================================KEYBOARD BINDS AND LOGIC========================================================
 else {
-	// Basic Attack
-	if (keyboard_check(ord("J")) && grounded && !isAttacking && move == 0) {
-		show_debug_message("Attempting Attack");
-		isAttacking = true;
-		image_index = 0; // Reset the image index
-		// Start ktimer to reset combo
-		Shake(1, 10);
-		alarm[4] = attackDelay * room_speed;
-		if (attackIndex == 0) {
-			show_debug_message("Attack index 0 entered");
-			if (faceRight) {
-				sprite_index = spr_attack1_right;
-				if (!instance_exists(obj_lightBox)) {
-					instance_create_depth(x + lightHit_xRange, y + lightHit_yRange, 0, obj_lightBox);
-				}
-				else if (instance_exists(obj_lightBox)) {
-					instance_destroy(obj_lightBox);
-					instance_create_depth(x + lightHit_xRange, y + lightHit_yRange, 0, obj_lightBox);
-				}
-			}
-			else {
-				sprite_index = spr_attack1_left;
-				if (!instance_exists(obj_lightBox)) {
-					instance_create_depth(x - lightHit_xRange, y + lightHit_yRange, 0, obj_lightBox);
-				}
-				else if (instance_exists(obj_lightBox)) {
-					instance_destroy(obj_lightBox);
-					instance_create_depth(x - lightHit_xRange, y + lightHit_yRange, 0, obj_lightBox);
-				}
-			}
-		}
-		else if (attackIndex == 1) {
-			if (faceRight) {
-				sprite_index = spr_attack2_right;
-				if (!instance_exists(obj_lightBox)) {
-					instance_create_depth(x + lightHit_xRange, y + lightHit_yRange, 0, obj_lightBox);
-				}
-				else if (instance_exists(obj_lightBox)) {
-					instance_destroy(obj_lightBox);
-					instance_create_depth(x + lightHit_xRange, y + lightHit_yRange, 0, obj_lightBox);
-				}
-			}
-			else {
-				sprite_index = spr_attack2_left;
-				if (!instance_exists(obj_lightBox)) {
-					instance_create_depth(x - lightHit_xRange, y + lightHit_yRange, 0, obj_lightBox);
-				}
-				else if (instance_exists(obj_lightBox)) {
-					instance_destroy(obj_lightBox);
-					instance_create_depth(x - lightHit_xRange, y + lightHit_yRange, 0, obj_lightBox);
-				}
-			}
-			
-		}
-		else if (attackIndex == 2) {
-			if (faceRight) {
-				sprite_index = spr_attack3_right;
-				if (!instance_exists(obj_lightBox)) {
-					instance_create_depth(x + lightHit_xRange, y + lightHit_yRange, 0, obj_lightBox);
-				}
-				else if (instance_exists(obj_lightBox)) {
-					instance_destroy(obj_lightBox);
-					instance_create_depth(x + lightHit_xRange, y + lightHit_yRange, 0, obj_lightBox);
-				}
-			}
-			else {
-				sprite_index = spr_attack3_left;
-				if (!instance_exists(obj_lightBox)) {
-					instance_create_depth(x - lightHit_xRange, y + lightHit_yRange, 0, obj_lightBox);
-				}
-				else if (instance_exists(obj_lightBox)) {
-					instance_destroy(obj_lightBox);
-					instance_create_depth(x - lightHit_xRange, y + lightHit_yRange, 0, obj_lightBox);
-				}
-			}
-		}
-	}
-	// Heavy Attack -- STOMP
-	if (keyboard_check_pressed(ord("K")) && !grounded && !isAttacking && !stomping) {
-		stomping = true;
-		player_grav = ori_player_grav;
-		player_grav = 50;
-	}
-	// Heavy Attack -- LASER
-	if (keyboard_check_pressed(ord("K")) && grounded && !isAttacking && !stomping && !firing) {
-		isAttacking = true;
-		firing = true;
-		// Delay specials alarm
-		alarm[6] = 1 * room_speed;
-		alarm[8] = 1.1 * room_speed;
-		Zoom(384, 1, 0.01, 0.2);
-		if (faceRight) {
-			sprite_index = spr_laser_right;		
-			laserRight = true;
-		}
-		else {
-			sprite_index = spr_laser_left;
-			laserLeft = true;
-		}
-	}
+	
 }
 
 //===================ANIMATION HANDLER=====================
 if (STATE = STATES.IDLE) {
 	sprite_index = spr_idle_left;	
+}
+if (STATE = STATES.IDLE_RIGHT) {
+	sprite_index = spr_idle_right;	
 }
 if (STATE = STATES.RUN_LEFT) {
 	sprite_index = spr_run_left;	
