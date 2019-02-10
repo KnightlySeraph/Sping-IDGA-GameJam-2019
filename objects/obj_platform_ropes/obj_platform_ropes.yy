@@ -4,7 +4,16 @@
     "mvc": "1.0",
     "name": "obj_platform_ropes",
     "eventList": [
-        
+        {
+            "id": "00677d0c-5a1a-462c-b887-40c1333d9e8d",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
+            "enumb": 0,
+            "eventtype": 0,
+            "m_owner": "9cb966da-0d67-4de3-932d-e760305aaf6c"
+        }
     ],
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",
     "overriddenProperties": null,

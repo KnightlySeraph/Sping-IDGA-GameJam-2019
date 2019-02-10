@@ -8,6 +8,14 @@ if (gamepad_button_check_pressed(slot, gp_select)) {
 	//show_message("isAttacking is: " + string(isAttacking) + " Basic attack index: " + string(attackIndex) + " isDashing is: " + string(isDashing));
 	show_message("STATE: " + string(STATE));
 }
+// FullScreen
+if (keyboard_check_pressed(vk_f11) && window_get_fullscreen()) {
+	window_set_fullscreen(false);	
+}
+else if (keyboard_check_pressed(vk_f11)) {
+	window_set_fullscreen(true);	
+}
+
 // Set mask across all animations
 mask_index = spr_idle_left;
 // Movement code
