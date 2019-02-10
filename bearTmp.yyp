@@ -1063,6 +1063,14 @@
             }
         },
         {
+            "Key": "aa7cbfc2-ae98-44fb-86f1-57d0dd54b612",
+            "Value": {
+                "id": "9a83525b-d596-4d0f-8438-bb3e1c757049",
+                "resourcePath": "sounds\\Cruising_Goblins\\Cruising_Goblins.yy",
+                "resourceType": "GMSound"
+            }
+        },
+        {
             "Key": "ab235435-8a78-4d83-a83c-885970a421d6",
             "Value": {
                 "id": "f025bd68-dc40-4b0d-a9a1-2ef0d8fc1ca0",
@@ -1391,6 +1399,14 @@
             }
         },
         {
+            "Key": "db8fe14f-0b71-4461-a784-b5702df69329",
+            "Value": {
+                "id": "8446d719-9db3-4ab8-9d31-be0143c02036",
+                "resourcePath": "sounds\\Exit_Premise\\Exit_Premise.yy",
+                "resourceType": "GMSound"
+            }
+        },
+        {
             "Key": "dbde608f-60b8-4ce6-bfcb-474bc3dc64a9",
             "Value": {
                 "id": "fbed8470-19ed-49e7-b787-5340faba87dc",
@@ -1420,6 +1436,14 @@
                 "id": "d6366d50-784f-48f0-ad6a-863acc8c2ad0",
                 "resourcePath": "views\\dd355605-38a8-454f-b5d9-759b678ee96e.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "e0ec6bd1-bd1b-4047-a549-ce9a5ad3d19f",
+            "Value": {
+                "id": "0ddb4aaa-1800-4bcb-a33c-5fe507f143e5",
+                "resourcePath": "sounds\\Meatball_Parade\\Meatball_Parade.yy",
+                "resourceType": "GMSound"
             }
         },
         {
