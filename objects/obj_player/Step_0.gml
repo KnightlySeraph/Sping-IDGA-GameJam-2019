@@ -198,45 +198,21 @@ if (global.usingGamePad) {
 			show_debug_message("Attack index 0 entered");
 			if (faceRight) {
 				STATE = STATES.ATTACK_RIGHT1; // Set Animation State
-				if (!instance_exists(obj_lightBox)) {
-					instance_create_depth(x + lightHit_xRange, y + lightHit_yRange, 0, obj_lightBox);
-				}
-				else if (instance_exists(obj_lightBox)) {
-					instance_destroy(obj_lightBox);
-					instance_create_depth(x + lightHit_xRange, y + lightHit_yRange, 0, obj_lightBox);
-				}
+				LightBox(obj_player, 1);
 			}
 			else {
 				STATE = STATES.ATTACK_LEFT1; // Set Animation State
-				if (!instance_exists(obj_lightBox)) {
-					instance_create_depth(x - lightHit_xRange, y + lightHit_yRange, 0, obj_lightBox);
-				}
-				else if (instance_exists(obj_lightBox)) {
-					instance_destroy(obj_lightBox);
-					instance_create_depth(x - lightHit_xRange, y + lightHit_yRange, 0, obj_lightBox);
-				}
+				LightBox(obj_player, -1);
 			}
 		}
 		else if (attackIndex == 1) {
 			if (faceRight) {
 				STATE = STATES.ATTACK_RIGHT2; // Set Animation State
-				if (!instance_exists(obj_lightBox)) {
-					instance_create_depth(x + lightHit_xRange, y + lightHit_yRange, 0, obj_lightBox);
-				}
-				else if (instance_exists(obj_lightBox)) {
-					instance_destroy(obj_lightBox);
-					instance_create_depth(x + lightHit_xRange, y + lightHit_yRange, 0, obj_lightBox);
-				}
+				LightBox(obj_player, 1);
 			}
 			else {
 				STATE = STATES.ATTACK_LEFT2; // Set Animation State
-				if (!instance_exists(obj_lightBox)) {
-					instance_create_depth(x - lightHit_xRange, y + lightHit_yRange, 0, obj_lightBox);
-				}
-				else if (instance_exists(obj_lightBox)) {
-					instance_destroy(obj_lightBox);
-					instance_create_depth(x - lightHit_xRange, y + lightHit_yRange, 0, obj_lightBox);
-				}
+				LightBox(obj_player, -1);
 			}
 			
 		}
