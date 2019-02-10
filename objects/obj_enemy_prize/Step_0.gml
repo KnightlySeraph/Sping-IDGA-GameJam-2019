@@ -31,7 +31,7 @@ switch(state){
 		break;
 		
 	case("DEATH"):
-		sprite_index = spr_enemy_health_dead;
+		sprite_index = spr_enemy_prize_dead;
 		scr_enemyDeath(self);
 		break;
 }
