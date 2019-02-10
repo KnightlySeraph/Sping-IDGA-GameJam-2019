@@ -30,7 +30,7 @@ switch(state){
 		
 	case("ATTACK"):
 		if(attacking) {
-			sprite_index = spr_enemy_basic_attack;
+			sprite_index = spr_enemy_shield_attack;
 		}
 		else if(!resting) {
 			state = "FOLLOW";
