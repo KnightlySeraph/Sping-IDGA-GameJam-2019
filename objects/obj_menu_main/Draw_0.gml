@@ -46,7 +46,7 @@ if(play_transition)
 	draw_set_color(c_black);
 	draw_rectangle(0, 0, room_width, room_height, false);
 }
-
+/*
 if(draw_back)
 {
 	draw_sprite_ext(spr_menu_back, 1, backButton.x, backButton.y, 0.7, 0.7, 0, c_white, 1);
