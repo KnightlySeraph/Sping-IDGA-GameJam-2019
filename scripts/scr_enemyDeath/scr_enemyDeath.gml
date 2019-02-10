@@ -27,6 +27,7 @@ if((place_meeting(enemy.x,enemy.y,obj_lightBox) || place_meeting(enemy.x,enemy.y
 	{
 		instance_create_depth(enemy.x, enemy.y, enemy.depth - 1, obj_pow);	
 	}
+	points += enemy.point * enemy.combo;
 }
 else if(place_meeting(enemy.x,enemy.y,obj_stompBox) && !hit)
 {
@@ -43,6 +44,7 @@ else if(place_meeting(enemy.x,enemy.y,obj_stompBox) && !hit)
 	{
 		instance_create_depth(enemy.x, enemy.y, enemy.depth - 1, obj_pow);	
 	}
+	points += enemy.point * enemy.combo;
 }
 else if(place_meeting(enemy.x, enemy.y, obj_laserBox) && !hit)
 {
@@ -59,6 +61,7 @@ else if(place_meeting(enemy.x, enemy.y, obj_laserBox) && !hit)
 	{
 		instance_create_depth(enemy.x, enemy.y, enemy.depth - 1, obj_pow);	
 	}
+	points += enemy.point * enemy.combo;
 }
 else if(!place_meeting(enemy.x,enemy.y,obj_lightBox) && !place_meeting(enemy.x,enemy.y,obj_airBox) && !place_meeting(enemy.x,enemy.y,obj_dashBox) && enemy.hit && enemy.type == "light")
 {

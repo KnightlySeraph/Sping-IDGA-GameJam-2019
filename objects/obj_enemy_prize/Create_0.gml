@@ -19,3 +19,5 @@ type = noone;
 combo = 0;
 
 damage_box = noone;
+
+point = 10;
