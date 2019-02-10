@@ -45,6 +45,7 @@ switch(state){
 		break;
 		
 	case("DEATH"):
+		sprite_index = spr_enemy_flying_dead;
 		scr_enemyDeath(self);
 		break;
 }
