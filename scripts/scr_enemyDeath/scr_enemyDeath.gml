@@ -1,5 +1,5 @@
 enemy = argument0
-
+if(hitPoints <= 0) instance_destroy();
 enemy.image_angle += enemy.death_rot;
 if(enemy.death_rot > 1) enemy.death_rot -= random_range(0.1, 0.3);
 if((place_meeting(enemy.x,enemy.y,obj_lightBox) || place_meeting(enemy.x,enemy.y,obj_airBox) || place_meeting(enemy.x,enemy.y,obj_dashBox)) && !enemy.hit)
