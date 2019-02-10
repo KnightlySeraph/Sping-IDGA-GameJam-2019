@@ -103,6 +103,14 @@
             }
         },
         {
+            "Key": "0d6db881-d723-4c04-8676-1233fcd7445a",
+            "Value": {
+                "id": "f0a09de8-30b1-42ea-b50a-f92326eefa46",
+                "resourcePath": "views\\0d6db881-d723-4c04-8676-1233fcd7445a.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "0d8ab429-0dc6-4b04-b750-df454058a42c",
             "Value": {
                 "id": "3e15d9bb-fd7a-4e39-8009-b3e1d13a439b",
@@ -204,6 +212,14 @@
                 "id": "996cbb9b-f546-40ba-82f6-b5565d9a57b7",
                 "resourcePath": "views\\1ed01cea-0c46-4569-9762-583add67ebc4.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "200a861f-3b66-44e8-9fb4-34397c15b76f",
+            "Value": {
+                "id": "dfc2fadf-6b5f-481e-98e7-b05796d00d81",
+                "resourcePath": "sprites\\spr_curtain_level\\spr_curtain_level.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -420,6 +436,14 @@
                 "id": "cb372840-1308-4329-ba7f-c97f7cbb6c29",
                 "resourcePath": "scripts\\Shake\\Shake.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "4eac7cca-c654-4e17-9548-3216fd4bde61",
+            "Value": {
+                "id": "0868e463-e087-4d75-965f-118ebd38ef95",
+                "resourcePath": "objects\\obj_stage\\obj_stage.yy",
+                "resourceType": "GMObject"
             }
         },
         {
