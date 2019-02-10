@@ -9,6 +9,7 @@ if(hitPoints <= 0) {
 		}
 		instance_destroy();
 	}	
+	exit;
 }
 enemy.image_angle += enemy.death_rot;
 if(enemy.death_rot > 1) enemy.death_rot -= random_range(0.1, 0.3);
