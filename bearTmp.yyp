@@ -735,6 +735,14 @@
             }
         },
         {
+            "Key": "849dfeab-c7bf-41da-afef-98e6b3bf4d6f",
+            "Value": {
+                "id": "1b233bb8-ecff-4551-9350-8a0d47e8a187",
+                "resourcePath": "sprites\\spr_enemy_prize\\spr_enemy_prize.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "86da4402-bf30-4b7d-b058-f1e114007cae",
             "Value": {
                 "id": "2ec00611-2942-4370-9777-a4ca9bc36d0d",
