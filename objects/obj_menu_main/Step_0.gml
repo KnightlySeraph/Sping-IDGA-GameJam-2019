@@ -36,50 +36,18 @@ if(main_control)
 }
 else if(!main_control)
 {
-	if(instance_exists(curtains))
+	switch(main_committed)
 	{
-		if(curtains.image_alpha == 1 && curtains.y < 1080)
+	case(0):
+		game_end();
+		break;
+	case(1):
+		scr_lower_curtain();
+		var castTransition = instance_create_depth(x, y, -1000, obj_roomTransition);
+		if(!instance_exists(castTransition))
 		{
-			curtains.y += 5;
+			
 		}
-		else if(curtains.y >= 1080)
-		{
-			play_transition = true;
-			curtains_open_left.image_alpha = 1;
-			curtains_open_right.image_alpha = 1;
-			curtains_top.image_alpha = 1;
-			instance_destroy(curtains);
-			curtains_open_left.image_speed = 1;
-			curtains_open_right.image_speed = 1;
-			for(var a = 0; a < 5; a++)
-			{
-				instance_destroy(main[a]);
-			}
-			main_exists = false;
-			layer_set_visible("Background", false);
-		}
-	}
-	if(curtains_open_left.image_index > curtains_open_left.image_number-1)
-	{
-		curtains_open_left.image_speed = 0;
-		curtains_open_right.image_speed = 0;
-		curtain_up = true;
-	}
-	else if(curtains_open_left.image_index > curtains_open_left.image_number-1)
-	{
-		curtains_open_left.image_speed = 0;
-		curtains_open_right.image_speed = 0;
-		curtain_up = true;
-	}
-	if(curtain_up && curtains_top.y > -300)
-	{
-		curtains_top.y -= 5;
-	}
-	else if(curtains_top.y <= -300)
-	{
-		if(!instance_exists(obj_roomTransition))
-		{
-			var tempRoomFade = instance_create_depth(x,y, -1000, obj_roomTransition);
-		}
+		break;
 	}
 }
