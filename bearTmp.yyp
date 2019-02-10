@@ -319,6 +319,14 @@
             }
         },
         {
+            "Key": "39cbce49-3d2e-446e-827b-ce68d7face67",
+            "Value": {
+                "id": "67d838d5-c669-4e18-b845-9eb9e46e02c4",
+                "resourcePath": "objects\\obj_curtain_top\\obj_curtain_top.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "3a25ef4f-6d66-4288-86b2-39d7aab4f573",
             "Value": {
                 "id": "7f14fd72-d47e-46e9-b4e5-6634b44c9056",

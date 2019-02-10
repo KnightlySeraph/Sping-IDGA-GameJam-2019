@@ -49,6 +49,10 @@ curtains_open_right.image_xscale *= -1;
 curtains_open_left.image_alpha = 0;
 curtains_open_right.image_alpha = 0;
 
+curtains_top = instance_create_depth(0, 0, -601, obj_curtain_top);
+curtains_top.image_alpha = 0;
+curtain_up = false;
+
 main[4] = playButton;
 main[3] = controlButton;
 main[2] = highscoreButton;
