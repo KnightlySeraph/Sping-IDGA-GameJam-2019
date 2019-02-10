@@ -51,17 +51,26 @@ else if(!main_control)
 			instance_destroy(curtains);
 			curtains_open_left.image_speed = 1;
 			curtains_open_right.image_speed = 1;
+			for(var a = 0; a < 5; a++)
+			{
+				instance_destroy(main[a]);
+			}
+			main_exists = false;
 		}
 	}
-	if(/*curtains_open_left.image_index <= 0 || */curtains_open_left.image_index > curtains_open_left.image_number)
+	if(curtains_open_left.image_index > curtains_open_left.image_number-1)
 	{
+		curtains_open_left.image_speed = 0;
+		curtains_open_right.image_speed = 0;
 		if(!instance_exists(obj_roomTransition))
 		{
 			var tempRoomFade = instance_create_depth(x,y, -1000, obj_roomTransition);
 		}
 	}
-	else if(/*curtains_open_left.image_index <= 0 ||*/ curtains_open_left.image_index > curtains_open_left.image_number)
+	else if(curtains_open_left.image_index > curtains_open_left.image_number-1)
 	{
+		curtains_open_left.image_speed = 0;
+		curtains_open_right.image_speed = 0;
 		if(!instance_exists(obj_roomTransition))
 		{
 			var tempRoomFade = instance_create_depth(x,y, -1000, obj_roomTransition);

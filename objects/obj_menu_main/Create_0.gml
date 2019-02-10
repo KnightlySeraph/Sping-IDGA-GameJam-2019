@@ -9,6 +9,7 @@ main_step = 0;
 main_index = -1;
 main_committed = -1;
 main_control = true;
+main_exists = true;
 
 main_pressed = false;
 main_hover = false;
