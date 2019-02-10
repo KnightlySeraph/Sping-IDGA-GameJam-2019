@@ -29,7 +29,14 @@ if((place_meeting(enemy.x,enemy.y,obj_lightBox) || place_meeting(enemy.x,enemy.y
 	}
 	points += enemy.point * enemy.combo;
 	hitPoints += enemy.heal;
-	if(enemy.increase > 0) obj_player.speed_timer = room_speed * 10;
+	if(enemy.heal == 5) audio_play_sound(snd_hpUp, 0, false);
+	if(enemy.increase > 0) {
+		audio_play_sound(snd_niceOne,0,false);
+		obj_player.speed_timer = room_speed * 10;
+	}
+	if(!audio_is_playing(snd_combo) && enemy.combo == 3) audio_play_sound(snd_combo, 0, false);
+	if(!audio_is_playing(snd_super) && enemy.combo == 5) audio_play_sound(snd_super, 0, false);
+	audio_play_sound(snd_punch,0,false);
 }
 else if(place_meeting(enemy.x,enemy.y,obj_stompBox) && !hit)
 {
@@ -48,7 +55,14 @@ else if(place_meeting(enemy.x,enemy.y,obj_stompBox) && !hit)
 	}
 	points += enemy.point * enemy.combo;
 	hitPoints += enemy.heal;
-	if(enemy.increase > 0) obj_player.speed_timer = room_speed * 10;
+	if(enemy.heal == 5) audio_play_sound(snd_hpUp, 0, false);
+	if(enemy.increase > 0) {
+		audio_play_sound(snd_niceOne,0,false);
+		obj_player.speed_timer = room_speed * 10;
+	}
+	if(!audio_is_playing(snd_combo) && enemy.combo == 3) audio_play_sound(snd_combo, 0, false);
+	if(!audio_is_playing(snd_super) && enemy.combo == 5) audio_play_sound(snd_super, 0, false);
+	audio_play_sound(snd_punch,0,false);
 }
 else if(place_meeting(enemy.x, enemy.y, obj_laserBox) && !hit)
 {
@@ -67,7 +81,14 @@ else if(place_meeting(enemy.x, enemy.y, obj_laserBox) && !hit)
 	}
 	points += enemy.point * enemy.combo;
 	hitPoints += enemy.heal;
-	if(enemy.increase > 0) obj_player.speed_timer = room_speed * 10;
+	if(enemy.heal == 5) audio_play_sound(snd_hpUp, 0, false);
+	if(enemy.increase > 0) {
+		audio_play_sound(snd_niceOne,0,false);
+		obj_player.speed_timer = room_speed * 10;
+	}
+	if(!audio_is_playing(snd_combo) && enemy.combo == 3) audio_play_sound(snd_combo, 0, false);
+	if(!audio_is_playing(snd_super) && enemy.combo == 5) audio_play_sound(snd_super, 0, false);
+	audio_play_sound(snd_punch,0,false);
 }
 else if(!place_meeting(enemy.x,enemy.y,obj_lightBox) && !place_meeting(enemy.x,enemy.y,obj_airBox) && !place_meeting(enemy.x,enemy.y,obj_dashBox) && enemy.hit && enemy.type == "light")
 {
