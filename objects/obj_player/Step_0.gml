@@ -233,10 +233,10 @@ if (global.usingGamePad) {
 		player_grav = ori_player_grav;
 		player_grav = 50;
 		if (faceRight) {
-			sprite_index = spr_groundPound_right;	
+			STATE = STATES.POUND_RIGHT;
 		}
 		else {
-			sprite_index = spr_groundPound_left;	
+			STATE = STATES.POUND_LEFT;
 		}
 	}
 	// Heavy Attack -- LASER
@@ -248,11 +248,11 @@ if (global.usingGamePad) {
 		alarm[8] = 1.1 * room_speed;
 		Zoom(384, 1, 0.01, 0.2);
 		if (faceRight) {
-			sprite_index = spr_laser_right;		
+			STATE = STATES.LASER_ATTACK_RIGHT;
 			laserRight = true;
 		}
 		else {
-			sprite_index = spr_laser_left;
+			STATE = STATES.LASER_ATTACK_LEFT;
 			laserLeft = true;
 		}
 	}
@@ -269,10 +269,10 @@ if (global.usingGamePad) {
 			instance_create_depth(x, y + 256, 0, obj_dashBox);
 		}
 		if (faceRight) {
-			sprite_index = spr_dashAttack_right;	
+			STATE = STATES.DASH_ATTACK_RIGHT;
 		}
 		else {
-			sprite_index = spr_dashAttack_left;
+			STATE = STATES.DASH_ATTACK_LEFT;
 		}
 	}
 }
