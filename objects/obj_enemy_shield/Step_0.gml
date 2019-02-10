@@ -82,7 +82,13 @@ if(((place_meeting(x,y,obj_lightBox) || place_meeting(x,y,obj_airBox) || place_m
 	alarm[2] = -1;
 }
 image_xscale = -direct;
-image_speed = spd / 2;
+if(state != "FALL" && state != "ATTACK"){
+	image_speed = spd / 2;
+}
+else
+{
+	image_speed = 1;	
+}
 
 if(state != "DEATH")
 {
