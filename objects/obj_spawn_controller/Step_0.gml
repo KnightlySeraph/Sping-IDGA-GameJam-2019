@@ -1,8 +1,8 @@
 timer += 1;
 switch(stage){
 	case(1):
-		if(timer == 1) scr_spawnEnemies(obj_enemy_basic, 2, spawners, 1);
-		else if(!instance_exists(obj_enemy_basic) && timer > 1){
+		if(timer == 1.5 * second) scr_spawnEnemies(obj_enemy_basic, 2, spawners, 1);
+		else if(!instance_exists(obj_enemy_basic) && timer > 1.5 * second){
 			timer = 0;
 			stage = 2;
 		}
