@@ -71,6 +71,14 @@
             }
         },
         {
+            "Key": "034ce029-7979-4851-8b30-8dc0722b5d3f",
+            "Value": {
+                "id": "ea6cb6ce-ca90-43b0-a0dd-087a1189ce42",
+                "resourcePath": "objects\\Connecter\\Connecter.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "03f3c06b-7fcf-4aac-bb90-77e7c470c5e7",
             "Value": {
                 "id": "0db24d5f-2afb-4ab8-8aea-85888fe0da87",
