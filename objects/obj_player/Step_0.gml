@@ -277,6 +277,8 @@ if (global.usingGamePad) {
 		// Delay specials alarm
 		alarm[6] = 1 * room_speed;
 		alarm[8] = 1.1 * room_speed;
+		// Delete boxo
+		alarm[11] = 1.5 * room_speed;
 		Zoom(384, 1, 0.01, 0.2);
 		if (faceRight) {
 			STATE = STATES.LASER_ATTACK_RIGHT;
