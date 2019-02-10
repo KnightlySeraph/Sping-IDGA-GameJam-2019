@@ -5,6 +5,7 @@ mask_index = spr_enemy_basic;
 
 switch(state){
 	case("FOLLOW"):
+		direct = sign(obj_player.x - x);
 		updown_time += 1;
 		if(updown_time % (room_speed) == 0){
 			updown_time = 0;
@@ -19,7 +20,10 @@ switch(state){
 		
 		if(abs(obj_player.x - x) < 172 && y > obj_player.y + 130 && y < obj_player.y + 160){
 			speed = 0;	
-			// state = "ATTACK";
+			state = "ATTACK";
+			alarm[2] = room_speed * 0.9;
+			attacking = true;
+			resting = true;
 		}
 		else
 		{
@@ -29,6 +33,15 @@ switch(state){
 		break;
 		
 	case("ATTACK"):
+		if(attacking) {
+			sprite_index = spr_enemy_basic_attack;
+		}
+		else if(!resting) {
+			state = "FOLLOW";
+			image_angle = 0;
+			sprite_index = spr_enemy_flying;
+		}
+		hsp = 0;
 		break;
 		
 	case("DEATH"):
@@ -62,8 +75,6 @@ if(state != "DEATH")
 		}
 		hsp = 0;
 	}
-	
-	direct = sign(obj_player.x - x);
 
 	x += hsp;
 	y += vsp;
