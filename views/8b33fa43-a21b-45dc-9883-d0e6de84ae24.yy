@@ -10,7 +10,8 @@
         "6baf1331-5bdd-405c-9b87-9accdc4ed07d",
         "46721331-be35-4139-b28d-431cb6b12235",
         "d8877aac-cfd3-424b-a9a9-5b5c99d20753",
-        "40537457-ba66-4090-bcbd-7fab75b12d62"
+        "40537457-ba66-4090-bcbd-7fab75b12d62",
+        "ded60b39-e147-4df0-96e8-fec7ff518125"
     ],
     "filterType": "GMSprite",
     "folderName": "Curtains",
