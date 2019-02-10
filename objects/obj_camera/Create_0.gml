@@ -9,10 +9,10 @@ zoomOut = false;
 player_cam = camera_create();
 zoomScale = 2.5;
 
-width = 1024;
-oriHeight = 768;
+width = 2098;
+oriHeight = 1180;
 height = oriHeight;
-aspectRatio = 0.75;
+aspectRatio = 0.5624404194470925;
 zoomSpeed = 100;
 
 var vm = matrix_build_lookat(x, y, -10, x, y, 0, 0, 1, 0);
@@ -23,7 +23,7 @@ camera_set_proj_mat(player_cam, pm);
 
 view_camera[0] = player_cam;
 
-follow = obj_player;
+follow = noone;
 xTo = x;
 yTo = y;
 
@@ -32,3 +32,5 @@ shake_length = 0;
 shake_mag = 0;
 shake_remain = 0;
 buff = 32;
+
+depth = -100;

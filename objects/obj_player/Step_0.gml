@@ -186,6 +186,7 @@ if (attackIndex > 2) {
 	isDashing = false;
 	sprite_index = spr_idle_left;
 }
+// ================================================GAMEPAD BINDS AND LOGIC============================================
 if (global.usingGamePad) {
 	// Basic Attack
 	if (gamepad_button_check(slot, gp_face3) && grounded && !isAttacking && move == 0) {
@@ -260,7 +261,7 @@ if (global.usingGamePad) {
 		}
 	}
 	// Dash Attack
-	if (gamepad_button_check_pressed(slot, gp_face3) && grounded && !isDashing && (move == 1 || move == -1) && !isAttacking && !stomping && !firing) {
+	if (gamepad_button_check_pressed(slot, gp_face2) && grounded && !isDashing && (move == 1 || move == -1) && !isAttacking && !stomping && !firing) {
 		isDashing = true;	
 		alarm[9] = 2 * room_speed;
 		image_index = 0;
@@ -279,6 +280,7 @@ if (global.usingGamePad) {
 		}
 	}
 }
+// ===============================================KEYBOARD BINDS AND LOGIC========================================================
 else {
 	// Basic Attack
 	if (keyboard_check(ord("J")) && grounded && !isAttacking && move == 0) {
