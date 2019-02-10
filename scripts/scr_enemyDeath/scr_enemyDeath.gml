@@ -10,10 +10,16 @@ if((place_meeting(enemy.x,enemy.y,obj_lightBox) || place_meeting(enemy.x,enemy.y
 	enemy.grav = 0.2;
 	enemy.death_rot = 10 + random_range(1,10);
 	enemy.type = "light";
+	if(place_meeting(x,y,obj_dashBox)) enemy.type = "dash";
 	enemy.combo += 1;
 	if(obj_player.sprite_index = spr_attack3_left || obj_player.sprite_index = spr_attack3_right) {
 		enemy.vsp *= 1.5;
 		enemy.hsp *= 1.5;
+	}
+	if(enemy.type = "dash")
+	{
+		enemy.vsp = -5;
+		enemy.hsp = -sign(obj_player.x - enemy.x) * 0.5;
 	}
 	
 	random_num = irandom_range(3,7);
@@ -69,17 +75,24 @@ else if(!place_meeting(enemy.x,enemy.y,obj_lightBox) && !place_meeting(enemy.x,e
 		enemy.vsp += (combo * 0.2);
 	}
 }
-else if(!place_meeting(enemy.x,enemy.y,obj_stompBox) && hit && type == "stomp")
+else if(!place_meeting(enemy.x,enemy.y,obj_stompBox) && hit && enemy.type == "stomp")
 {
 	enemy.hsp = -sign(obj_player.x - enemy.x) * combo * 3;
 	enemy.vsp = -15;
 	enemy.hit = false;
 	enemy.grav = 0.45 + (combo * 0.2);
 }
-else if(!place_meeting(enemy.x, enemy.y, obj_laserBox) && hit && type == "laser")
+else if(!place_meeting(enemy.x, enemy.y, obj_laserBox) && hit && enemy.type == "laser")
 {
 	enemy.hsp = -sign(obj_player.x - enemy.x) * combo * 4;
 	enemy.vsp = -5;
+	enemy.hit = false;
+	enemy.grav = 1 + (combo * 0.3);
+}
+else if(!place_meeting(enemy.x, enemy.y, obj_dashBox) && hit && enemy.type == "dash")
+{
+	enemy.hsp = -sign(obj_player.x - enemy.x) * (combo * 0.1);
+	enemy.vsp = -12;
 	enemy.hit = false;
 	enemy.grav = 1 + (combo * 0.3);
 }
