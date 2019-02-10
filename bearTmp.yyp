@@ -383,6 +383,14 @@
             }
         },
         {
+            "Key": "364c46a5-2aff-42e3-9ec7-7dec63f3d311",
+            "Value": {
+                "id": "f8a70c7e-c51f-4048-98cf-254e5887fb2c",
+                "resourcePath": "sprites\\spr_enemy_prize_dead\\spr_enemy_prize_dead.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "37b69369-fa58-4d30-b557-c5ddb35a2531",
             "Value": {
                 "id": "0709407b-0fb1-4f69-87e3-4f05ed1d146a",
@@ -524,6 +532,14 @@
                 "id": "1ce90ce9-845f-48cb-9b90-e313ada95191",
                 "resourcePath": "sounds\\Italy_Jr\\Italy_Jr.yy",
                 "resourceType": "GMSound"
+            }
+        },
+        {
+            "Key": "46ada3e3-b9e3-4c54-a759-e636a5c58c35",
+            "Value": {
+                "id": "4f9e1a27-d96f-4da7-89e5-b1280870a850",
+                "resourcePath": "sprites\\spr_enemy_shield_attack\\spr_enemy_shield_attack.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
