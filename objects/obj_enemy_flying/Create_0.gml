@@ -35,3 +35,5 @@ death_rot = 1;
 type = noone;
 combo = 0;
 point = 2;
+heal = 0;
+increase = 0;

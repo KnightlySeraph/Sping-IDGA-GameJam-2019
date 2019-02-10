@@ -19,3 +19,5 @@ combo = 0;
 
 damage_box = noone;
 point = 1;
+heal = 5;
+increase = 0;

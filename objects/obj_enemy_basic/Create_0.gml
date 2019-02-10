@@ -1,6 +1,7 @@
 // States are FOLLOW, ATTACK, PATH, DEATH and FALL
 state = "FOLLOW";
 
+
 hsp = 0;
 vsp = 0;
 grav = 0.5;
@@ -28,3 +29,5 @@ death_rot = 1;
 type = noone;
 combo = 0;
 point = 1;
+heal = 0;
+increase = 0;

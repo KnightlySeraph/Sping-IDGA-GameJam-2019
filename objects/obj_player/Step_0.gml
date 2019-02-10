@@ -8,16 +8,7 @@ if (gamepad_button_check_pressed(slot, gp_select)) {
 	//show_message("isAttacking is: " + string(isAttacking) + " Basic attack index: " + string(attackIndex) + " isDashing is: " + string(isDashing));
 	// show_message("STATE: " + string(STATE));
 }
-// FullScreen
-if ((keyboard_check_pressed(vk_f11) || gamepad_button_check_pressed(slot, gp_select)) && window_get_fullscreen()) {
-	window_set_fullscreen(false);	
-}
-else if (keyboard_check_pressed(vk_f11) || gamepad_button_check_pressed(slot, gp_select)) {
-	window_set_fullscreen(true);	
-}
 
-// Quit game and stuff
-if (global.usingGamePad && gamepad_button_check_pressed(slot, gp_start)) game_end(); 
 // Set mask across all animations
 mask_index = spr_idle_left;
 // Movement code
@@ -390,10 +381,11 @@ else {
 		}
 	}
 	// Dash Attack
-	if (keyboard_check_pressed(ord("J")) && grounded && !isDashing && (move == 1 || move == -1) && !isAttacking && !stomping && !firing) {
+	if (keyboard_check_pressed(ord("L")) && grounded && !isDashing && (move == 1 || move == -1) && !isAttacking && !stomping && !firing) {
 		isDashing = true;	
 		alarm[9] = 2 * room_speed;
 		image_index = 0;
+		moveSpeed *= 2;
 		if (faceRight) {
 			STATE = STATES.DASH_ATTACK_RIGHT;
 		}
@@ -486,25 +478,39 @@ if (STATE = STATES.AIR_ATTACK_RIGHT) {
 
 // Taking Damage
 
-if((place_meeting(x,y,obj_enemy_basic_damage) || spotHit) && !invincible)
-{
+if(hitPoints > 100) hitPoints = 100;
+if(hitPoints < 0) hitPoints = 0;
+
+if((place_meeting(x,y,obj_enemy_basic_damage) || spotHit) && !invincible) {
 	invincible = true;
 	hitPoints -= 10;
 }
 
 
-if(invincible)
-{
+if(invincible) {
 	invince_timer += 1;
-	if(invince_timer > invince_max)
-	{
+	if(invince_timer > invince_max) {
 		invincible = false;
 		invince_timer = 0;
 		spotHit = false;
 	}
 	image_alpha = random_range(0.5,0.8);
 }
+else {
+	image_alpha = 1;	
+}
+
+// NEED FOR SPEED
+if(speed_timer > 0)
+{
+	moveSpeed = maxSpeed * 3;
+	speed_timer -= 1;
+	if(speed_timer % 5 == 0)
+	{
+		instance_create_depth(x,y,depth, obj_sparkle);	
+	}
+}
 else
 {
-	image_alpha = 1;	
+	moveSpeed = maxSpeed;	
 }

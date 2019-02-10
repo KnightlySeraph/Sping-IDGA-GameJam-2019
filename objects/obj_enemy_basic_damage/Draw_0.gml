@@ -1,1 +1,1 @@
-draw_sprite_ext(spr_enemy_basic_damage, -1, x, y, 1, 1, 0, color, image_alpha);
+draw_self();

@@ -19,7 +19,7 @@ if((place_meeting(enemy.x,enemy.y,obj_lightBox) || place_meeting(enemy.x,enemy.y
 	if(enemy.type = "dash")
 	{
 		enemy.vsp = -5;
-		enemy.hsp = -sign(obj_player.x - enemy.x) * 0.5;
+		enemy.hsp = -sign(obj_player.x - enemy.x) * combo * 1.5;
 	}
 	
 	random_num = irandom_range(3,7);
@@ -28,6 +28,8 @@ if((place_meeting(enemy.x,enemy.y,obj_lightBox) || place_meeting(enemy.x,enemy.y
 		instance_create_depth(enemy.x, enemy.y, enemy.depth - 1, obj_pow);	
 	}
 	points += enemy.point * enemy.combo;
+	hitPoints += enemy.heal;
+	if(enemy.increase > 0) obj_player.speed_timer = room_speed * 10;
 }
 else if(place_meeting(enemy.x,enemy.y,obj_stompBox) && !hit)
 {
@@ -45,6 +47,8 @@ else if(place_meeting(enemy.x,enemy.y,obj_stompBox) && !hit)
 		instance_create_depth(enemy.x, enemy.y, enemy.depth - 1, obj_pow);	
 	}
 	points += enemy.point * enemy.combo;
+	hitPoints += enemy.heal;
+	if(enemy.increase > 0) obj_player.speed_timer = room_speed * 10;
 }
 else if(place_meeting(enemy.x, enemy.y, obj_laserBox) && !hit)
 {
@@ -62,6 +66,8 @@ else if(place_meeting(enemy.x, enemy.y, obj_laserBox) && !hit)
 		instance_create_depth(enemy.x, enemy.y, enemy.depth - 1, obj_pow);	
 	}
 	points += enemy.point * enemy.combo;
+	hitPoints += enemy.heal;
+	if(enemy.increase > 0) obj_player.speed_timer = room_speed * 10;
 }
 else if(!place_meeting(enemy.x,enemy.y,obj_lightBox) && !place_meeting(enemy.x,enemy.y,obj_airBox) && !place_meeting(enemy.x,enemy.y,obj_dashBox) && enemy.hit && enemy.type == "light")
 {
@@ -94,10 +100,11 @@ else if(!place_meeting(enemy.x, enemy.y, obj_laserBox) && hit && enemy.type == "
 }
 else if(!place_meeting(enemy.x, enemy.y, obj_dashBox) && hit && enemy.type == "dash")
 {
-	enemy.hsp = -sign(obj_player.x - enemy.x) * (combo * 0.1);
+	enemy.hsp = -sign(obj_player.x - enemy.x) * combo * 5;
 	enemy.vsp = -12;
 	enemy.hit = false;
-	enemy.grav = 1 + (combo * 0.3);
+	enemy.grav = (combo * 0.3);
+	show_debug_message("OW");
 }
 enemy.x += enemy.hsp;
 enemy.y += enemy.vsp
