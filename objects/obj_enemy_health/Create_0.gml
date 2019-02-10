@@ -16,3 +16,5 @@ hit = false;
 death_rot = 1;
 type = noone;
 combo = 0;
+
+damage_box = noone;

@@ -13,3 +13,5 @@ timer = 0;
 rock_direct = 0.1;
 
 depth = -2;
+
+damage_box = noone;

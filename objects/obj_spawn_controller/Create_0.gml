@@ -17,4 +17,10 @@ for(i = 0; i < instance_number(obj_lightspawner); i+=1)
 	spotlights[i] = instance_find(obj_lightspawner, i);	
 }
 
+difficulty = 1;
+basic_rate = 2;
+shield_rate = 1;
+fly_rate = 1;
+light_rate = 1;
+
 randomize();

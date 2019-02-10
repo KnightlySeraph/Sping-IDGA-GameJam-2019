@@ -483,3 +483,26 @@ if (STATE = STATES.AIR_ATTACK_RIGHT) {
 	sprite_index = spr_air_right;	
 }
 
+
+// Taking Damage
+
+if((place_meeting(x,y,obj_enemy_basic_damage) || spotHit) && !invincible)
+{
+	invincible = true;
+}
+
+
+if(invincible)
+{
+	invince_timer += 1;
+	if(invince_timer > invince_max)
+	{
+		invincible = false;
+		invince_timer = 0;
+	}
+	image_alpha = random_range(0.5,0.8);
+}
+else
+{
+	image_alpha = 1;	
+}
