@@ -499,7 +499,7 @@ if(invincible)
 	{
 		invincible = false;
 		invince_timer = 0;
-		spotHit = true;
+		spotHit = false;
 	}
 	image_alpha = random_range(0.5,0.8);
 }
