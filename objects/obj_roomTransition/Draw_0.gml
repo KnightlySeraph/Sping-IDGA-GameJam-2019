@@ -12,7 +12,11 @@ if(fadeAlpha == 1)
 if(fadeAlpha == 0 && fadeState == -1)
 {
 	instance_destroy();
+	draw_set_alpha(1);
 }
-draw_set_color(c_black);
-draw_set_alpha(fadeAlpha);
-draw_rectangle(0, 0, room_width, room_height, false);
+if(instance_exists(self))
+{
+	draw_set_color(c_black);
+	draw_set_alpha(fadeAlpha);
+	draw_rectangle(0, 0, room_width, room_height, false);
+}

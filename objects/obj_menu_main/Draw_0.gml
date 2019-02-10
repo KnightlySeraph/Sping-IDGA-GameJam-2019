@@ -17,3 +17,9 @@ if(main_pressed)
 	gpu_set_blendmode(bm_normal);
 	draw_set_alpha(1);
 }
+
+if(play_transition)
+{
+	draw_set_color(c_black);
+	draw_rectangle(0, 0, room_width, room_height, false);
+}

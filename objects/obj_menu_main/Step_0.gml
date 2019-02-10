@@ -36,12 +36,31 @@ if(main_control)
 }
 else if(!main_control)
 {
-	if(curtains.image_alpha == 1 && curtains.y < 1080)
+	if(instance_exists(curtains))
 	{
-		// show_debug_message("Curtains drop");
-		curtains.y += 5;
+		if(curtains.image_alpha == 1 && curtains.y < 1080)
+		{
+			// show_debug_message("Curtains drop");
+			curtains.y += 5;
+		}
+		else if(curtains.y >= 1080)
+		{
+			play_transition = true;
+			curtains_open_left.image_alpha = 1;
+			curtains_open_right.image_alpha = 1;
+			instance_destroy(curtains);
+			curtains_open_left.image_speed = 1;
+			curtains_open_right.image_speed = 1;
+		}
 	}
-	else if(curtains.y >= 1080)
+	if(/*curtains_open_left.image_index <= 0 || */curtains_open_left.image_index > curtains_open_left.image_number)
+	{
+		if(!instance_exists(obj_roomTransition))
+		{
+			var tempRoomFade = instance_create_depth(x,y, -1000, obj_roomTransition);
+		}
+	}
+	else if(/*curtains_open_left.image_index <= 0 ||*/ curtains_open_left.image_index > curtains_open_left.image_number)
 	{
 		if(!instance_exists(obj_roomTransition))
 		{

@@ -13,6 +13,7 @@ main_control = true;
 main_pressed = false;
 main_hover = false;
 main_lightup = false;
+play_transition = false;
 
 light_horizontal_radius = 170;
 light_vertical_radius = 95;
@@ -38,6 +39,14 @@ exitButton = instance_create_depth(main_x, main_y + main_space * 4, -100, obj_bu
 
 curtains = instance_create_depth(0, 0, -500, obj_curtaindrop);
 curtains.image_alpha = 0;
+
+curtains_open_left = instance_create_depth(0, room_height, -600, obj_open);
+curtains_open_right = instance_create_depth(room_width, room_height, -600, obj_open);
+curtains_open_left.image_speed = 0;
+curtains_open_right.image_speed = 0;
+curtains_open_right.image_xscale *= -1;
+curtains_open_left.image_alpha = 0;
+curtains_open_right.image_alpha = 0;
 
 main[4] = playButton;
 main[3] = controlButton;
