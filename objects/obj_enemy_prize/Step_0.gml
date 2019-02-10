@@ -49,9 +49,9 @@ if(place_meeting(x,y,obj_lightBox) || place_meeting(x,y,obj_stompBox)) {
 	state = "DEATH";
 }
 
-if(timer % 5 == 0)
+if(timer % 3 == 0)
 {
-		
+	instance_create_depth(x,y,depth, obj_sparkle);
 }
 
 } // DO NOT DELETE
