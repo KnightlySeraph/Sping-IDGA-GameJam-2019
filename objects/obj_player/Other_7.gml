@@ -55,6 +55,6 @@ if (sprite_index == spr_air_right || sprite_index == spr_air_left) {
 
 if (sprite_index == spr_perish_left || sprite_index == spr_perish_right) {
 	image_speed = 0;
-	
-	room_goto(rm_menu_test);
+	var myScore = instance_create_depth(x, y, 0, obj_name);
+	// room_goto(rm_menu_test);
 }

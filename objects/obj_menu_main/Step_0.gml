@@ -96,6 +96,7 @@ else if(!main_control)
 			{
 				if(scoreTransition.option_fadeAlpha == 1)
 				{
+					scr_load_score();
 					draw_score = true;
 					//draw_enter = true;
 					instance_deactivate_object(curtains);
