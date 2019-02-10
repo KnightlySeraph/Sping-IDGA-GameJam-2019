@@ -54,5 +54,5 @@ if (sprite_index == spr_air_right || sprite_index == spr_air_left) {
 }
 
 if (sprite_index == spr_perish_left || sprite_index == spr_perish_right) {
-	room_goto(rm_menu_highscore);
+	room_goto(rm_menu_test);
 }

@@ -14,6 +14,9 @@ if (hitPoints <= 0) {
 	stomping = false;
 	isDashing = false;
 	isAttacking = false;
+	if(!instance_exists(obj_stompBox)) {
+		instance_create_depth(x, y + 216, 0, obj_stompBox);	
+	}
 	if (faceRight) STATE = STATES.DEATH_RIGHT;
 	else STATE = STATES.DEATH_LEFT;
 }
