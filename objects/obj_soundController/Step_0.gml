@@ -19,3 +19,16 @@ if (global.usingGamePad) {
 		audio_play_sound(track_to_play, 1, true);
 	}
 }
+else {
+	if (keyboard_check_pressed(vk_tab)) {
+		audio_stop_sound(track_to_play);
+		if (i < (length - 1)) {
+			i++;
+		}
+		else {
+			i = 0;	
+		}
+		track_to_play = music_list[i];
+		audio_play_sound(track_to_play, 1, true);
+	}
+}

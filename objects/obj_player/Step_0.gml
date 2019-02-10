@@ -38,8 +38,8 @@ move = key_right + key_left
 // Set animation state based on move var, animation cannot be accessed while the player is considered to be attacking
 if (grounded && !isAttacking  && !isDashing) {
 	if (move == 0) {
-		if (faceRight) STATE = STATES.IDLE;
-		else STATE = STATES.IDLE_RIGHT;
+		if (faceRight) STATE = STATES.IDLE_RIGHT;
+		else STATE = STATES.IDLE;
 	}
 	else if (move == 1) {
 		STATE = STATES.RUN_RIGHT;
@@ -489,6 +489,7 @@ if (STATE = STATES.AIR_ATTACK_RIGHT) {
 if((place_meeting(x,y,obj_enemy_basic_damage) || spotHit) && !invincible)
 {
 	invincible = true;
+	hitPoints -= 10;
 }
 
 
@@ -499,6 +500,7 @@ if(invincible)
 	{
 		invincible = false;
 		invince_timer = 0;
+		spotHit = false;
 	}
 	image_alpha = random_range(0.5,0.8);
 }

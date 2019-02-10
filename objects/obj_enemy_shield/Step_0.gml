@@ -30,7 +30,7 @@ switch(state){
 		
 	case("ATTACK"):
 		if(attacking) {
-			sprite_index = spr_enemy_basic_attack;
+			sprite_index = spr_enemy_shield_attack;
 		}
 		else if(!resting) {
 			state = "FOLLOW";
@@ -50,13 +50,13 @@ switch(state){
 		break;
 		
 	case("DEATH"):
-		sprite_index = spr_enemy_basic_dead;
+		sprite_index = spr_enemy_shield_dead;
 		scr_enemyDeath(self);
 		break;
 		
 	case("FALL"):
 		// Fall to the ground, then go back to following
-		sprite_index = spr_enemy_basic_fall;
+		sprite_index = spr_enemy_shield_fall;
 		if (place_meeting(x, y + vsp, obj_floor) || place_meeting(x, y + vsp, obj_platform_passable)){
 			while(!place_meeting(x, y+sign(vsp), obj_floor) && !place_meeting(x, y+sign(vsp), obj_platform_passable)){
 				y += sign(vsp);	
