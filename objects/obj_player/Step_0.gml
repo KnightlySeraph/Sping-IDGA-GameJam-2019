@@ -49,39 +49,40 @@ if (move == -1) {
 }
 
 player_hsp = move * moveSpeed;
-player_vsp = 0;
 
 // Jump Code
-if (key_jump && jump2) {
-	isJumping = true;
-	// Set the correct animation state
-	if (jump1) {
-		if (faceRight) {
-			STATE = STATES.JUMP1_RIGHT;
+// Disallow jumps when attacking
+if (!isAttacking) {
+	if (key_jump && jump2) {
+		isJumping = true;
+		// Set the correct animation state
+		if (jump1) {
+			if (faceRight) {
+				STATE = STATES.JUMP1_RIGHT;
+			}
+			else {
+				STATE = STATES.JUMP1_LEFT;
+			}
 		}
 		else {
-			STATE = STATES.JUMP1_LEFT;
+			if (faceRight) {
+				STATE = STATES.JUMP2_RIGHT;
+			}
+			else {
+				STATE = STATES.JUMP2_LEFT;
+			}
 		}
-	}
-	else {
-		if (faceRight) {
-			STATE = STATES.JUMP2_RIGHT;
+		// Control the length of the jump
+		alarm[0] = room_speed * jumpLength;
+	
+		// Implements double jump
+		if (jump1) {
+			jump1 = false;	
 		}
 		else {
-			STATE = STATES.JUMP2_LEFT;
-		}
+			jump2 = false;	
+		}	
 	}
-	// Control the length of the jump
-	alarm[0] = room_speed * jumpLength;
-	
-	// Implements double jump
-	if (jump1) {
-		jump1 = false;	
-	}
-	else {
-		jump2 = false;	
-	}
-	
 }
 
 // Set grounded var
@@ -104,7 +105,7 @@ if (grounded) {
 }
 else if (!grounded) {
 	// Change player animation to fall unless doing airial attack
-	if (!stomping) { // Set an animation state
+	if (!stomping && player_vsp > 0) { // Set an animation state
 		if (faceRight) STATE = STATES.FALL_RIGHT;
 		else STATE = STATES.FALL_LEFT;
 	}

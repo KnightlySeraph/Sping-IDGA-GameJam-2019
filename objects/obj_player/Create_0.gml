@@ -38,10 +38,10 @@ slot = -1;
 // ======================INIT NON-GLOBALS========================
 grounded = true; // Is the player on the ground
 move = 0; // Drives movement
-ori_player_grav = 9;
+ori_player_grav = 1;
 player_grav = ori_player_grav;
 isJumping = false;
-oriJumpForce = -26;
+oriJumpForce = -12;
 jumpForce = oriJumpForce;
 jumpLength = 0.3;
 jump1 = true;
@@ -57,6 +57,7 @@ faceRight = true;
 faceLeft = false;
 firing = false;
 isDashing = false;
+player_vsp = 0;
 
 camLerp = 0.01;
 
