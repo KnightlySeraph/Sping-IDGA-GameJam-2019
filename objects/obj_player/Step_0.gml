@@ -27,19 +27,13 @@ move = key_right + key_left
 // Set ground movement animations
 if (!isAttacking && grounded && !isDashing) {
 	if (move == 0) {
-		idling = true;
-		moveRight = false;
-		moveLeft = false;
+		STATE = STATES.IDLE;
 	}
 	else if (move == 1) {
-		moveRight = true;
-		moveLeft = false;
-		idling = false;
+		STATE = STATES.RUN_RIGHT;
 	}
 	else if (move == -1) {
-		moveLeft = true;
-		moveRight = false;
-		idling = false;
+		STATE = STATES.RUN_LEFT;
 	}
 }
 
@@ -59,35 +53,24 @@ player_vsp = 0;
 // Jump Code
 if (key_jump && jump2) {
 	isJumping = true;
-	// Control the length of the jump
+	// Set the correct animation state
 	if (jump1) {
 		if (faceRight) {
-			jump1right = true;
-			jump1left = false;
-			jump2right = false;
-			jump2left = false;
+			STATE = STATES.JUMP1_RIGHT;
 		}
 		else {
-			jump1right = false;
-			jump1left = true;
-			jump2right = false;
-			jump2left = false;
+			STATE = STATES.JUMP1_LEFT;
 		}
 	}
 	else {
 		if (faceRight) {
-			jump1right = false;
-			jump1left = false;
-			jump2right = true;
-			jump2left = false;
+			STATE = STATES.JUMP2_RIGHT;
 		}
 		else {
-			jump1right = false;
-			jump1left = false;
-			jump2right = false;
-			jump2left = true;
+			STATE = STATES.JUMP2_LEFT;
 		}
 	}
+	// Control the length of the jump
 	alarm[0] = room_speed * jumpLength;
 	if (jump1) {
 		jump1 = false;	
@@ -122,6 +105,12 @@ if (grounded) {
 	// Reset jump
 	if (!jump1) {
 		jump1 = true;
+	}
+	
+	// Change player animation to fall unless doing airial attack
+	if (!stomping) {
+		if (faceRight) sprite_index = spr_fall_right;
+		else sprite_index = spr_fall_left;
 	}
 }
 
@@ -273,6 +262,12 @@ if (global.usingGamePad) {
 		stomping = true;
 		player_grav = ori_player_grav;
 		player_grav = 50;
+		if (faceRight) {
+			sprite_index = spr_groundPound_right;	
+		}
+		else {
+			sprite_index = spr_groundPound_left;	
+		}
 	}
 	// Heavy Attack -- LASER
 	if (gamepad_button_check_pressed(slot, gp_face4) && grounded && !isAttacking && !stomping && !firing) {

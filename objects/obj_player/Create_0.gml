@@ -1,5 +1,7 @@
 /// @description Init primary vars
 global.usingGamePad = false;
+instance_create_depth(x, y, 0, STATES);
+STATE = STATES.IDLE;
 
 Connect();
 

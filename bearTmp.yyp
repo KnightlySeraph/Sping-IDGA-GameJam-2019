@@ -767,6 +767,14 @@
             }
         },
         {
+            "Key": "b861097b-2012-4140-a5e3-703127ff5d7a",
+            "Value": {
+                "id": "5a1af4bb-3305-4000-b619-5059d453b34e",
+                "resourcePath": "objects\\STATES\\STATES.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "b99e5757-bd0e-405b-be6a-75ad567697f8",
             "Value": {
                 "id": "eae23306-7244-4c2c-b81e-10632535c333",
