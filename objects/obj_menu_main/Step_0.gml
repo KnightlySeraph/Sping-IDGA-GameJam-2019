@@ -82,7 +82,6 @@ else if(!main_control)
 					{
 						instance_deactivate_object(main[k]);
 					}
-					scr_addScore();
 				}
 			}
 		}
@@ -161,18 +160,20 @@ else if(!main_control)
 
 if(draw_enter)
 {
-	if (string_length(keyboard_string)<limit)
+	if(keyboard_check_pressed(vk_enter))
+	{
+		show_debug_message("I should work");
+		global.name = message;
+		scr_addScore();
+		show_debug_message("I'm back!");
+		draw_enter = false;
+	}
+	if (string_length(keyboard_string) <= limit)
 	{
 		message = keyboard_string;
 	}
 	else
 	{
 		keyboard_string = message;
-	}
-	if(keyboard_check_pressed(vk_enter))
-	{
-		global.name = message;
-		scr_addScore();
-		draw_enter = false;
 	}
 }
