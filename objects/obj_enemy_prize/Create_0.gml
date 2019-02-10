@@ -21,3 +21,4 @@ combo = 0;
 damage_box = noone;
 
 point = 10;
+heal = 1;
