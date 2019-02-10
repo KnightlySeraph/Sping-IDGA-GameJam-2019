@@ -15,7 +15,7 @@ Meat = .51;
 Run = 1;
 
 selection = random_range(0, 1);
-show_message("Rand is: " + string(selection));
+// show_message("Rand is: " + string(selection));
 
 music_list = [Run_Amok, Italy_Jr, Spazmatic_Polka, Cruising_Goblins, Pop_Weasel, Exit_Premise, Adventure_Meme, Jaunty_Gumption, Music_Delight, Meatball_Parade, Cartoon_Battle];
 length = array_length_1d(music_list);
