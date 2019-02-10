@@ -22,3 +22,4 @@ damage_box = noone;
 
 point = 10;
 heal = 1;
+increase = 2;

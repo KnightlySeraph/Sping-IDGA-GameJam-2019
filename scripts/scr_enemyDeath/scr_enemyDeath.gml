@@ -29,6 +29,7 @@ if((place_meeting(enemy.x,enemy.y,obj_lightBox) || place_meeting(enemy.x,enemy.y
 	}
 	points += enemy.point * enemy.combo;
 	hitPoints += enemy.heal;
+	if(enemy.increase > 0) obj_player.speed_timer = room_speed * 10;
 }
 else if(place_meeting(enemy.x,enemy.y,obj_stompBox) && !hit)
 {
@@ -47,6 +48,7 @@ else if(place_meeting(enemy.x,enemy.y,obj_stompBox) && !hit)
 	}
 	points += enemy.point * enemy.combo;
 	hitPoints += enemy.heal;
+	if(enemy.increase > 0) obj_player.speed_timer = room_speed * 10;
 }
 else if(place_meeting(enemy.x, enemy.y, obj_laserBox) && !hit)
 {
@@ -65,6 +67,7 @@ else if(place_meeting(enemy.x, enemy.y, obj_laserBox) && !hit)
 	}
 	points += enemy.point * enemy.combo;
 	hitPoints += enemy.heal;
+	if(enemy.increase > 0) obj_player.speed_timer = room_speed * 10;
 }
 else if(!place_meeting(enemy.x,enemy.y,obj_lightBox) && !place_meeting(enemy.x,enemy.y,obj_airBox) && !place_meeting(enemy.x,enemy.y,obj_dashBox) && enemy.hit && enemy.type == "light")
 {

@@ -88,6 +88,8 @@ invince_timer = 0;
 invince_max = room_speed * 1.5;
 spotHit = false;
 
+//SPEED
+speed_timer = 0;
 
-// Play game start sound
 audio_play_sound(snd_startAnnouncer, 1, 0);
+
