@@ -5,4 +5,4 @@ createLeft = false;
 
 alarm[0] = 2 * room_speed;
 
-depth = -1;
+depth = 0;
