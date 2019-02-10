@@ -478,25 +478,24 @@ if (STATE = STATES.AIR_ATTACK_RIGHT) {
 
 // Taking Damage
 
-if((place_meeting(x,y,obj_enemy_basic_damage) || spotHit) && !invincible)
-{
+if(hitPoints > 100) hitPoints = 100;
+if(hitPoints < 0) hitPoints = 0;
+
+if((place_meeting(x,y,obj_enemy_basic_damage) || spotHit) && !invincible) {
 	invincible = true;
 	hitPoints -= 10;
 }
 
 
-if(invincible)
-{
+if(invincible) {
 	invince_timer += 1;
-	if(invince_timer > invince_max)
-	{
+	if(invince_timer > invince_max) {
 		invincible = false;
 		invince_timer = 0;
 		spotHit = false;
 	}
 	image_alpha = random_range(0.5,0.8);
 }
-else
-{
+else {
 	image_alpha = 1;	
 }
