@@ -52,7 +52,6 @@ highscoreButton = instance_create_depth(main_x, main_y + main_space * 2, -100, o
 creditButton = instance_create_depth(main_x, main_y + main_space * 3, -100, obj_button_credits);
 exitButton = instance_create_depth(main_x, main_y + main_space * 4, -100, obj_button_exit);
 backButton = instance_create_depth(main_x, (main_y + main_space * 4) + 100, -100, obj_button_back);
-instance_deactivate_object(backButton);
 
 curtains = instance_create_depth(0, 0, -500, obj_curtaindrop);
 curtains.image_alpha = 0;

@@ -37,7 +37,7 @@ if(main_control)
 else if(!main_control)
 {
 	if(draw_back)
-	{
+	{		
 		if(instance_position(mouse_x, mouse_y, backButton))
 		{
 			show_debug_message("Back hover");
@@ -79,8 +79,8 @@ else if(!main_control)
 						instance_deactivate_object(main[k]);
 					}
 				}
-				instance_activate_object(backButton);
-				draw_back = true;
+				//instance_activate_object(backButton);
+				//draw_back = true;
 			}
 		}
 		break;
@@ -103,8 +103,8 @@ else if(!main_control)
 					{
 						instance_deactivate_object(main[k]);
 					}
-					instance_activate_object(backButton);
-					draw_back = true;
+				//instance_activate_object(backButton);
+				//draw_back = true;
 				}
 			}
 		}
@@ -127,8 +127,8 @@ else if(!main_control)
 					{
 						instance_deactivate_object(main[k]);
 					}
-					instance_activate_object(backButton);
-					draw_back = true;
+				//instance_activate_object(backButton);
+				//draw_back = true;
 				}
 			}
 		}
@@ -201,4 +201,8 @@ if(draw_enter)
 	{
 		keyboard_string = message;
 	}
+}
+if(keyboard_check_pressed(vk_enter))
+{
+	room_restart();
 }
