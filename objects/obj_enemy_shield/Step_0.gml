@@ -56,7 +56,7 @@ switch(state){
 		
 	case("FALL"):
 		// Fall to the ground, then go back to following
-		sprite_index = spr_enemy_basic_fall;
+		sprite_index = spr_enemy_shield_fall;
 		if (place_meeting(x, y + vsp, obj_floor) || place_meeting(x, y + vsp, obj_platform_passable)){
 			while(!place_meeting(x, y+sign(vsp), obj_floor) && !place_meeting(x, y+sign(vsp), obj_platform_passable)){
 				y += sign(vsp);	
