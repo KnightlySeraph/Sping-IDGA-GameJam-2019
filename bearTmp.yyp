@@ -1631,6 +1631,14 @@
             }
         },
         {
+            "Key": "f1bf796d-dc7c-447d-a2c0-eb902a4716c8",
+            "Value": {
+                "id": "1a54297d-ce63-4505-a1db-193cce337b77",
+                "resourcePath": "fonts\\Epbb\\Epbb.yy",
+                "resourceType": "GMFont"
+            }
+        },
+        {
             "Key": "f2de7ae7-15ff-4d48-a17b-99f150dd3090",
             "Value": {
                 "id": "fc39372e-a943-4ad9-8776-0c48c6cd3eb5",
