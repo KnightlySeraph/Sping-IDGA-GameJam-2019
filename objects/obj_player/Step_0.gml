@@ -26,7 +26,7 @@ else { // Player is using the keyboard
 move = key_right + key_left
 
 // Set animation state based on move var, animation cannot be accessed while the player is considered to be attacking
-if (grounded && !isAttacking) {
+if (grounded && !isAttacking  && !isDashing) {
 	if (move == 0) {
 		if (faceRight) STATE = STATES.IDLE;
 		else STATE = STATES.IDLE_RIGHT;
@@ -174,6 +174,10 @@ if (isDashing) {
 			y = obj_player.y + 256;
 		}
 	}
+	if (image_index > 6 && image_index < 9) {
+		if (faceRight) DashBox(obj_player, 1);
+		else DashBox(obj_player, -1);
+	}
 	if (image_index > 9 && image_index < 11) {
 		// Do some special effects
 		Rumble(0.6, 0.7);
@@ -266,13 +270,6 @@ if (global.usingGamePad) {
 		isDashing = true;	
 		alarm[9] = 2 * room_speed;
 		image_index = 0;
-		if (!instance_exists(obj_dashBox)) {
-			instance_create_depth(x, y + 256, 0, obj_dashBox);	
-		}
-		else {
-			instance_destroy(obj_dashBox);
-			instance_create_depth(x, y + 256, 0, obj_dashBox);
-		}
 		if (faceRight) {
 			STATE = STATES.DASH_ATTACK_RIGHT;
 		}

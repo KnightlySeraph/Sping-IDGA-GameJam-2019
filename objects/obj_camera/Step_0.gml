@@ -2,6 +2,15 @@
 x += (xTo - x) / 10;
 y += (yTo - y) / 10;
 if (keyboard_check_pressed(ord("O"))) show_message("Height, Width: (" + string(height) + ", " + string(width) +")");
+if (keyboard_check_pressed(ord("P"))) {
+	if (follow == obj_focus) {
+		follow = obj_player;	
+	}
+	else {
+		
+		follow = obj_focus;	
+	}
+}
 
 //As long as player following  is following the player
 if(follow != noone){
