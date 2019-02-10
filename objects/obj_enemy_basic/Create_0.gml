@@ -29,3 +29,4 @@ type = noone;
 combo = 0;
 point = 1;
 heal = 0;
+increase = 0;
