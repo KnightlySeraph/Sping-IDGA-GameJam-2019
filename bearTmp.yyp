@@ -327,6 +327,14 @@
             }
         },
         {
+            "Key": "406b5350-b944-49fd-bb5f-d32d1c7a56b6",
+            "Value": {
+                "id": "d00a7c31-8a11-4160-9e15-9558755526e2",
+                "resourcePath": "sprites\\spr_enemy_flying_dead\\spr_enemy_flying_dead.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "409c946b-f401-4c7d-94f8-f296032795ec",
             "Value": {
                 "id": "ac41bbf3-65d7-4360-b67e-8b9d23a0c134",
