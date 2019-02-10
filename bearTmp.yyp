@@ -1463,6 +1463,14 @@
             }
         },
         {
+            "Key": "e0400ba7-7ede-4df3-8a93-5b159ff9a7e9",
+            "Value": {
+                "id": "027c89dd-5093-4823-82d7-5a3372848de3",
+                "resourcePath": "sprites\\spr_enemy_shield_fall\\spr_enemy_shield_fall.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "e0ec6bd1-bd1b-4047-a549-ce9a5ad3d19f",
             "Value": {
                 "id": "0ddb4aaa-1800-4bcb-a33c-5fe507f143e5",
