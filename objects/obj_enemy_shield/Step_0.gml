@@ -57,8 +57,8 @@ switch(state){
 	case("FALL"):
 		// Fall to the ground, then go back to following
 		sprite_index = spr_enemy_basic_fall;
-		if (place_meeting(x, y + vsp, obj_floor)){
-			while(!place_meeting(x, y+sign(vsp), obj_floor)){
+		if (place_meeting(x, y + vsp, obj_floor) || place_meeting(x, y + vsp, obj_platform_passable)){
+			while(!place_meeting(x, y+sign(vsp), obj_floor) && !place_meeting(x, y+sign(vsp), obj_platform_passable)){
 				y += sign(vsp);	
 			}
 			vsp = 0;
@@ -74,7 +74,7 @@ switch(state){
 }
 
 // If there is no floor below, go into falling
-if(!place_meeting(x, y+1, obj_floor) && state != "DEATH") state = "FALL";
+if((!place_meeting(x, y+1, obj_floor) && !place_meeting(x, y+1, obj_platform_passable)) && state != "DEATH") state = "FALL";
 if((place_meeting(x,y,obj_lightBox) && direct != sign(obj_player.x - x)) || place_meeting(x,y,obj_stompBox)) {
 	state = "DEATH";
 	alarm[0] = -1;
@@ -90,8 +90,8 @@ if(state != "DEATH")
 		hsp = sign(x - obj_player.x) * maxSpeed;	
 	}
 
-	if (place_meeting(x + hsp, y, obj_floor)){
-		while(!place_meeting(x+sign(hsp), y, obj_floor)){
+	if (place_meeting(x + hsp, y, obj_floor) || place_meeting(x + hsp, y, obj_platform_passable)){
+		while(!place_meeting(x+sign(hsp), y, obj_floor) && !place_meeting(x+sign(hsp), y, obj_platform_passable)){
 			x += sign(hsp);	
 		}
 		hsp = 0;
