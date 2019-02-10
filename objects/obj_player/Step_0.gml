@@ -38,8 +38,8 @@ move = key_right + key_left
 // Set animation state based on move var, animation cannot be accessed while the player is considered to be attacking
 if (grounded && !isAttacking  && !isDashing) {
 	if (move == 0) {
-		if (faceRight) STATE = STATES.IDLE;
-		else STATE = STATES.IDLE_RIGHT;
+		if (faceRight) STATE = STATES.IDLE_RIGHT;
+		else STATE = STATES.IDLE;
 	}
 	else if (move == 1) {
 		STATE = STATES.RUN_RIGHT;
