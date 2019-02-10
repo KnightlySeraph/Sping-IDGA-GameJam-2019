@@ -12,4 +12,9 @@ for(i = 0; i < instance_number(obj_spawner); i+=1)
 	spawners[i] = instance_find(obj_spawner,i);	
 }
 
+for(i = 0; i < instance_number(obj_lightspawner); i+=1)
+{
+	spotlights[i] = instance_find(obj_lightspawner, i);	
+}
+
 randomize();
