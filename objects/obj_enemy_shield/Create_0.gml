@@ -4,7 +4,7 @@ state = "FOLLOW";
 hsp = 0;
 vsp = 0;
 grav = 0.5;
-spd = 1.2;
+spd = 2;
 direct = 1;
 
 attacking = false;
@@ -18,6 +18,12 @@ if(instance_exists(obj_player))
 }
 else max_height = 0;
 
-anti_sezure = 0; // Delet Later
-
 last_sprite = sprite_index;
+
+damage_box = noone;
+
+// DEath Variables
+hit = false;
+death_rot = 1;
+type = noone;
+combo = 0;
