@@ -56,6 +56,7 @@ else if(!main_control)
 				instance_destroy(main[a]);
 			}
 			main_exists = false;
+			layer_set_visible("Background", false);
 		}
 	}
 	if(curtains_open_left.image_index > curtains_open_left.image_number-1)

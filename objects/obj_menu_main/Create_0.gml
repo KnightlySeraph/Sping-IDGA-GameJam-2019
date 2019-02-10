@@ -1,10 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-
-//main_light_surf = surface_create(camera_get_view_width(view_camera[0]), camera_get_view_height(view_camera[0]));
-//main_light_surf_copy = surface_create(camera_get_view_width(view_camera[0]), camera_get_view_height(view_camera[0]));
-
 main_step = 0;
 main_index = -1;
 main_committed = -1;
@@ -61,6 +57,6 @@ main[0] = exitButton;
 
 for(var n = 0; n < 5; n++)
 {
-	main[n].image_xscale = 0.6;
-	main[n].image_yscale = 0.6;
+	main[n].image_xscale = 0.7;
+	main[n].image_yscale = 0.7;
 }
