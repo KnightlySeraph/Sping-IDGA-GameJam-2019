@@ -1,6 +1,7 @@
 // States are FOLLOW, ATTACK, PATH, DEATH and FALL
 state = "FOLLOW";
 
+
 hsp = 0;
 vsp = 0;
 grav = 0.5;
