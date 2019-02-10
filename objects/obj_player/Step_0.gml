@@ -304,7 +304,101 @@ if (global.usingGamePad) {
 }
 // ===============================================KEYBOARD BINDS AND LOGIC========================================================
 else {
-	
+	// Basic Attack
+	if (keyboard_check(ord("J")) && grounded && !isAttacking && move == 0) {
+		show_debug_message("Attempting Attack");
+		isAttacking = true;
+		image_index = 0; // Reset the image index
+		// Start ktimer to reset combo
+		Shake(1, 10);
+		
+		
+		alarm[4] = attackDelay * room_speed;
+		if (attackIndex == 0) {
+			show_debug_message("Attack index 0 entered");
+			if (faceRight) {
+				STATE = STATES.ATTACK_RIGHT1; // Set Animation State
+				LightBox(obj_player, 1);
+			}
+			else {
+				STATE = STATES.ATTACK_LEFT1; // Set Animation State
+				LightBox(obj_player, -1);
+			}
+		}
+		else if (attackIndex == 1) {
+			if (faceRight) {
+				STATE = STATES.ATTACK_RIGHT2; // Set Animation State
+				LightBox(obj_player, 1);
+			}
+			else {
+				STATE = STATES.ATTACK_LEFT2; // Set Animation State
+				LightBox(obj_player, -1);
+			}
+			
+		}
+		else if (attackIndex == 2) {
+			if (faceRight) {
+				STATE = STATES.ATTACK_RIGHT3; // Set Animation State
+				alarm[7] = 0.7 * room_speed;
+			}
+			else {
+				STATE = STATES.ATTACK_LEFT3; // Set Animation State
+				alarm[7] = 0.7 * room_speed;
+			}
+		}
+	}
+	// Arial Attack
+	if (keyboard_check_pressed(ord("J")) && !grounded && !stomping && !isAttacking) {
+		isAttacking = true;
+		// Change animation state
+		image_index = 0;
+		if (faceRight) AirBox(obj_player, 1);
+		else AirBox(obj_player, -1);
+		if (faceRight) STATE = STATES.AIR_ATTACK_RIGHT;
+		else STATE = STATES.AIR_ATTACK_LEFT;
+	}
+	// Heavy Attack -- STOMP
+	if (keyboard_check_pressed(ord("K")) && !grounded && !isAttacking && !stomping) {
+		isAttacking = true;
+		alarm[10] = room_speed * 0.5;
+		if (faceRight) {
+			STATE = STATES.DIVE_RIGHT;
+		}
+		else {
+			STATE = STATES.DIVE_LEFT;
+		}
+	}
+	// Heavy Attack -- LASER
+	if (keyboard_check_pressed(ord("K")) && grounded && !isAttacking && !stomping && !firing) {
+		isAttacking = true;
+		firing = true;
+		// Delay specials alarm
+		alarm[6] = 1 * room_speed;
+		alarm[8] = 1.1 * room_speed;
+		// Delete boxo
+		alarm[11] = 1.5 * room_speed;
+		Zoom(384, 1, 0.01, 0.2);
+		if (faceRight) {
+			STATE = STATES.LASER_ATTACK_RIGHT;
+			laserRight = true;
+		}
+		else {
+			STATE = STATES.LASER_ATTACK_LEFT;
+			laserLeft = true;
+		}
+	}
+	// Dash Attack
+	if (keyboard_check_pressed(ord("J")) && grounded && !isDashing && (move == 1 || move == -1) && !isAttacking && !stomping && !firing) {
+		isDashing = true;	
+		alarm[9] = 2 * room_speed;
+		image_index = 0;
+		if (faceRight) {
+			STATE = STATES.DASH_ATTACK_RIGHT;
+		}
+		else {
+			STATE = STATES.DASH_ATTACK_LEFT;
+		}
+	}
 }
 
 //===================ANIMATION HANDLER=====================
