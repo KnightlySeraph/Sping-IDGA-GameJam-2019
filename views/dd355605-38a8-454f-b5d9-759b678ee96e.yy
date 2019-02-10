@@ -12,7 +12,8 @@
         "f044fcd6-455e-45b4-92d7-dfaea9631fd6",
         "200a861f-3b66-44e8-9fb4-34397c15b76f",
         "06e74a62-498f-4be6-b8b9-91649182c1b8",
-        "309ec4e1-e228-4151-8e4d-e2ca14a926fc"
+        "309ec4e1-e228-4151-8e4d-e2ca14a926fc",
+        "d7270cab-4f31-478b-a2b0-592ce2dc981c"
     ],
     "filterType": "GMSprite",
     "folderName": "Level",
