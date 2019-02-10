@@ -295,6 +295,14 @@
             }
         },
         {
+            "Key": "214dd55c-7508-451b-ae1c-47f709b3d3fe",
+            "Value": {
+                "id": "11b5aea3-94a7-4a21-9600-a5b6bc3b218b",
+                "resourcePath": "datafiles_yy\\Epbb-Regular.ttf.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
             "Key": "239bab02-f132-429f-890f-a7648b5d5624",
             "Value": {
                 "id": "17c51e4e-e7ef-4792-b761-42d843851a03",
