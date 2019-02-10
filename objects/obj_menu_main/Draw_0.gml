@@ -45,3 +45,18 @@ if(play_transition)
 	draw_set_color(c_black);
 	draw_rectangle(0, 0, room_width, room_height, false);
 }
+
+if(draw_back)
+{
+	draw_sprite_ext(spr_menu_back, 1, backButton.x, backButton.y, 0.7, 0.7, 0, c_white, 1);
+}
+if(back_hover)
+{
+	draw_set_alpha(0.8);
+	draw_ellipse_color(backButton.x - light_horizontal_radius, backButton.y - light_vertical_radius, backButton.x + light_horizontal_radius, backButton.y + light_vertical_radius, c_white, c_yellow, false);
+}
+if(back_pressed)
+{
+	draw_set_alpha(0.8);
+	draw_ellipse_color(backButton.x - light_horizontal_radius, backButton.y - light_vertical_radius, backButton.x + light_horizontal_radius, backButton.y + light_vertical_radius, c_yellow, c_orange, false);
+}

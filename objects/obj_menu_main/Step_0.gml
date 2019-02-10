@@ -36,6 +36,25 @@ if(main_control)
 }
 else if(!main_control)
 {
+	if(draw_back)
+	{
+		if(instance_position(mouse_x, mouse_y, backButton))
+		{
+			show_debug_message("Back hover");
+			back_hover = true;
+		}
+		else
+		{
+			back_hover = false;
+		}
+		if(back_hover)
+		{
+			if(mouse_check_button_pressed(mb_left))
+			{
+				back_pressed = true;
+			}
+		}
+	}
 	switch(main_committed)
 	{
 	case(0):
@@ -60,6 +79,8 @@ else if(!main_control)
 						instance_deactivate_object(main[k]);
 					}
 				}
+				instance_activate_object(backButton);
+				draw_back = true;
 			}
 		}
 		break;
@@ -82,6 +103,8 @@ else if(!main_control)
 					{
 						instance_deactivate_object(main[k]);
 					}
+					instance_activate_object(backButton);
+					draw_back = true;
 				}
 			}
 		}
@@ -104,6 +127,8 @@ else if(!main_control)
 					{
 						instance_deactivate_object(main[k]);
 					}
+					instance_activate_object(backButton);
+					draw_back = true;
 				}
 			}
 		}

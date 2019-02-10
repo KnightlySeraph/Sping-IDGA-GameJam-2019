@@ -16,6 +16,10 @@ main_hover = false;
 main_lightup = false;
 play_transition = false;
 
+back_hover = false;
+back_pressed = false;
+draw_back = false;
+
 draw_credits = false;
 draw_controls = false;
 draw_score = false;
@@ -47,6 +51,8 @@ controlButton = instance_create_depth(main_x, main_y + main_space, -100, obj_but
 highscoreButton = instance_create_depth(main_x, main_y + main_space * 2, -100, obj_button_highscores);
 creditButton = instance_create_depth(main_x, main_y + main_space * 3, -100, obj_button_credits);
 exitButton = instance_create_depth(main_x, main_y + main_space * 4, -100, obj_button_exit);
+backButton = instance_create_depth(main_x, (main_y + main_space * 4) + 100, -100, obj_button_back);
+instance_deactivate_object(backButton);
 
 curtains = instance_create_depth(0, 0, -500, obj_curtaindrop);
 curtains.image_alpha = 0;
