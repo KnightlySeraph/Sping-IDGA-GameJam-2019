@@ -7,6 +7,7 @@ if (!instance_exists(obj_alex_tester)) {
 	else obj_alex_tester.createRight = false;
 }
 
+audio_play_sound(snd_laser, 1, 0);
 laserRight = false;
 laserLeft = false;
 firing = false;
