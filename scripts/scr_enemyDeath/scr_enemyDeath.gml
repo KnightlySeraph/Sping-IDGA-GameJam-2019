@@ -42,7 +42,7 @@ else if(place_meeting(enemy.x, enemy.y, obj_laserBox) && !hit)
 {
 	enemy.hit = true;
 	enemy.hsp = -sign(obj_player.x - enemy.x) * 1.4;
-	enemy.vsp = -5;
+	enemy.vsp = -10;
 	enemy.grav = 0.1;
 	enemy.death_rot = 10 + random_range(1,10);
 	enemy.type = "laser";
@@ -77,7 +77,7 @@ else if(!place_meeting(enemy.x, enemy.y, obj_laserBox) && hit && type == "laser"
 	enemy.hsp = -sign(obj_player.x - enemy.x) * combo * 4;
 	enemy.vsp = -5;
 	enemy.hit = false;
-	enemy.grav = 0.5;
+	enemy.grav = 1;
 }
 enemy.x += enemy.hsp;
 enemy.y += enemy.vsp

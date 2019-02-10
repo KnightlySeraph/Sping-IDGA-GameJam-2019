@@ -10,10 +10,10 @@ switch(stage){
 		
 	case(2):
 		if(timer == 1) scr_spawnEnemies(obj_enemy_basic, 1, spawners, 1);
-		else if(timer == 2 * second) scr_spawnEnemies(obj_enemy_basic, 1, spawners, 1);
-		else if(timer == 4 * second) scr_spawnEnemies(obj_enemy_basic, 2, spawners, 1);
-		else if(timer == 5 * second) scr_spawnEnemies(obj_enemy_basic, 1, spawners, 1);
-		else if(!instance_exists(obj_enemy_basic) && timer > 5 * second) {
+		else if(timer == 4 * second) scr_spawnEnemies(obj_enemy_basic, 1, spawners, 1);
+		else if(timer == 8 * second) scr_spawnEnemies(obj_enemy_basic, 2, spawners, 1);
+		else if(timer == 10 * second) scr_spawnEnemies(obj_enemy_basic, 1, spawners, 1);
+		else if(!instance_exists(obj_enemy_basic) && timer > 10 * second) {
 			timer = 0;
 			stage = 3;
 		}
@@ -29,8 +29,8 @@ switch(stage){
 		
 	case(4):
 		if(timer == 1) scr_spawnEnemies(obj_enemy_basic, 4, spawners, 1);
-		else if(timer == 3 * second) scr_spawnEnemies(obj_enemy_basic, 2, spawners, 1);
-		else if(!instance_exists(obj_enemy_basic) && timer > 3 * second) {
+		else if(timer == 6 * second) scr_spawnEnemies(obj_enemy_basic, 2, spawners, 1);
+		else if(!instance_exists(obj_enemy_basic) && timer > 6 * second) {
 			timer = 0;
 			stage = 5;
 		}
@@ -49,10 +49,10 @@ switch(stage){
 			scr_spawnEnemies(obj_enemy_basic, 2, spawners, 1);
 			scr_spawnEnemies(obj_enemy_shield, 1, spawners, 1);
 		}
-		else if(timer > 2 * second) scr_spawnEnemies(obj_enemy_basic, 3, spawners, 1);
-		else if(timer > 3 * second) scr_spawnEnemies(obj_enemy_health, 1, spawners, 1);
-		else if(timer > 4 * second) scr_spawnEnemies(obj_enemy_shield, 2, spawners, 1);
-		else if(!instance_exists(obj_enemy_basic) && !instance_exists(obj_enemy_shield) && timer > 4 * second) {
+		else if(timer == 4 * second) scr_spawnEnemies(obj_enemy_basic, 3, spawners, 1);
+		else if(timer == 6 * second) scr_spawnEnemies(obj_enemy_health, 1, spawners, 1);
+		else if(timer == 8 * second) scr_spawnEnemies(obj_enemy_shield, 2, spawners, 1);
+		else if(!instance_exists(obj_enemy_basic) && !instance_exists(obj_enemy_shield) && timer > 8 * second) {
 			timer = 0;
 			stage = 7;
 		}
@@ -71,8 +71,8 @@ switch(stage){
 			scr_spawnEnemies(obj_enemy_basic, 3, spawners, 1);
 			scr_spawnEnemies(obj_enemy_shield, 2, spawners, 1);
 		}
-		else if(timer == 3 * second) scr_spawnEnemies(obj_enemy_basic, 4, spawners, 1);
-		else if(timer == 4 * second) scr_spawnEnemies(obj_enemy_shield, 1, spawners, 1);
+		else if(timer == 6 * second) scr_spawnEnemies(obj_enemy_basic, 4, spawners, 1);
+		else if(timer == 8 * second) scr_spawnEnemies(obj_enemy_shield, 1, spawners, 1);
 		else if(!instance_exists(obj_enemy_basic) && !instance_exists(obj_enemy_shield) && timer > 4 * second)
 		{
 			timer = 0;
@@ -95,13 +95,13 @@ switch(stage){
 			scr_spawnEnemies(obj_enemy_basic,2,spawners, 1);
 			scr_spawnEnemies(obj_enemy_flying, 2, spawners, 1);
 		}
-		else if(timer == 1 * second) scr_spawnEnemies(obj_enemy_shield, 3, spawners, 1);
-		else if(timer == 4 * second) scr_spawnEnemies(obj_enemy_health, 1, spawners, 1);
-		else if(timer == 5 * second) {
+		else if(timer == 2 * second) scr_spawnEnemies(obj_enemy_shield, 3, spawners, 1);
+		else if(timer == 8 * second) scr_spawnEnemies(obj_enemy_health, 1, spawners, 1);
+		else if(timer == 10 * second) {
 			scr_spawnEnemies(obj_enemy_basic, 2, spawners, 1);
 			scr_spawnEnemies(obj_enemy_flying, 1, spawners, 1);
 		}
-		else if(!instance_exists(obj_enemy_basic) && !instance_exists(obj_enemy_shield) && !instance_exists(obj_enemy_flying) && timer > 5 * second) {
+		else if(!instance_exists(obj_enemy_basic) && !instance_exists(obj_enemy_shield) && !instance_exists(obj_enemy_flying) && timer > 10 * second) {
 			timer = 0;
 			stage = 11;
 		}
@@ -109,13 +109,13 @@ switch(stage){
 		
 	case(11):
 		if(timer == 1) scr_spawnEnemies(obj_enemy_basic, 4, spawners, 1);
-		else if(timer > 2 * second) scr_spawnEnemies(obj_enemy_shield, 4, spawners, 1);
-		else if(timer > 4 * second) scr_spawnEnemies(obj_enemy_flying, 4, spawners, 1);
-		else if(timer > 8 * second) {
+		else if(timer == 4 * second) scr_spawnEnemies(obj_enemy_shield, 4, spawners, 1);
+		else if(timer == 8 * second) scr_spawnEnemies(obj_enemy_flying, 4, spawners, 1);
+		else if(timer == 16 * second) {
 			scr_spawnEnemies(obj_enemy_prize, 1, spawners, 1);	
 			scr_spawnEnemies(obj_enemy_health, 1, spawners, 1);	
 		}
-		else if(!instance_exists(obj_enemy_basic) && !instance_exists(obj_enemy_shield) && !instance_exists(obj_enemy_flying) && timer > 8 * second) {
+		else if(!instance_exists(obj_enemy_basic) && !instance_exists(obj_enemy_shield) && !instance_exists(obj_enemy_flying) && timer > 16 * second) {
 			timer = 0;
 			stage = 12;
 		}

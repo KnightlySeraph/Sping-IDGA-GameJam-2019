@@ -4,7 +4,7 @@ state = "FOLLOW";
 hsp = 0;
 vsp = 0;
 grav = 0.5;
-spd = 2;
+spd = 1.5;
 direct = 1;
 
 attacking = false;
