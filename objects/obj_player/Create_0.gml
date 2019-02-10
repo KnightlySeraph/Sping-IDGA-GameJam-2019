@@ -2,6 +2,7 @@
 global.usingGamePad = false;
 instance_create_depth(x, y, 0, STATES);
 STATE = STATES.IDLE;
+window_set_fullscreen(true);
 
 Connect();
 
