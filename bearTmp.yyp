@@ -1383,6 +1383,14 @@
             }
         },
         {
+            "Key": "ba8e1333-9ef4-4fff-981a-d76c865ccc39",
+            "Value": {
+                "id": "aadf8c29-6a0e-4899-bb02-662404c12f5d",
+                "resourcePath": "objects\\obj_uiRope\\obj_uiRope.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "ba9577a7-958a-4530-a351-1f179e26f6bb",
             "Value": {
                 "id": "48dceba2-93a5-4527-a744-a420382a3292",
