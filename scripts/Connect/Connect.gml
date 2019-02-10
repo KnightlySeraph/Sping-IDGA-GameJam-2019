@@ -5,7 +5,7 @@ for(i = 0; i < controller_count; i++){
 		global.usingGamePad = true;
 		//Create a Deadzone for the Gamepad of 0.05
 		gamepad_set_axis_deadzone(i, 0.5);
-		obj_player.slot = i;
+		slot = i;
 		break;
 	}
 	else{

@@ -7,7 +7,7 @@ if (room == room0 && !playing) {
 
 // Cycle Music
 if (global.usingGamePad) {
-	if (gamepad_button_check_pressed(obj_player.slot, gp_shoulderlb)) {
+	if (gamepad_button_check_pressed(slot, gp_shoulderlb)) {
 		audio_stop_sound(track_to_play);
 		if (i < (length - 1)) {
 			i++;
