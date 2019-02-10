@@ -1,3 +1,4 @@
+
 pip.x = x;
 pip.y = y;
 scale = (hitPoints * 285) / hitPointMax;
