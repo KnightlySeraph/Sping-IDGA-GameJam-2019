@@ -489,6 +489,7 @@ if (STATE = STATES.AIR_ATTACK_RIGHT) {
 if((place_meeting(x,y,obj_enemy_basic_damage) || spotHit) && !invincible)
 {
 	invincible = true;
+	hitPoints -= 10;
 }
 
 

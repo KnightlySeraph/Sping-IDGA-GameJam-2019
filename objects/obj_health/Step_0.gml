@@ -1,3 +1,4 @@
 pip.x = x;
 pip.y = y;
-pip.image_xscale = 285;
+scale = (hitPoints * 285) / hitPointMax;
+pip.image_xscale = scale;
