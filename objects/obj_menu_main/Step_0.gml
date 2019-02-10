@@ -76,11 +76,13 @@ else if(!main_control)
 				if(scoreTransition.option_fadeAlpha == 1)
 				{
 					draw_score = true;
+					draw_enter = true;
 					instance_deactivate_object(curtains);
 					for(var k = 0; k < 5; k++)
 					{
 						instance_deactivate_object(main[k]);
 					}
+					scr_addScore();
 				}
 			}
 		}
@@ -154,5 +156,23 @@ else if(!main_control)
 				var tempRoomFade = instance_create_depth(x,y, -1000, obj_roomTransition);
 			}
 		}
+	}
+}
+
+if(draw_enter)
+{
+	if (string_length(keyboard_string)<limit)
+	{
+		message = keyboard_string;
+	}
+	else
+	{
+		keyboard_string = message;
+	}
+	if(keyboard_check_pressed(vk_enter))
+	{
+		global.name = message;
+		scr_addScore();
+		draw_enter = false;
 	}
 }

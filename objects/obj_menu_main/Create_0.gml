@@ -1,5 +1,8 @@
 /// @description Insert description here
 // You can write your code in this editor
+global.name = "";
+limit = 5;
+message = "";
 
 main_step = 0;
 main_index = -1;
@@ -15,6 +18,8 @@ play_transition = false;
 draw_credits = false;
 draw_controls = false;
 draw_score = false;
+
+draw_enter = false;
 
 castTransition = noone;
 controlsTransition = noone;
