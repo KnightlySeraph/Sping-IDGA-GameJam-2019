@@ -29,7 +29,10 @@ switch(stage){
 		
 	case(4):
 		if(timer == 1) scr_spawnEnemies(obj_enemy_basic, 4, spawners, 1);
-		else if(timer == 6 * second) scr_spawnEnemies(obj_enemy_basic, 2, spawners, 1);
+		else if(timer == 6 * second) {
+			scr_spawnEnemies(obj_enemy_basic, 2, spawners, 1);
+			scr_spawnEnemies(obj_spotlight,1,spotlights,1);
+		}
 		else if(!instance_exists(obj_enemy_basic) && timer > 6 * second) {
 			timer = 0;
 			stage = 5;
@@ -72,7 +75,10 @@ switch(stage){
 			scr_spawnEnemies(obj_enemy_shield, 2, spawners, 1);
 		}
 		else if(timer == 6 * second) scr_spawnEnemies(obj_enemy_basic, 4, spawners, 1);
-		else if(timer == 8 * second) scr_spawnEnemies(obj_enemy_shield, 1, spawners, 1);
+		else if(timer == 8 * second) {
+			scr_spawnEnemies(obj_enemy_shield, 1, spawners, 1);
+			scr_spawnEnemies(obj_spotlight,1,spotlights,1);
+		}
 		else if(!instance_exists(obj_enemy_basic) && !instance_exists(obj_enemy_shield) && timer > 4 * second)
 		{
 			timer = 0;
@@ -127,11 +133,11 @@ switch(stage){
 			percentage = irandom_range(1,100);
 			if(percentage == 1) scr_spawnEnemies(obj_enemy_prize, 1, spawners, 1);
 			else if(percentage <= 6) scr_spawnEnemies(obj_enemy_health, 1, spawners, 1);
-			else if(percentage <= 26) scr_spawnEnemies(obj_enemy_flying, irandom_range(1,fly_rate), spawners, 1 + (0.1 * difficulty));
-			else if(percentage <= 55) scr_spawnEnemies(obj_enemy_shield, irandom_range(1,shield_rate), spawners, 1 + (0.1 * difficulty));
-			else scr_spawnEnemies(obj_enemy_basic, irandom_range(1,basic_rate), spawners, 1 + (0.1 * difficulty));
+			else if(percentage <= 26 && instance_number(obj_enemy_flying) < 50) scr_spawnEnemies(obj_enemy_flying, irandom_range(1,fly_rate), spawners, 1 + (0.1 * difficulty));
+			else if(percentage <= 55 && instance_number(obj_enemy_shield) < 50) scr_spawnEnemies(obj_enemy_shield, irandom_range(1,shield_rate), spawners, 1 + (0.1 * difficulty));
+			else if(instance_number(obj_enemy_basic) < 100)scr_spawnEnemies(obj_enemy_basic, irandom_range(1,basic_rate), spawners, 1 + (0.1 * difficulty));
 			
-			if(!instance_exists(obj_spotlight) && percentage % 5 == 0) scr_spawnEnemies(obj_spotlight, irandom_range(1,light_rate), spotlights, 1);
+			if(!instance_exists(obj_spotlight) && percentage % 20 == 0) scr_spawnEnemies(obj_spotlight, irandom_range(1,light_rate), spotlights, 1);
 		}
 		if(timer % (10 * second) == 0)
 		{
