@@ -5,4 +5,4 @@ text = obj_soundController.credit;
 draw_set_font(Epbb);
 draw_set_color(c_white);
 
-draw_text_transformed(x, y + 16, string(text), 2, 2, 0);
+draw_text_transformed(x, y + 48, string(text), 2, 2, 0);
