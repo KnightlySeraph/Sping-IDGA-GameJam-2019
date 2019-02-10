@@ -28,6 +28,7 @@ if(draw_credits)
 else if(draw_controls)
 {
 	draw_sprite(spr_curtain_directions, 1, 0, 0);
+	draw_sprite(spr_controls, 1, room_width/2, room_height + 200);
 }
 else if(draw_score)
 {
