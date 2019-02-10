@@ -130,13 +130,15 @@ switch(stage){
 			else if(percentage <= 26) scr_spawnEnemies(obj_enemy_flying, irandom_range(1,3), spawners, 1);
 			else if(percentage <= 55) scr_spawnEnemies(obj_enemy_shield, irandom_range(1,3), spawners, 1);
 			else scr_spawnEnemies(obj_enemy_basic, irandom_range(1,3), spawners, 1);
+			
+			scr_spawnEnemies(obj_spotlight, 1, spotlights, 1);
 		}
 		break;
 		
 	case(13):
 		if(timer % (5 * second) == 0)
 		{
-			scr_spawnEnemies(obj_enemy_health, 1, spawners, 1);
+			scr_spawnEnemies(obj_enemy_basic, 1, spawners, 1);
 			scr_spawnEnemies(obj_spotlight, 1, spotlights, 1);
 		}
 		break;
