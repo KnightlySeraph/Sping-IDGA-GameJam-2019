@@ -35,11 +35,13 @@ else if(draw_score)
 	draw_sprite(spr_curtain_sponsors, 1, 0, 0);
 	draw_highscore(100, 100, room_width - 100, room_height - 100);
 }
+/*
 if(draw_enter)
 {
 	draw_text(room_width/2, room_height/2, "Enter your name:")
 	draw_text(room_width/2, room_height/2 + 10, message);
 }
+*/
 
 if(play_transition)
 {

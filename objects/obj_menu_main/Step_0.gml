@@ -97,7 +97,7 @@ else if(!main_control)
 				if(scoreTransition.option_fadeAlpha == 1)
 				{
 					draw_score = true;
-					draw_enter = true;
+					//draw_enter = true;
 					instance_deactivate_object(curtains);
 					for(var k = 0; k < 5; k++)
 					{
@@ -183,6 +183,7 @@ else if(!main_control)
 	}
 }
 
+/*
 if(draw_enter)
 {
 	if(keyboard_check_pressed(vk_enter))
@@ -202,6 +203,7 @@ if(draw_enter)
 		keyboard_string = message;
 	}
 }
+*/
 if(keyboard_check_pressed(vk_enter))
 {
 	room_restart();

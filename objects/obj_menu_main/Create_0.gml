@@ -1,8 +1,13 @@
 /// @description Insert description here
 // You can write your code in this editor
 window_set_fullscreen(true);
-global.name = "";
+global.myName = "";
 global.fromGame = false;
+global.highName = []
+global.highScore = [];
+global.highName[10] = "";
+global.highScore[10] = 0;
+
 limit = 5;
 message = "";
 
