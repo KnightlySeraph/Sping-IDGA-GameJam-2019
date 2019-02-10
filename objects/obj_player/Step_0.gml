@@ -6,18 +6,18 @@ if (gamepad_button_check_pressed(slot, gp_select)) {
 	// show_message("Image Index is: " + string(image_index) + " Move is Set to: " + string(move) + " isDashing is set to: " + string(isDashing));
 	// if (sprite_index == spr_attack2_left) show_message("Current sprite: " + string(sprite_index));
 	//show_message("isAttacking is: " + string(isAttacking) + " Basic attack index: " + string(attackIndex) + " isDashing is: " + string(isDashing));
-	show_message("STATE: " + string(STATE));
+	// show_message("STATE: " + string(STATE));
 }
 // FullScreen
-if (keyboard_check_pressed(vk_f11) && window_get_fullscreen()) {
+if ((keyboard_check_pressed(vk_f11) || gamepad_button_check_pressed(slot, gp_select)) && window_get_fullscreen()) {
 	window_set_fullscreen(false);	
 }
-else if (keyboard_check_pressed(vk_f11)) {
+else if (keyboard_check_pressed(vk_f11) || gamepad_button_check_pressed(slot, gp_select)) {
 	window_set_fullscreen(true);	
 }
 
 // Quit game and stuff
-
+if (global.usingGamePad && gamepad_button_check_pressed(slot, gp_start)) game_end(); 
 // Set mask across all animations
 mask_index = spr_idle_left;
 // Movement code

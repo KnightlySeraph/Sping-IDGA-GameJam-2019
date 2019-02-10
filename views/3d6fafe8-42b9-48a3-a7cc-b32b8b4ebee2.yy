@@ -4,7 +4,8 @@
     "mvc": "1.1",
     "name": "3d6fafe8-42b9-48a3-a7cc-b32b8b4ebee2",
     "children": [
-        "b9f0800d-2e65-451a-bbd0-20aedfd70bb1"
+        "b9f0800d-2e65-451a-bbd0-20aedfd70bb1",
+        "772bef6d-eddd-4043-8f52-9d181807dee6"
     ],
     "filterType": "GMSound",
     "folderName": "Tracks",
