@@ -37,7 +37,7 @@ else if(draw_score)
 if(draw_enter)
 {
 	draw_text(room_width/2, room_height/2, "Enter your name:")
-	draw_text(room_width/2, room_height/2, message);
+	draw_text(room_width/2, room_height/2 + 10, message);
 }
 
 if(play_transition)
