@@ -43,10 +43,24 @@ else if(!main_control)
 		break;
 	case(1):
 		scr_lower_curtain();
-		var castTransition = instance_create_depth(x, y, -1000, obj_roomTransition);
-		if(!instance_exists(castTransition))
+		if(curtains.y >= 1080)
 		{
-			
+			if(!instance_exists(obj_optionTransition) && !draw_credits)
+			{
+				castTransition = instance_create_depth(x, y, -1000, obj_optionTransition);
+			}
+			else if(instance_exists(obj_optionTransition))
+			{
+				if(castTransition.option_fadeAlpha == 1)
+				{
+					draw_credits = true;
+					instance_deactivate_object(curtains);
+					for(var k = 0; k < 5; k++)
+					{
+						instance_deactivate_object(main[k]);
+					}
+				}
+			}
 		}
 		break;
 	}
