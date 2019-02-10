@@ -15,7 +15,8 @@
         "1ea9eec4-5baa-44d5-a635-67cbba7e2852",
         "bac53d4a-4a4f-4ef7-be10-48f8871787fa",
         "f80814dc-1b20-487a-83d3-a0d3a26a25ee",
-        "75c86018-a755-4aa7-8cc3-348c81f8d08f"
+        "75c86018-a755-4aa7-8cc3-348c81f8d08f",
+        "355298db-8ec5-41ad-a562-f141419e8b09"
     ],
     "filterType": "GMObject",
     "folderName": "Enemies",

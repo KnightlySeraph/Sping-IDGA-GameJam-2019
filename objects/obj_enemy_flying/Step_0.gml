@@ -76,6 +76,10 @@ if(state != "DEATH")
 		}
 		hsp = 0;
 	}
+	else if(place_meeting(x,y,obj_platform_solid))
+	{
+		vsp = -5;	
+	}
 
 	x += hsp;
 	y += vsp;

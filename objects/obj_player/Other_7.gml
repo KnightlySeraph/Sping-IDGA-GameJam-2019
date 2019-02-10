@@ -41,3 +41,14 @@ if (sprite_index == spr_dashAttack_left || sprite_index == spr_dashAttack_right)
 		instance_destroy(obj_dashBox);	
 	}
 }
+
+if (sprite_index == spr_groundPound_left || sprite_index == spr_groundPound_right) {
+	isAttacking = false;	
+}
+
+if (sprite_index == spr_air_right || sprite_index == spr_air_left) {
+	isAttacking = false;	
+	if (instance_exists(obj_airBox)) {
+		instance_destroy(obj_airBox);	
+	}
+}

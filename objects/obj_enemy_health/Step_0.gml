@@ -7,15 +7,15 @@ switch(state){
 	case("WALK"):
 		sprite_index = spr_enemy_health;
 		if(place_meeting(x,y,obj_floor)) instance_destroy();
-		if(!place_meeting(x, y+1, obj_floor)) state = "FALL";
+		if(!place_meeting(x, y+1, obj_floor) && !place_meeting(x, y+1, obj_platform_passable)) state = "FALL";
 		hsp = direct * spd;
 		x += hsp;
 		break;
 		
 	case("FALL"):
 		sprite_index = spr_enemy_health_fall;
-		if (place_meeting(x, y + vsp, obj_floor)){
-			while(!place_meeting(x, y+sign(vsp), obj_floor)){
+		if (place_meeting(x, y + vsp, obj_floor) || place_meeting(x, y + vsp, obj_platform_passable)){
+			while(!place_meeting(x, y+sign(vsp), obj_floor) && !place_meeting(x, y+sign(vsp), obj_platform_passable)){
 				y += sign(vsp);	
 			}
 			vsp = 0;
