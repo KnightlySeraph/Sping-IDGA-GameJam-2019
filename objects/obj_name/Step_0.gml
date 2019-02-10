@@ -3,7 +3,8 @@
 if(keyboard_check_pressed(vk_enter))
 {
 	global.name = name;
-	scr_addScore();
+	scr_addScore(myPoints);
+	room_goto(rm_menu_test);
 }
 if(string_length(keyboard_string) <= limit)
 {
@@ -11,5 +12,5 @@ if(string_length(keyboard_string) <= limit)
 }
 else
 {
-	keyboard_string = message;
+	keyboard_string = name;
 }

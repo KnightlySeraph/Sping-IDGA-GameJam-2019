@@ -32,8 +32,10 @@ else if(draw_controls)
 }
 else if(draw_score)
 {
+	draw_set_font(Epbb);
+	draw_set_color(c_white);
 	draw_sprite(spr_curtain_sponsors, 1, 0, 0);
-	draw_highscore(100, 100, room_width - 100, room_height - 100);
+	draw_highscore(200, 200, room_width - 200, room_height - 200);
 }
 /*
 if(draw_enter)

@@ -59,3 +59,5 @@ else if (selection < Meat) {
 else {
 	track_to_play = Run_Amok;	
 }
+
+credit = "Title " + string(object_get_name(track_to_play));

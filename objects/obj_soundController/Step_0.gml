@@ -4,6 +4,11 @@ if (room == room0 && !playing) {
 	audio_play_sound(track_to_play, 1, true);
 }
 
+// Acreddation is a bitch
+if (track_to_play == Italy_Jr) {
+	credit = "Current Track " + string(audio_get_name(track_to_play)) + " by Underbelly";
+}
+else credit = "Current Track " + string(audio_get_name(track_to_play)) + " by Kevin MacLeod";
 
 // Cycle Music
 if (global.usingGamePad) {
