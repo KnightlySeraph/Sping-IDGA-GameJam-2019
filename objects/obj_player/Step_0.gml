@@ -15,7 +15,7 @@ if (hitPoints <= 0) {
 	isDashing = false;
 	isAttacking = false;
 	if (faceRight) STATE = STATES.DEATH_RIGHT;
-	else STATE = STATES.DETH_LEFT;
+	else STATE = STATES.DEATH_LEFT;
 }
 
 // Set mask across all animations
@@ -482,6 +482,12 @@ if (STATE = STATES.AIR_ATTACK_LEFT) {
 }
 if (STATE = STATES.AIR_ATTACK_RIGHT) {
 	sprite_index = spr_air_right;	
+}
+if (STATE = STATES.DEATH_RIGHT) {
+	sprite_index = spr_perish_right;	
+}
+if (STATE = STATES.DEATH_LEFT) {
+	sprite_index = spr_perish_left;	
 }
 
 

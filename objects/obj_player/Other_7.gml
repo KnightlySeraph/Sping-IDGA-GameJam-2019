@@ -52,3 +52,7 @@ if (sprite_index == spr_air_right || sprite_index == spr_air_left) {
 		instance_destroy(obj_airBox);	
 	}
 }
+
+if (sprite_index == spr_perish_left || sprite_index == spr_perish_right) {
+	room_goto(rm_menu_highscore);
+}
