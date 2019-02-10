@@ -239,6 +239,14 @@
             }
         },
         {
+            "Key": "1ca9cb91-e156-4c2c-92f9-e3df3ae05cae",
+            "Value": {
+                "id": "be3c1e3b-9b06-43ca-975d-11d1ac2e2552",
+                "resourcePath": "sounds\\Pop_Weasel\\Pop_Weasel.yy",
+                "resourceType": "GMSound"
+            }
+        },
+        {
             "Key": "1ea9eec4-5baa-44d5-a635-67cbba7e2852",
             "Value": {
                 "id": "cddb8ac8-fc1a-4aa4-bb98-c1c56f6b99ee",
@@ -599,6 +607,14 @@
             }
         },
         {
+            "Key": "5465eb76-bf4c-48c6-951a-ed09a50a05b6",
+            "Value": {
+                "id": "99b56449-99fc-496b-aac4-4026e982cadb",
+                "resourcePath": "sounds\\Adventure_Meme\\Adventure_Meme.yy",
+                "resourceType": "GMSound"
+            }
+        },
+        {
             "Key": "559ae38d-e3b7-48bc-a9be-c9e0c0a8ad6d",
             "Value": {
                 "id": "b46f59f9-5a21-4726-8064-cd1d335c3d6e",
@@ -740,6 +756,14 @@
                 "id": "9ed00328-fca2-4c90-99c2-afb541b5f7bd",
                 "resourcePath": "objects\\obj_spotlight\\obj_spotlight.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "764a54d9-6871-4cb1-a280-b51348d05a22",
+            "Value": {
+                "id": "57b5fdf2-8fd2-44ad-8892-fe118e04719f",
+                "resourcePath": "sounds\\Jaunty_Gumption\\Jaunty_Gumption.yy",
+                "resourceType": "GMSound"
             }
         },
         {
@@ -1044,6 +1068,14 @@
                 "id": "f025bd68-dc40-4b0d-a9a1-2ef0d8fc1ca0",
                 "resourcePath": "sprites\\spr_air_left\\spr_air_left.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "ac899483-8148-4653-ab49-b5467a829535",
+            "Value": {
+                "id": "7f3bd647-8b7c-46bf-b616-174476aee7d7",
+                "resourcePath": "sounds\\Music_Delight\\Music_Delight.yy",
+                "resourceType": "GMSound"
             }
         },
         {
@@ -1540,6 +1572,14 @@
                 "id": "213f462a-f77d-4076-b7b4-c25515b7e9c3",
                 "resourcePath": "objects\\obj_lightspawner\\obj_lightspawner.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "fa659280-fc17-47de-a7e8-6111a5f586d3",
+            "Value": {
+                "id": "b4c5639e-dd34-4a5a-b69f-fec72d0a5204",
+                "resourcePath": "sounds\\Cartoon_Battle\\Cartoon_Battle.yy",
+                "resourceType": "GMSound"
             }
         },
         {
