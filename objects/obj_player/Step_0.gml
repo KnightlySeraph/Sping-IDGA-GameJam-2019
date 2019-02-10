@@ -197,7 +197,7 @@ if (global.usingGamePad) {
 		if (attackIndex == 0) {
 			show_debug_message("Attack index 0 entered");
 			if (faceRight) {
-				sprite_index = spr_attack1_right;
+				STATE = STATES.ATTACK_RIGHT1; // Set Animation State
 				if (!instance_exists(obj_lightBox)) {
 					instance_create_depth(x + lightHit_xRange, y + lightHit_yRange, 0, obj_lightBox);
 				}
@@ -207,7 +207,7 @@ if (global.usingGamePad) {
 				}
 			}
 			else {
-				sprite_index = spr_attack1_left;
+				STATE = STATES.ATTACK_LEFT1; // Set Animation State
 				if (!instance_exists(obj_lightBox)) {
 					instance_create_depth(x - lightHit_xRange, y + lightHit_yRange, 0, obj_lightBox);
 				}
@@ -219,7 +219,7 @@ if (global.usingGamePad) {
 		}
 		else if (attackIndex == 1) {
 			if (faceRight) {
-				sprite_index = spr_attack2_right;
+				STATE = STATES.ATTACK_RIGHT2; // Set Animation State
 				if (!instance_exists(obj_lightBox)) {
 					instance_create_depth(x + lightHit_xRange, y + lightHit_yRange, 0, obj_lightBox);
 				}
@@ -229,7 +229,7 @@ if (global.usingGamePad) {
 				}
 			}
 			else {
-				sprite_index = spr_attack2_left;
+				STATE = STATES.ATTACK_LEFT2; // Set Animation State
 				if (!instance_exists(obj_lightBox)) {
 					instance_create_depth(x - lightHit_xRange, y + lightHit_yRange, 0, obj_lightBox);
 				}
@@ -242,11 +242,11 @@ if (global.usingGamePad) {
 		}
 		else if (attackIndex == 2) {
 			if (faceRight) {
-				sprite_index = spr_attack3_right;
+				STATE = STATES.ATTACK_RIGHT3; // Set Animation State
 				alarm[7] = 0.7 * room_speed;
 			}
 			else {
-				sprite_index = spr_attack3_left;
+				STATE = STATES.ATTACK_LEFT3; // Set Animation State
 				alarm[7] = 0.7 * room_speed;
 			}
 		}
@@ -419,37 +419,52 @@ if (STATE = STATES.FALL_LEFT) {
 if (STATE = STATES.FALL_RIGHT) {
 	sprite_index = spr_fall_right;	
 }
-if (STATE = STATES.IDLE) {
-	sprite_index = spr_idle_left;	
+if (STATE = STATES.JUMP1_LEFT) {
+	sprite_index = spr_jump1_left;	
 }
-if (STATE = STATES.IDLE) {
-	sprite_index = spr_idle_left;	
+if (STATE = STATES.JUMP1_RIGHT) {
+	sprite_index = spr_jump1_right;	
 }
-if (STATE = STATES.IDLE) {
-	sprite_index = spr_idle_left;	
+if (STATE = STATES.JUMP2_LEFT) {
+	sprite_index = spr_jump2_left;	
 }
-if (STATE = STATES.IDLE) {
-	sprite_index = spr_idle_left;	
+if (STATE = STATES.JUMP2_RIGHT) {
+	sprite_index = spr_jump2_right;	
 }
-if (STATE = STATES.IDLE) {
-	sprite_index = spr_idle_left;	
+if (STATE = STATES.ATTACK_LEFT1) {
+	sprite_index = spr_attack1_left;	
 }
-if (STATE = STATES.IDLE) {
-	sprite_index = spr_idle_left;	
+if (STATE = STATES.ATTACK_LEFT2) {
+	sprite_index = spr_attack2_left;	
 }
-if (STATE = STATES.IDLE) {
-	sprite_index = spr_idle_left;	
+if (STATE = STATES.ATTACK_LEFT3) {
+	sprite_index = spr_attack3_left;	
 }
-if (STATE = STATES.IDLE) {
-	sprite_index = spr_idle_left;	
+if (STATE = STATES.ATTACK_RIGHT1) {
+	sprite_index = spr_attack1_right;	
 }
-if (STATE = STATES.IDLE) {
-	sprite_index = spr_idle_left;	
+if (STATE = STATES.ATTACK_RIGHT2) {
+	sprite_index = spr_attack2_right;	
 }
-if (STATE = STATES.IDLE) {
-	sprite_index = spr_idle_left;	
+if (STATE = STATES.ATTACK_RIGHT3) {
+	sprite_index = spr_attack3_right;	
 }
-if (STATE = STATES.IDLE) {
-	sprite_index = spr_idle_left;	
+if (STATE = STATES.LASER_ATTACK_LEFT) {
+	sprite_index = spr_laser_left;	
+}
+if (STATE = STATES.LASER_ATTACK_RIGHT) {
+	sprite_index = spr_laser_right;	
+}
+if (STATE = STATES.POUND_LEFT) {
+	sprite_index = spr_groundPound_left;	
+}
+if (STATE = STATES.POUND_RIGHT) {
+	sprite_index = spr_groundPound_right;	
+}
+if (STATE = STATES.DASH_ATTACK_LEFT) {
+	sprite_index = spr_dashAttack_left;	
+}
+if (STATE = STATES.DASH_ATTACK_RIGHT) {
+	sprite_index = spr_dashAttack_right;	
 }
 
