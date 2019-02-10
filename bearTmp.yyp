@@ -167,6 +167,14 @@
             }
         },
         {
+            "Key": "14959705-3bac-42d5-aa7b-003e16b26174",
+            "Value": {
+                "id": "2b7f55bc-40fa-474e-a242-b67a5b86b729",
+                "resourcePath": "scripts\\DashBox\\DashBox.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "16610606-706a-4c25-a1ab-d621901e23c0",
             "Value": {
                 "id": "faf0ecc5-8e39-4b61-96c5-e9f11617b6e2",
@@ -847,6 +855,14 @@
             }
         },
         {
+            "Key": "a385038b-ae66-4283-9dd1-8622a04f6a65",
+            "Value": {
+                "id": "bc2d502e-1c05-4d03-bb3b-697a6715104d",
+                "resourcePath": "objects\\obj_focus\\obj_focus.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "a4ef9d9a-7836-4eee-901d-c897c769e7aa",
             "Value": {
                 "id": "dabdf58a-0965-464b-8c6f-b1b7abd8e8da",
@@ -1314,7 +1330,8 @@
         "567a50bb-130e-4ae5-8029-0f1c4eb3f21b",
         "0012b3d7-353b-418a-b5bb-75514abf8366",
         "c6aedef7-ec89-421a-8f6f-75db652e09cd",
-        "3376d47f-2441-4bea-954f-3c06cd8da28c"
+        "3376d47f-2441-4bea-954f-3c06cd8da28c",
+        "14959705-3bac-42d5-aa7b-003e16b26174"
     ],
     "tutorial": ""
 }

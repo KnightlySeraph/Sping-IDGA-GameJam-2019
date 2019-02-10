@@ -23,7 +23,7 @@ camera_set_proj_mat(player_cam, pm);
 
 view_camera[0] = player_cam;
 
-follow = noone;
+follow = obj_focus;
 xTo = x;
 yTo = y;
 
