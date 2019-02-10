@@ -13,8 +13,12 @@ main_lightup = false;
 play_transition = false;
 
 draw_credits = false;
+draw_controls = false;
+draw_score = false;
 
 castTransition = noone;
+controlsTransition = noone;
+scoreTransition = noone;
 
 light_horizontal_radius = 170;
 light_vertical_radius = 95;

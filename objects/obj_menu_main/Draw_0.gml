@@ -24,7 +24,14 @@ if(main_exists)
 if(draw_credits)
 {
 	draw_sprite(spr_cutrain_cast, 1, 0, 0);
-	show_debug_message("Draw cast");
+}
+else if(draw_controls)
+{
+	draw_sprite(spr_curtain_directions, 1, 0, 0);
+}
+else if(draw_score)
+{
+	draw_sprite(spr_curtain_sponsors, 1, 0, 0);
 }
 
 if(play_transition)
