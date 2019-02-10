@@ -75,7 +75,7 @@ switch(state){
 
 // If there is no floor below, go into falling
 if((!place_meeting(x, y+1, obj_floor) && !place_meeting(x, y+1, obj_platform_passable)) && state != "DEATH") state = "FALL";
-if((place_meeting(x,y,obj_lightBox) || place_meeting(x,y,obj_stompBox) || place_meeting(x,y,obj_airBox) || place_meeting(x,y,obj_dashBox) || place_meeting(x,y,obj_laserBox)) && direct != sign(obj_player.x - x)) {
+if(((place_meeting(x,y,obj_lightBox) || place_meeting(x,y,obj_airBox) || place_meeting(x,y,obj_dashBox)) && direct != sign(obj_player.x - x)) || place_meeting(x,y,obj_laserBox) || place_meeting(x,y,obj_stompBox)) {
 	state = "DEATH";
 	alarm[0] = -1;
 	alarm[1] = -1;

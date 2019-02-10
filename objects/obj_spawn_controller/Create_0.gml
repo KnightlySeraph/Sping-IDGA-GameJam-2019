@@ -1,5 +1,5 @@
 //Which set of enemies will start spawning.  12 is infinite.
-stage = 13;
+stage = 12;
 
 // Timer for counting seconds
 timer = 0;
