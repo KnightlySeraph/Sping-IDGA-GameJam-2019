@@ -1,6 +1,6 @@
 /// @description Insert description here
 velocity = 32;
-
+image_alpha = 0;
 
 // show_message("obj created");
 
