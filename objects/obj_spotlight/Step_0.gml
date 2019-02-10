@@ -26,6 +26,9 @@ else
 		crash = true;
 		timer = 0;
 	}
+	if(place_meeting(x,y,obj_player)){
+		obj_player.spotHit = true;	
+	}
 	vsp += grav;
 	y += vsp;
 }
