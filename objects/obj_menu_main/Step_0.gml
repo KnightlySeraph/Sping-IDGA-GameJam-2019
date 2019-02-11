@@ -11,6 +11,7 @@ if (gamepad_button_check_pressed(slot, gp_padd)) {
 	index--;
 	index = clamp(index, 0, 4);
 }
+// Implements navigation with the joystick, requires an input delay so that the hover doesn't jump
 if (gamepad_axis_value(slot, gp_axislv) && !delaying) {
 	delaying = true;
 	alarm[1] = room_speed * delay;
