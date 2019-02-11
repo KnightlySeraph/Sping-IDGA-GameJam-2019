@@ -85,3 +85,8 @@ for(var n = 0; n < 5; n++)
 	main[n].image_xscale = 0.7;
 	main[n].image_yscale = 0.7;
 }
+
+// Controller Index
+index = 4;
+delay = 1;
+delaying = false;

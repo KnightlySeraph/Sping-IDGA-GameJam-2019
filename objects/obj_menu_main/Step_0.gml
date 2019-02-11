@@ -1,15 +1,56 @@
 /// @description Insert description here
 // You can write your code in this editor
+
+// Handle selection via either keyboard or controller
+if (gamepad_button_check_pressed(slot, gp_padu)) {
+	index++;
+	// Clamp the value
+	index = clamp(index, 0, 4);
+}
+if (gamepad_button_check_pressed(slot, gp_padd)) {
+	index--;
+	index = clamp(index, 0, 4);
+}
+if (gamepad_axis_value(slot, gp_axislv) && !delaying) {
+	delaying = true;
+	alarm[1] = room_speed * delay;
+	index--;
+	index = clamp(index, 0, 4);
+}
+if (gamepad_axis_value(slot, gp_axislv) == -1 && !delaying) {
+	delaying = true;
+	alarm[1] = room_speed * delay;
+	index++;
+	index = clamp(index, 0, 4);
+}
+if (keyboard_check_pressed(vk_up) || keyboard_check_pressed(ord("W"))) {
+	index++;
+	// Clamp the value
+	index = clamp(index, 0, 4);
+}
+if (keyboard_check_pressed(vk_down) || keyboard_check_pressed(ord("S"))) {
+	index--;
+	index = clamp(index, 0, 4);
+}
+
 if(main_control)
 {
 	for(var k = 0; k < 5; k++)
 	{
-		if(instance_position(mouse_x, mouse_y, main[k]))
+		//if(instance_position(mouse_x, mouse_y, main[k]))
+		//{
+		//	main_lightup = true;
+		//	main_hover = true;
+		//	main_light_index = k;
+		//	main_index = k;
+		//	break;
+		//}
+		if(global.usingGamePad || !global.usingGamePad)
 		{
 			main_lightup = true;
 			main_hover = true;
-			main_light_index = k;
-			main_index = k;
+			main_light_index = index;
+			main_index = index;
 			break;
 		}
 		if(k == 4)
@@ -24,7 +65,7 @@ if(main_control)
 
 	if(main_hover)
 	{
-		if(mouse_check_button_pressed(mb_left))
+		if(gamepad_button_check_pressed(slot, gp_face3) || keyboard_check_pressed(vk_tab))
 		{
 			main_pressed = true;
 			main_committed = main_index;

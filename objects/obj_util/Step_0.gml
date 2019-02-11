@@ -9,4 +9,4 @@ else if (keyboard_check_pressed(vk_f11) || gamepad_button_check_pressed(slot, gp
 }
 
 // Quit game and stuff
-if (global.usingGamePad && gamepad_button_check_pressed(slot, gp_start)) game_end(); 
+if (global.usingGamePad && gamepad_button_check_pressed(slot, gp_start)) room_goto(rm_menu_test); 
