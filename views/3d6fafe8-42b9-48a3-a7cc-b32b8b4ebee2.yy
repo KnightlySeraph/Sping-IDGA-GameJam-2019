@@ -15,7 +15,8 @@
         "1ca9cb91-e156-4c2c-92f9-e3df3ae05cae",
         "aa7cbfc2-ae98-44fb-86f1-57d0dd54b612",
         "e0ec6bd1-bd1b-4047-a549-ce9a5ad3d19f",
-        "db8fe14f-0b71-4461-a784-b5702df69329"
+        "db8fe14f-0b71-4461-a784-b5702df69329",
+        "d5831512-b232-4f5a-b2a4-63a5f38cb137"
     ],
     "filterType": "GMSound",
     "folderName": "Tracks",

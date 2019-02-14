@@ -1,7 +1,7 @@
 /// @description Insert description here
 playing = false;
 randomize();
-Latin = 0.01;
+Latin = 0.02;
 Spaz = 0.06;	
 Exit = 0.11; 
 Italy = .16;
@@ -12,12 +12,13 @@ Mus = .36;
 Pop = .41;
 Cruise = .46;
 Meat = .51;
-Run = 1;
+Run = .56;
+Tavern = 1;
 
 selection = random_range(0, 1);
 // show_message("Rand is: " + string(selection));
 
-music_list = [Run_Amok, Italy_Jr, Spazmatic_Polka, Cruising_Goblins, Pop_Weasel, Exit_Premise, Adventure_Meme, Jaunty_Gumption, Music_Delight, Meatball_Parade, Cartoon_Battle];
+music_list = [Tavern_Fight, Run_Amok, Italy_Jr, Spazmatic_Polka, Cruising_Goblins, Pop_Weasel, Exit_Premise, Adventure_Meme, Jaunty_Gumption, Music_Delight, Meatball_Parade, Cartoon_Battle];
 length = array_length_1d(music_list);
 i = 0;
 
@@ -56,8 +57,11 @@ else if (selection < Cruise) {
 else if (selection < Meat) {
 	track_to_play = Meatball_Parade;
 }
-else {
+else if (selection < Run) {
 	track_to_play = Run_Amok;	
+}
+else {
+	track_to_play = Tavern_Fight;	
 }
 
 credit = "Title " + string(object_get_name(track_to_play));

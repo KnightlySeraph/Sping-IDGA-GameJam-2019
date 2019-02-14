@@ -1679,6 +1679,14 @@
             }
         },
         {
+            "Key": "d5831512-b232-4f5a-b2a4-63a5f38cb137",
+            "Value": {
+                "id": "0cab65d7-fc3c-4931-807c-df187f7e5f38",
+                "resourcePath": "sounds\\Tavern_Fight\\Tavern_Fight.yy",
+                "resourceType": "GMSound"
+            }
+        },
+        {
             "Key": "d5b73529-74b3-4ea6-bec3-92a35847c984",
             "Value": {
                 "id": "4e3618bc-f55f-4b0d-af11-07bea3b503a9",

@@ -4,9 +4,12 @@ if (room == room0 && !playing) {
 	audio_play_sound(track_to_play, 1, true);
 }
 
-// Acreddation is a bitch
+// Acreddation
 if (track_to_play == Italy_Jr) {
 	credit = "Current Track " + string(audio_get_name(track_to_play)) + " by Underbelly";
+}
+else if (track_to_play == Tavern_Fight) {
+	credit = "Current Track Tavern Fight from the Divinity Original Sin II Soundtrack";	
 }
 else credit = "Current Track " + string(audio_get_name(track_to_play)) + " by Kevin MacLeod";
 
